@@ -22,7 +22,6 @@ const LIGHT_LAYERS = [
 const PALETTES = {
   dark: {
     blend: "lighter",
-    line: "143,163,199",
     amber: "255,197,110",
     pink: "255,110,199",
     cyan: "61,220,255",
@@ -31,7 +30,6 @@ const PALETTES = {
   },
   light: {
     blend: "source-over",
-    line: "70,84,120",
     amber: "245,166,35",
     pink: "236,72,153",
     cyan: "14,165,233",
@@ -42,8 +40,6 @@ const PALETTES = {
 const PALETTE = PALETTES[document.documentElement.dataset.theme === "light" ? "light" : "dark"];
 const { amber: AMBER, pink: PINK, cyan: CYAN, lime: LIME, violet: VIOLET } = PALETTE;
 const LIGHT_COLORS = [AMBER, AMBER, PINK, CYAN, LIME, VIOLET];
-
-const WHEEL = { spokes: 12, bulbs: 36, turn: 0.04, colors: [AMBER, PINK, CYAN, LIME] };
 
 function createGlow(rgb) {
   const sprite = document.createElement("canvas");
@@ -71,7 +67,6 @@ function createSky(canvas) {
   const ctx = canvas.getContext("2d");
   const cloudAlpha = CLOUDS.map(() => 0.045);
   const glows = new Map([...new Set(LIGHT_COLORS)].map((rgb) => [rgb, createGlow(rgb)]));
-  let wheelAlpha = 0.26;
   let width = 0;
   let height = 0;
   let lights = [];
@@ -119,50 +114,6 @@ function createSky(canvas) {
       ctx.fillStyle = gradient;
       ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
     });
-  };
-
-  const drawWheel = () => {
-    const radius = Math.min(width, height) * 0.4;
-    const cx = width * 0.84 - pointerX * 8;
-    const cy = height + radius * 0.12 - pointerY * 5;
-    const turn = time * WHEEL.turn;
-    const cabin = radius * 0.05;
-    const bulb = clamp(radius * 0.011, 2.2, 4);
-    const rim = (index, count) => {
-      const angle = turn + (index / count) * Math.PI * 2;
-      return [cx + Math.cos(angle) * radius, cy + Math.sin(angle) * radius];
-    };
-    wheelAlpha += ((active === 0 ? 0.26 : 0.12) - wheelAlpha) * 0.03;
-
-    ctx.strokeStyle = `rgba(${PALETTE.line},${wheelAlpha})`;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-    ctx.moveTo(cx + radius * 0.86, cy);
-    ctx.arc(cx, cy, radius * 0.86, 0, Math.PI * 2);
-    for (let index = 0; index < WHEEL.spokes; index++) {
-      const [x, y] = rim(index, WHEEL.spokes);
-      ctx.moveTo(cx, cy);
-      ctx.lineTo(x, y);
-      ctx.lineTo(x, y + cabin);
-    }
-    ctx.stroke();
-
-    for (let index = 0; index < WHEEL.spokes; index++) {
-      const [x, y] = rim(index, WHEEL.spokes);
-      ctx.fillStyle = `rgba(${WHEEL.colors[index % WHEEL.colors.length]},${wheelAlpha * 1.5})`;
-      ctx.beginPath();
-      ctx.arc(x, y + cabin, cabin, 0, Math.PI);
-      ctx.fill();
-    }
-
-    for (let index = 0; index < WHEEL.bulbs; index++) {
-      const [x, y] = rim(index, WHEEL.bulbs);
-      const blink = 0.5 + 0.5 * Math.sin(time * 2.2 - index * 0.7);
-      ctx.globalAlpha = wheelAlpha * 2.6 * (0.4 + 0.6 * blink);
-      ctx.drawImage(glows.get(WHEEL.colors[index % WHEEL.colors.length]), x - bulb, y - bulb, bulb * 2, bulb * 2);
-    }
-    ctx.globalAlpha = 1;
   };
 
   const drawLights = (scrollDelta) => {
@@ -229,7 +180,6 @@ function createSky(canvas) {
     ctx.clearRect(0, 0, width, height);
     ctx.globalCompositeOperation = PALETTE.blend;
     drawClouds();
-    drawWheel();
     drawLights(animated ? scrollDelta : 0);
     if (animated) drawFireworks();
     ctx.globalCompositeOperation = "source-over";
@@ -291,7 +241,7 @@ function typeInto(element, text, perChar) {
 
 const TERMINAL_LINES = [
   { prompt: true, text: "whoami" },
-  { text: "최민주 · 작고 재밌는 것을 만드는 사람" },
+  { text: "최민주" },
   { prompt: true, text: "contact --list" },
   { text: "email   cmj120333@gmail.com" },
   { text: "github  github.com/cmj1203" },

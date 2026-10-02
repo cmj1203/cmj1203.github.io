@@ -1029,22 +1029,22 @@ html[data-theme="light"] {
   --line: rgba(23, 26, 38, 0.14);
   --line-soft: rgba(23, 26, 38, 0.07);
 
-  --lime: #2f7d00;
+  --lime: #cf2460;
   --cyan: #08769d;
   --violet: #7a4fe0;
   --pink: #d6249f;
-  --grad: linear-gradient(100deg, #3f9d00, #0b8fc0 55%, #7a4fe0);
+  --grad: linear-gradient(100deg, #e0356f, #e8650a);
 
   --panel: rgba(255, 255, 255, 0.74);
   --glass: rgba(255, 255, 255, 0.62);
   --glass-deep: rgba(255, 255, 255, 0.84);
   --shadow: 0 24px 60px rgba(40, 50, 80, 0.16);
-  --glow-lime: rgba(47, 125, 0, 0.25);
+  --glow-lime: rgba(207, 36, 96, 0.25);
   --glow-cyan: rgba(8, 118, 157, 0.2);
 }
 
 html[data-theme="light"] ::selection {
-  background: rgba(47, 125, 0, 0.2);
+  background: rgba(207, 36, 96, 0.18);
   color: var(--ink);
 }
 
@@ -1087,9 +1087,9 @@ html[data-theme="light"] .ring-c {
 }
 
 html[data-theme="light"] .core {
-  border-color: rgba(47, 125, 0, 0.5);
-  background: radial-gradient(circle at 35% 30%, #ffffff, #eaf5df);
-  box-shadow: 0 0 44px rgba(47, 125, 0, 0.2), inset 0 0 26px rgba(8, 118, 157, 0.1);
+  border-color: rgba(207, 36, 96, 0.45);
+  background: radial-gradient(circle at 35% 30%, #ffffff, #ffe9ef);
+  box-shadow: 0 0 44px rgba(207, 36, 96, 0.18), inset 0 0 26px rgba(245, 166, 35, 0.16);
 }
 
 html[data-theme="light"] .thumb::after {
