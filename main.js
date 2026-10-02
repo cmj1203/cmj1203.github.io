@@ -7,31 +7,75 @@ const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 const random = (min, max) => min + Math.random() * (max - min);
+const pick = (list) => list[Math.floor(Math.random() * list.length)];
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const scenes = $$(".scene");
 let active = 0;
 
-const STAR_LAYERS = [
-  { count: 150, depth: 0.18, alpha: 0.55, color: "#3a4a6e" },
-  { count: 95, depth: 0.42, alpha: 0.75, color: "#7f9fd6" },
-  { count: 46, depth: 0.9, alpha: 1, color: "#cfe6ff" },
+const LIGHT_LAYERS = [
+  { count: 80, depth: 0.18, alpha: 0.8, min: 0.6, max: 1.1 },
+  { count: 46, depth: 0.42, alpha: 0.75, min: 1.4, max: 2.6 },
+  { count: 18, depth: 0.9, alpha: 0.45, min: 3, max: 7 },
 ];
 
+const PALETTES = {
+  dark: {
+    blend: "lighter",
+    line: "143,163,199",
+    amber: "255,197,110",
+    pink: "255,110,199",
+    cyan: "61,220,255",
+    lime: "198,255,61",
+    violet: "167,139,250",
+  },
+  light: {
+    blend: "source-over",
+    line: "70,84,120",
+    amber: "245,166,35",
+    pink: "236,72,153",
+    cyan: "14,165,233",
+    lime: "101,190,40",
+    violet: "139,92,246",
+  },
+};
+const PALETTE = PALETTES[document.documentElement.dataset.theme === "light" ? "light" : "dark"];
+const { amber: AMBER, pink: PINK, cyan: CYAN, lime: LIME, violet: VIOLET } = PALETTE;
+const LIGHT_COLORS = [AMBER, AMBER, PINK, CYAN, LIME, VIOLET];
+
+const WHEEL = { spokes: 12, bulbs: 36, turn: 0.04, colors: [AMBER, PINK, CYAN, LIME] };
+
+function createGlow(rgb) {
+  const sprite = document.createElement("canvas");
+  sprite.width = 64;
+  sprite.height = 64;
+  const paint = sprite.getContext("2d");
+  const gradient = paint.createRadialGradient(32, 32, 0, 32, 32, 32);
+  gradient.addColorStop(0, `rgba(${rgb},0.6)`);
+  gradient.addColorStop(0.72, `rgba(${rgb},0.5)`);
+  gradient.addColorStop(0.86, `rgba(${rgb},0.8)`);
+  gradient.addColorStop(1, `rgba(${rgb},0)`);
+  paint.fillStyle = gradient;
+  paint.fillRect(0, 0, 64, 64);
+  return sprite;
+}
+
 const CLOUDS = [
-  { x: 0.22, y: 0.28, radius: 330, rgb: "198,255,61" },
-  { x: 0.82, y: 0.2, radius: 300, rgb: "61,220,255" },
-  { x: 0.35, y: 0.8, radius: 340, rgb: "167,139,250" },
-  { x: 0.78, y: 0.72, radius: 290, rgb: "255,110,199" },
+  { x: 0.22, y: 0.28, radius: 330, rgb: LIME },
+  { x: 0.82, y: 0.2, radius: 300, rgb: CYAN },
+  { x: 0.35, y: 0.8, radius: 340, rgb: VIOLET },
+  { x: 0.78, y: 0.72, radius: 290, rgb: PINK },
 ];
 
 function createSky(canvas) {
   const ctx = canvas.getContext("2d");
   const cloudAlpha = CLOUDS.map(() => 0.045);
+  const glows = new Map([...new Set(LIGHT_COLORS)].map((rgb) => [rgb, createGlow(rgb)]));
+  let wheelAlpha = 0.26;
   let width = 0;
   let height = 0;
-  let stars = [];
-  let meteors = [];
+  let lights = [];
+  let bursts = [];
   let time = 0;
   let lastScroll = window.scrollY;
   let warp = 0;
@@ -48,17 +92,18 @@ function createSky(canvas) {
     canvas.height = Math.round(height * ratio);
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
     const density = width < 720 ? 0.55 : 1;
-    stars = STAR_LAYERS.flatMap((layer) =>
+    lights = LIGHT_LAYERS.flatMap((layer) =>
       Array.from({ length: Math.round(layer.count * density) }, () => ({
         layer,
+        rgb: pick(LIGHT_COLORS),
         x: random(0, width),
         y: random(0, height),
-        size: random(0.4, 1.6) * (0.5 + layer.depth),
+        size: random(layer.min, layer.max),
         phase: random(0, Math.PI * 2),
         rate: random(0.3, 1.4),
       })),
     );
-    meteors = [];
+    bursts = [];
   };
 
   const drawClouds = () => {
@@ -76,63 +121,100 @@ function createSky(canvas) {
     });
   };
 
-  const drawStars = (scrollDelta) => {
-    for (const star of stars) {
-      const { depth, alpha, color } = star.layer;
-      star.y += 0.015 + depth * 0.03 - scrollDelta * depth * 0.32;
-      if (star.y > height + 4) {
-        star.y = -4;
-        star.x = random(0, width);
-      } else if (star.y < -4) {
-        star.y = height + 4;
-        star.x = random(0, width);
-      }
-      const x = star.x - pointerX * 18 * depth;
-      const y = star.y - pointerY * 12 * depth;
-      const streak = warp * depth * 46;
-      ctx.globalAlpha = alpha * (0.55 + 0.45 * Math.sin(time * star.rate + star.phase)) * (1 - warp * 0.4);
-      if (streak > 1.5) {
-        ctx.strokeStyle = color;
-        ctx.lineWidth = star.size * 0.9;
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(x, y + direction * streak);
-        ctx.stroke();
-      } else {
-        ctx.fillStyle = color;
-        ctx.beginPath();
-        ctx.arc(x, y, star.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
+  const drawWheel = () => {
+    const radius = Math.min(width, height) * 0.4;
+    const cx = width * 0.84 - pointerX * 8;
+    const cy = height + radius * 0.12 - pointerY * 5;
+    const turn = time * WHEEL.turn;
+    const cabin = radius * 0.05;
+    const bulb = clamp(radius * 0.011, 2.2, 4);
+    const rim = (index, count) => {
+      const angle = turn + (index / count) * Math.PI * 2;
+      return [cx + Math.cos(angle) * radius, cy + Math.sin(angle) * radius];
+    };
+    wheelAlpha += ((active === 0 ? 0.26 : 0.12) - wheelAlpha) * 0.03;
+
+    ctx.strokeStyle = `rgba(${PALETTE.line},${wheelAlpha})`;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.moveTo(cx + radius * 0.86, cy);
+    ctx.arc(cx, cy, radius * 0.86, 0, Math.PI * 2);
+    for (let index = 0; index < WHEEL.spokes; index++) {
+      const [x, y] = rim(index, WHEEL.spokes);
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(x, y);
+      ctx.lineTo(x, y + cabin);
+    }
+    ctx.stroke();
+
+    for (let index = 0; index < WHEEL.spokes; index++) {
+      const [x, y] = rim(index, WHEEL.spokes);
+      ctx.fillStyle = `rgba(${WHEEL.colors[index % WHEEL.colors.length]},${wheelAlpha * 1.5})`;
+      ctx.beginPath();
+      ctx.arc(x, y + cabin, cabin, 0, Math.PI);
+      ctx.fill();
+    }
+
+    for (let index = 0; index < WHEEL.bulbs; index++) {
+      const [x, y] = rim(index, WHEEL.bulbs);
+      const blink = 0.5 + 0.5 * Math.sin(time * 2.2 - index * 0.7);
+      ctx.globalAlpha = wheelAlpha * 2.6 * (0.4 + 0.6 * blink);
+      ctx.drawImage(glows.get(WHEEL.colors[index % WHEEL.colors.length]), x - bulb, y - bulb, bulb * 2, bulb * 2);
     }
     ctx.globalAlpha = 1;
   };
 
-  const drawMeteors = () => {
-    if (Math.random() < 0.012 && meteors.length < 2) {
-      meteors.push({
-        x: random(0.25, 0.85) * width,
-        y: random(0.05, 0.3) * height,
-        vx: random(-7, -4),
-        vy: random(2.4, 3.4),
+  const drawLights = (scrollDelta) => {
+    for (const light of lights) {
+      const { depth, alpha } = light.layer;
+      const edge = light.size + 4;
+      light.y += 0.015 + depth * 0.03 - scrollDelta * depth * 0.32;
+      if (light.y > height + edge) {
+        light.y = -edge;
+        light.x = random(0, width);
+      } else if (light.y < -edge) {
+        light.y = height + edge;
+        light.x = random(0, width);
+      }
+      const x = light.x - pointerX * 18 * depth;
+      const y = light.y - pointerY * 12 * depth;
+      const streak = warp * depth * 46;
+      const top = y - light.size - (direction < 0 ? streak : 0);
+      ctx.globalAlpha = alpha * (0.55 + 0.45 * Math.sin(time * light.rate + light.phase)) * (1 - warp * 0.4);
+      ctx.drawImage(glows.get(light.rgb), x - light.size, top, light.size * 2, light.size * 2 + streak);
+    }
+    ctx.globalAlpha = 1;
+  };
+
+  const drawFireworks = () => {
+    if (Math.random() < 0.007 && bursts.length < 2) {
+      const x = random(0.12, 0.88) * width;
+      const y = random(0.1, 0.42) * height;
+      bursts.push({
+        rgb: pick(LIGHT_COLORS),
         life: 1,
+        sparks: Array.from({ length: 22 }, (_, index) => {
+          const angle = (index / 22) * Math.PI * 2 + random(-0.12, 0.12);
+          const speed = random(1.1, 2.4);
+          return { x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed };
+        }),
       });
     }
-    meteors = meteors.filter((meteor) => meteor.life > 0);
-    for (const meteor of meteors) {
-      meteor.x += meteor.vx;
-      meteor.y += meteor.vy;
-      meteor.life -= 0.018;
-      const tailX = meteor.x - meteor.vx * 9;
-      const tailY = meteor.y - meteor.vy * 9;
-      const gradient = ctx.createLinearGradient(meteor.x, meteor.y, tailX, tailY);
-      gradient.addColorStop(0, `rgba(220,255,255,${0.9 * Math.max(meteor.life, 0)})`);
-      gradient.addColorStop(1, "rgba(220,255,255,0)");
-      ctx.strokeStyle = gradient;
-      ctx.lineWidth = 1.4;
+    bursts = bursts.filter((burst) => burst.life > 0);
+    for (const burst of bursts) {
+      burst.life -= 0.014;
+      ctx.strokeStyle = `rgba(${burst.rgb},${0.85 * Math.max(burst.life, 0)})`;
+      ctx.lineWidth = 1.3;
       ctx.beginPath();
-      ctx.moveTo(meteor.x, meteor.y);
-      ctx.lineTo(tailX, tailY);
+      for (const spark of burst.sparks) {
+        spark.vx *= 0.985;
+        spark.vy = spark.vy * 0.985 + 0.018;
+        spark.x += spark.vx;
+        spark.y += spark.vy;
+        ctx.moveTo(spark.x - spark.vx * 4, spark.y - spark.vy * 4);
+        ctx.lineTo(spark.x, spark.y);
+      }
       ctx.stroke();
     }
   };
@@ -145,10 +227,11 @@ function createSky(canvas) {
     warp += (clamp(Math.abs(scrollDelta) / 26, 0, 1) - warp) * 0.14;
 
     ctx.clearRect(0, 0, width, height);
-    ctx.globalCompositeOperation = "lighter";
+    ctx.globalCompositeOperation = PALETTE.blend;
     drawClouds();
-    drawStars(animated ? scrollDelta : 0);
-    if (animated) drawMeteors();
+    drawWheel();
+    drawLights(animated ? scrollDelta : 0);
+    if (animated) drawFireworks();
     ctx.globalCompositeOperation = "source-over";
   };
 

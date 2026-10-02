@@ -958,12 +958,6 @@ html.js #tag-text:not(.on) {
   color: var(--faint);
 }
 
-.scene:not(.live) .floor::before,
-.scene:not(.live) .core-glow,
-.scene:not(.live) .core {
-  animation-play-state: paused;
-}
-
 @media (max-width: 900px) {
   .orbit {
     --size: min(300px, 52vmin);
@@ -1025,4 +1019,98 @@ html.js #tag-text:not(.on) {
   .caret {
     animation: none;
   }
+}
+
+html[data-theme="light"] {
+  --bg: #faf8f3;
+  --ink: #171a26;
+  --muted: #4d5670;
+  --faint: #626c88;
+  --line: rgba(23, 26, 38, 0.14);
+  --line-soft: rgba(23, 26, 38, 0.07);
+
+  --lime: #2f7d00;
+  --cyan: #08769d;
+  --violet: #7a4fe0;
+  --pink: #d6249f;
+  --grad: linear-gradient(100deg, #3f9d00, #0b8fc0 55%, #7a4fe0);
+
+  --panel: rgba(255, 255, 255, 0.74);
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-deep: rgba(255, 255, 255, 0.84);
+  --shadow: 0 24px 60px rgba(40, 50, 80, 0.16);
+  --glow-lime: rgba(47, 125, 0, 0.25);
+  --glow-cyan: rgba(8, 118, 157, 0.2);
+}
+
+html[data-theme="light"] ::selection {
+  background: rgba(47, 125, 0, 0.2);
+  color: var(--ink);
+}
+
+html[data-theme="light"] .scanlines {
+  display: none;
+}
+
+html[data-theme="light"] .vignette {
+  background: radial-gradient(120% 95% at 50% 40%, transparent 60%, rgba(222, 214, 198, 0.35) 100%);
+}
+
+html[data-theme="light"] .top {
+  background: linear-gradient(180deg, rgba(250, 248, 243, 0.86), rgba(250, 248, 243, 0));
+}
+
+html[data-theme="light"] #map {
+  background: rgba(250, 248, 243, 0.97);
+}
+
+html[data-theme="light"] .floor::before {
+  background-image:
+    linear-gradient(rgba(8, 118, 157, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 118, 157, 0.5) 1px, transparent 1px);
+}
+
+html[data-theme="light"] .core-glow {
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.24) 0%, rgba(236, 72, 153, 0.1) 38%, rgba(14, 165, 233, 0.06) 60%, transparent 75%);
+}
+
+html[data-theme="light"] .ring-a {
+  border-color: rgba(8, 118, 157, 0.36);
+}
+
+html[data-theme="light"] .ring-b {
+  border-color: rgba(8, 118, 157, 0.2);
+}
+
+html[data-theme="light"] .ring-c {
+  border-color: rgba(122, 79, 224, 0.42);
+}
+
+html[data-theme="light"] .core {
+  border-color: rgba(47, 125, 0, 0.5);
+  background: radial-gradient(circle at 35% 30%, #ffffff, #eaf5df);
+  box-shadow: 0 0 44px rgba(47, 125, 0, 0.2), inset 0 0 26px rgba(8, 118, 157, 0.1);
+}
+
+html[data-theme="light"] .thumb::after {
+  background-image:
+    linear-gradient(rgba(23, 26, 38, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 26, 38, 0.06) 1px, transparent 1px);
+}
+
+html[data-theme="light"] .thumb code {
+  border-color: rgba(23, 26, 38, 0.1);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+@media (max-width: 720px) {
+  html[data-theme="light"] .top {
+    background: linear-gradient(180deg, rgba(250, 248, 243, 0.97) 58%, rgba(250, 248, 243, 0));
+  }
+}
+
+.scene:not(.live) .floor::before,
+.scene:not(.live) .core-glow,
+.scene:not(.live) .core {
+  animation-play-state: paused;
 }
