@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko" data-theme="light" class="project">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>바탕화면 다마고치 · 최민주</title>
+  <meta name="description" content="바탕화면에 사는 우파루파 다마고치. 먹이를 주고, 같이 놀고, 집과 모습을 꾸미는 macOS · Windows 앱.">
+  <meta name="theme-color" content="#faf8f3">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="바탕화면 다마고치 · 최민주">
+  <meta property="og:description" content="바탕화면에 사는 우파루파 다마고치. 먹이를 주고, 같이 놀고, 집과 모습을 꾸밉니다.">
+  <meta property="og:url" content="https://cmj1203.github.io/projects/tamagotchi.html">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="canonical" href="https://cmj1203.github.io/projects/tamagotchi.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  </noscript>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+
+<body>
+  <a class="skip" href="#features">본문으로 건너뛰기</a>
+  <div class="p-glow" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="logo" href="../">&lt;minju<span>/&gt;</span></a>
+    <div class="top-right">
+      <a class="map-btn" href="../#missions">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg>
+        작업 목록
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="p-hero">
+      <div class="p-hero-text">
+        <p class="eyebrow mono" style="--i:0"><span class="idx">./01</span> desktop tamagotchi</p>
+        <h1 class="p-title" style="--i:1">바탕화면에 사는<br><span class="accent">우파루파</span> 한 마리</h1>
+        <p class="lead" style="--i:2">컴퓨터를 켜면 바탕화면 물속에서 헤엄치는 다마고치예요. <strong>먹이를 주고, 같이 놀고, 집과 모습을 꾸미면서</strong> 키웁니다.</p>
+        <ul class="p-tags mono" style="--i:3">
+          <li>macOS</li>
+          <li>Windows</li>
+          <li>electron</li>
+          <li>react</li>
+          <li>pixi.js</li>
+        </ul>
+        <div class="p-actions" style="--i:4">
+          <a class="p-btn" href="#features">
+            뭘 할 수 있나 보기
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>
+          </a>
+        </div>
+      </div>
+      <figure class="p-window">
+        <div class="term-bar"><i></i><i></i><i></i><span class="mono term-title">~/desktop</span></div>
+        <div class="p-stage" role="img" aria-label="바닷속 배경에 집과 작은 성, 불가사리가 놓여 있고 우파루파가 헤엄치는 모습">
+          <img class="bg" src="assets/tamagotchi/reef-photo.webp" alt="" width="1152" height="662" fetchpriority="high">
+          <span class="place" style="left:5%;bottom:8%"><img class="sprite" style="--w:33" src="assets/tamagotchi/house.png" alt="" width="33" height="28"></span>
+          <span class="place" style="left:40%;bottom:6%;--s:2"><img class="sprite" style="--w:30" src="assets/tamagotchi/props/prop-starfish.png" alt="" width="30" height="30"></span>
+          <span class="place" style="right:5%;bottom:7%;--s:2"><img class="sprite" style="--w:48" src="assets/tamagotchi/props/prop-castle.png" alt="" width="48" height="46"></span>
+          <span class="place drift" style="left:24%;top:24%"><span class="strip" style="--f:24;--d:1.44s"><img src="assets/tamagotchi/axolotl-swim.png" alt="" width="768" height="32"></span></span>
+        </div>
+      </figure>
+    </section>
+
+    <section class="p-features" id="features">
+      <p class="eyebrow mono"><span class="idx">./features</span> what it does</p>
+      <h2 class="title">이런 걸 <span class="accent">할 수 있어요</span></h2>
+      <p class="lead">아래 그림은 전부 앱에 들어 있는 실제 도트 그림과 실제 화면이에요.</p>
+      <div class="p-grid">
+        <article class="feat">
+          <h3><span class="no mono">01</span>헤엄치고 걷기</h3>
+          <div class="feat-media" role="img" aria-label="바닷속 배경에서 우파루파가 헤엄치고 걷는 모습">
+            <img class="bg" src="assets/tamagotchi/canyon-mix.webp" alt="" width="1152" height="662" loading="lazy">
+            <span class="place drift" style="left:8%;top:14%"><span class="strip" style="--f:24;--d:1.44s"><img src="assets/tamagotchi/axolotl-swim.png" alt="" width="768" height="32" loading="lazy"></span></span>
+            <span class="place" style="right:12%;bottom:8%"><span class="strip" style="--f:4;--d:0.8s"><img src="assets/tamagotchi/axolotl-walk.png" alt="" width="128" height="32" loading="lazy"></span></span>
+          </div>
+          <p>바탕화면 물속을 스스로 돌아다녀요. 헤엄칠 때는 24칸, 걸을 때는 4칸짜리 도트 그림이 움직입니다.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">02</span>먹이 주기</h3>
+          <div class="feat-media"><img class="p-shot" style="--pos:top" src="assets/tamagotchi/shop-food.webp" alt="기분, 호감도, 포만감과 먹이 목록이 보이는 상점 화면" width="840" height="1064" loading="lazy"></div>
+          <p>상점에서 사료, 물벼룩, 실지렁이, 민물새우를 사서 줘요. 먹이마다 포만감과 호감도가 다르게 올라요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">03</span>머리 장식 12가지</h3>
+          <div class="feat-media big" role="img" aria-label="리본, 화관, 개구리 모자, 헤드폰, 왕관 같은 머리 장식 도트 그림 12개">
+            <div class="items">
+              <img class="sprite" style="--w:15" src="assets/tamagotchi/acc/acc-bow-headband.png" alt="" width="15" height="9" loading="lazy">
+              <img class="sprite" style="--w:17" src="assets/tamagotchi/acc/acc-flower-crown.png" alt="" width="17" height="8" loading="lazy">
+              <img class="sprite" style="--w:16" src="assets/tamagotchi/acc/acc-frog-hat.png" alt="" width="16" height="9" loading="lazy">
+              <img class="sprite" style="--w:18" src="assets/tamagotchi/acc/acc-headphones.png" alt="" width="18" height="10" loading="lazy">
+              <img class="sprite" style="--w:7" src="assets/tamagotchi/acc/acc-heart-clip.png" alt="" width="7" height="7" loading="lazy">
+              <img class="sprite" style="--w:16" src="assets/tamagotchi/acc/acc-pearl-headband.png" alt="" width="16" height="7" loading="lazy">
+              <img class="sprite" style="--w:13" src="assets/tamagotchi/acc/acc-sprout-headband.png" alt="" width="13" height="9" loading="lazy">
+              <img class="sprite" style="--w:7" src="assets/tamagotchi/acc/acc-star-clip.png" alt="" width="7" height="8" loading="lazy">
+              <img class="sprite" style="--w:15" src="assets/tamagotchi/acc/hat-beanie.png" alt="" width="15" height="9" loading="lazy">
+              <img class="sprite" style="--w:18" src="assets/tamagotchi/acc/hat-cap.png" alt="" width="18" height="8" loading="lazy">
+              <img class="sprite" style="--w:13" src="assets/tamagotchi/acc/hat-crown.png" alt="" width="13" height="7" loading="lazy">
+              <img class="sprite" style="--w:16" src="assets/tamagotchi/acc/hat-wizard.png" alt="" width="16" height="10" loading="lazy">
+            </div>
+          </div>
+          <p>모자, 머리띠, 헤드폰 같은 머리 장식을 씌워요. 마음에 드는 게 없으면 직접 도트로 그려서 씌울 수도 있어요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">04</span>집 직접 그리기</h3>
+          <div class="feat-media"><img class="p-shot" style="--pos:top" src="assets/tamagotchi/shop-house.webp" alt="격자 판에 붓과 색으로 새 집을 그리는 화면" width="840" height="1064" loading="lazy"></div>
+          <p>33×28칸 판에 붓으로 집을 그려서 바탕화면에 놓아요. 그린 집은 목록에 모아 두고 바꿔 쓸 수 있어요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">05</span>수조 소품</h3>
+          <div class="feat-media" style="--s:2" role="img" aria-label="바닷속 바닥에 불가사리, 보물상자, 작은 성, 진주 조개가 놓여 있고 우파루파가 헤엄치는 모습">
+            <img class="bg" src="assets/tamagotchi/reef-cartoon.webp" alt="" width="1152" height="662" loading="lazy">
+            <span class="place" style="left:3%;bottom:6%"><img class="sprite" style="--w:30" src="assets/tamagotchi/props/prop-starfish.png" alt="" width="30" height="30" loading="lazy"></span>
+            <span class="place" style="left:22%;bottom:6%"><img class="sprite" style="--w:36" src="assets/tamagotchi/props/prop-chest.png" alt="" width="36" height="30" loading="lazy"></span>
+            <span class="place" style="left:45%;bottom:6%"><img class="sprite" style="--w:48" src="assets/tamagotchi/props/prop-castle.png" alt="" width="48" height="46" loading="lazy"></span>
+            <span class="place" style="left:76%;bottom:6%"><img class="sprite" style="--w:36" src="assets/tamagotchi/props/prop-clam.png" alt="" width="36" height="28" loading="lazy"></span>
+            <span class="place" style="left:30%;top:12%"><span class="strip" style="--f:24;--d:1.44s"><img src="assets/tamagotchi/axolotl-swim.png" alt="" width="768" height="32" loading="lazy"></span></span>
+          </div>
+          <p>작은 성, 보물상자, 진주 조개 같은 소품 8가지를 코인으로 사서 바닥에 놓고, 끌어서 옮겨요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">06</span>날씨를 따라가는 바탕화면</h3>
+          <div class="feat-media" role="img" aria-label="햇살, 비, 눈 오는 밤, 안개가 낀 네 가지 바닷속 배경">
+            <div class="quad">
+              <img src="assets/tamagotchi/weather-sun-rays.webp" alt="" width="720" height="405" loading="lazy">
+              <img src="assets/tamagotchi/weather-rain-fall.webp" alt="" width="720" height="405" loading="lazy">
+              <img src="assets/tamagotchi/weather-snow-night.webp" alt="" width="720" height="405" loading="lazy">
+              <img src="assets/tamagotchi/weather-fog-flow.webp" alt="" width="720" height="405" loading="lazy">
+            </div>
+          </div>
+          <p>지금 있는 곳의 날씨를 받아 와서 바탕화면에 햇살, 비, 눈, 안개를 그려요. 밤이 되면 어두워집니다.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">07</span>날씨를 알려 주는 말풍선</h3>
+          <div class="feat-media" role="img" aria-label="우파루파가 말풍선으로 지금은 맑고 18도라고 알려 주는 모습">
+            <img class="place" style="left:7%;top:9%;width:56%;height:auto" src="assets/tamagotchi/bubble-weather.png" alt="" width="404" height="208" loading="lazy">
+            <span class="place" style="left:46%;bottom:6%"><img class="sprite" style="--w:32" src="assets/tamagotchi/axolotl.png" alt="" width="32" height="32" loading="lazy"></span>
+          </div>
+          <p>말을 걸면 오늘 날씨와 기온을 말풍선으로 알려 줘요. 비가 오는 날에는 우산을 챙기라고도 해요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">08</span>밤에는 잠들기</h3>
+          <div class="feat-media big dark" role="img" aria-label="개구리 모자를 쓴 우파루파가 눈을 감고 자는 모습">
+            <div class="items"><img class="sprite" style="--w:32" src="assets/tamagotchi/pet-sleep.png" alt="" width="288" height="288" loading="lazy"></div>
+          </div>
+          <p>밤 10시부터 아침 7시 사이에 90초 동안 혼자 두면 눈을 감고 잠들어요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">09</span>같이 놀기</h3>
+          <div class="feat-media" role="img" aria-label="바닷속에서 우파루파가 공을 따라가고 옆에 기포와 크레용이 있는 모습">
+            <img class="bg" src="assets/tamagotchi/reef-photo.webp" alt="" width="1152" height="662" loading="lazy">
+            <span class="place" style="left:14%;bottom:8%"><span class="strip" style="--f:4;--d:0.8s"><img src="assets/tamagotchi/axolotl-walk.png" alt="" width="128" height="32" loading="lazy"></span></span>
+            <span class="place" style="left:50%;top:28%"><img class="sprite" style="--w:8" src="assets/tamagotchi/ball.png" alt="" width="8" height="8" loading="lazy"></span>
+            <span class="place" style="left:68%;top:12%"><span class="strip frame" style="--w:12;--h:12;--f:7;--i:0"><img src="assets/tamagotchi/bubble.png" alt="" width="84" height="12" loading="lazy"></span></span>
+            <span class="place" style="right:12%;bottom:10%"><img class="sprite" style="--w:6" src="assets/tamagotchi/crayon.png" alt="" width="6" height="10" loading="lazy"></span>
+          </div>
+          <p>공을 던지면 물속에서 튕기고, 숨바꼭질을 하면 바위 뒤에 숨어요. 가끔은 크레용으로 바탕화면에 낙서도 해요.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="p-facts">
+      <div>
+        <p class="eyebrow mono"><span class="idx">./info</span> about</p>
+        <h2 class="title">어떻게 <span class="accent">만들었나</span></h2>
+        <p class="lead">우파루파 도트 그림부터 바탕화면에 붙어 있는 창까지, 2주 동안 하나씩 붙여 가며 만들었어요. 아직 내려받는 곳은 없습니다.</p>
+      </div>
+      <dl>
+        <div class="cell"><dt class="k mono">target</dt><dd class="v">macOS 13 이상 · Windows 10 22H2 이상</dd></div>
+        <div class="cell"><dt class="k mono">built with</dt><dd class="v">Electron · React · pixi.js · TypeScript</dd></div>
+        <div class="cell"><dt class="k mono">period</dt><dd class="v">2026.09.22 ~ 2026.10.04</dd></div>
+        <div class="cell"><dt class="k mono">checks</dt><dd class="v">자동 검사 705개 통과</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="p-foot mono">
+    <a href="../#missions">
+      <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg>
+      작업 목록으로
+    </a>
+    <span>&copy; 2026 최민주</span>
+  </footer>
+</body>
+
+</html>

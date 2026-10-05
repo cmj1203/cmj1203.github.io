@@ -722,6 +722,7 @@ html.js #tag-text:not(.on) {
 }
 
 .slot {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -733,6 +734,59 @@ html.js #tag-text:not(.on) {
   translate: 0 -6px;
   border-color: var(--cyan);
   box-shadow: var(--shadow), 0 0 40px rgba(61, 220, 255, 0.12);
+}
+
+.slot:has(.more:focus-visible) {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.more {
+  color: inherit;
+  text-decoration: none;
+}
+
+.more::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.more:focus-visible {
+  outline: none;
+}
+
+.shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shot-pet {
+  position: absolute;
+  right: 14%;
+  top: 18%;
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+}
+
+.slot .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cyan);
+}
+
+.go svg {
+  transition: translate 0.22s;
+}
+
+.slot:hover .go svg {
+  translate: 3px 0;
 }
 
 .thumb {
