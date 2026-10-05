@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   </noscript>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261005c">
   <script>
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.classList.add("js", "intro");
@@ -142,32 +142,50 @@
       <div class="scene-inner">
         <p class="eyebrow mono" data-r><span class="idx">./03</span> missions</p>
         <h2 class="title" data-r>만든 <span class="accent">것들</span></h2>
-        <p class="lead" data-r>완성한 작업부터 정리했습니다. 카드를 누르면 상세 내용을 볼 수 있습니다.</p>
-        <div class="slots">
-          <article class="slot" data-r>
-            <div class="thumb t1" aria-hidden="true"><code>&lt;DesktopTamagotchi /&gt;</code><code>status: complete</code><code>electron · react · pixi.js</code><img class="shot" src="projects/assets/tamagotchi/reef-photo.webp" alt="" width="1152" height="662" loading="lazy"><img class="shot-pet" src="projects/assets/tamagotchi/axolotl.png" alt="" width="32" height="32" loading="lazy"></div>
-            <div class="body">
-              <h3><a class="more" href="projects/tamagotchi.html">바탕화면 다마고치</a></h3>
-              <p>바탕화면에 사는 우파루파 펫을 키우는 macOS · Windows 앱입니다. 먹이 주기, 놀이, 꾸미기를 구현했습니다.</p>
-              <p class="meta mono"><span>complete</span><span class="go">자세히 <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span></p>
+        <p class="lead" data-r>완성한 작업을 게임과 개발 도구로 나눠 정리했습니다. 게임 카드를 누르면 상세 내용을 볼 수 있습니다.</p>
+        <div class="groups">
+          <section class="group" aria-labelledby="group-games">
+            <h3 class="group-title" id="group-games" data-r><span class="mono">games</span>게임</h3>
+            <div class="slots">
+              <article class="slot" data-r>
+                <div class="thumb t1" aria-hidden="true"><code>&lt;DesktopTamagotchi /&gt;</code><code>status: complete</code><code>electron · react · pixi.js</code><img class="shot" src="projects/assets/tamagotchi/reef-photo.webp" alt="" width="1152" height="662" loading="lazy"><img class="shot-pet" src="projects/assets/tamagotchi/axolotl.png" alt="" width="32" height="32" loading="lazy"></div>
+                <div class="body">
+                  <h4><a class="more" href="projects/tamagotchi.html">바탕화면 다마고치</a></h4>
+                  <p>바탕화면에 사는 우파루파 펫을 키우는 macOS · Windows 앱입니다. 먹이 주기, 놀이, 꾸미기를 구현했습니다.</p>
+                  <p class="meta mono"><span>complete</span><span class="go">자세히 <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span></p>
+                </div>
+              </article>
+              <article class="slot" data-r>
+                <div class="thumb t2" aria-hidden="true"><code>&lt;LiveCanvas /&gt;</code><code>status: live</code><code>typescript · canvas</code><img class="shot" src="projects/assets/rhythm-game/card.webp?v=2" alt="" width="1280" height="720" loading="lazy"></div>
+                <div class="body">
+                  <h4><a class="more" href="projects/rhythm-game.html">라이브캔버스</a></h4>
+                  <p>키 하나로 박자를 맞추면 크레파스 한붓그리기가 완성되는 웹 리듬게임입니다. 설치 없이 브라우저에서 바로 실행됩니다.</p>
+                  <p class="meta mono"><span>live</span><span class="go">자세히 <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span></p>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="slot" data-r>
-            <div class="thumb t2" aria-hidden="true"><code>&lt;LiveCanvas /&gt;</code><code>status: live</code><code>typescript · canvas</code><img class="shot" src="projects/assets/rhythm-game/card.webp?v=2" alt="" width="1280" height="720" loading="lazy"></div>
-            <div class="body">
-              <h3><a class="more" href="projects/rhythm-game.html">라이브캔버스</a></h3>
-              <p>키 하나로 박자를 맞추면 크레파스 한붓그리기가 완성되는 웹 리듬게임입니다. 설치 없이 브라우저에서 바로 실행됩니다.</p>
-              <p class="meta mono"><span>live</span><span class="go">자세히 <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span></p>
+          </section>
+          <section class="group" aria-labelledby="group-tools">
+            <h3 class="group-title" id="group-tools" data-r><span class="mono">dev tools</span>개발 도구</h3>
+            <div class="slots">
+              <article class="slot" data-r>
+                <div class="thumb t3" aria-hidden="true"><code>&lt;TokenMenubar /&gt;</code><code>status: complete</code><code>swift · swiftui</code><img class="shot" src="projects/assets/token-menubar/card.webp" alt="" width="1280" height="720" loading="lazy"></div>
+                <div class="body">
+                  <h4>AI 계정 사용량 메뉴바</h4>
+                  <p>Claude Code와 Codex 계정별 남은 사용량을 메뉴바에서 바로 확인하는 macOS 앱입니다.</p>
+                  <p class="meta mono"><span>complete</span><span>macOS</span></p>
+                </div>
+              </article>
+              <article class="slot" data-r>
+                <div class="thumb t3" aria-hidden="true"><code>&lt;RepoOverview /&gt;</code><code>status: complete</code><code>typescript · chrome</code><img class="shot" src="projects/assets/repo-overview/card.webp" alt="" width="1280" height="720" loading="lazy"></div>
+                <div class="body">
+                  <h4>GitHub 레포 개요</h4>
+                  <p>GitHub 저장소의 README와 폴더 구조를 읽고, 어떤 프로젝트인지 한국어로 요약해 주는 Chrome 확장입니다.</p>
+                  <p class="meta mono"><span>complete</span><span>chrome</span></p>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="slot" data-r>
-            <div class="thumb t3" aria-hidden="true"><code>&lt;Mission03 /&gt;</code><code>status: building</code><code>// coming soon</code></div>
-            <div class="body">
-              <h3>mission_03</h3>
-              <p>세 번째 작업이 들어올 자리입니다.</p>
-              <p class="meta mono"><span>empty slot</span><span>03 / 03</span></p>
-            </div>
-          </article>
+          </section>
         </div>
       </div>
     </section>
