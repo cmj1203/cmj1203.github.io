@@ -282,6 +282,10 @@ html.lc :focus-visible {
   gap: 16px;
 }
 
+.lc-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .lc-card {
   display: flex;
   flex-direction: column;
@@ -495,7 +499,8 @@ html.lc :focus-visible {
     padding: 8px 1.2rem 48px;
   }
 
-  .lc-grid {
+  .lc-grid,
+  .lc-grid.two {
     grid-template-columns: 1fr;
   }
 
