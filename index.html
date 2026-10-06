@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   </noscript>
-  <link rel="stylesheet" href="style.css?v=20261005c">
+  <link rel="stylesheet" href="style.css?v=20261006b">
   <script>
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.classList.add("js", "intro");
@@ -142,11 +142,19 @@
       <div class="scene-inner">
         <p class="eyebrow mono" data-r><span class="idx">./03</span> missions</p>
         <h2 class="title" data-r>만든 <span class="accent">것들</span></h2>
-        <p class="lead" data-r>다 만든 것들을 게임과 개발 도구로 나눠 모아 뒀어요. 게임 카드를 누르면 더 자세히 볼 수 있어요!</p>
+        <p class="lead" data-r>다 만든 것들을 게임과 앱·도구로 나눠 모아 뒀어요. '자세히'가 붙은 카드를 누르면 더 볼 수 있어요!</p>
         <div class="groups">
           <section class="group" aria-labelledby="group-games">
             <h3 class="group-title" id="group-games" data-r><span class="mono">games</span>게임</h3>
             <div class="slots">
+              <article class="slot" data-r>
+                <div class="thumb t2" aria-hidden="true"><code>&lt;DungeonSurvivor /&gt;</code><code>status: live</code><code>html5 · canvas</code><img class="shot" src="projects/assets/survivor-game/card.webp" alt="" width="1280" height="720" loading="lazy"></div>
+                <div class="body">
+                  <h4>던전 서바이버</h4>
+                  <p>몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임이에요. 무기 27가지를 모아 진화시킬 수 있어요!</p>
+                  <p class="meta mono"><span>live</span><span>web</span></p>
+                </div>
+              </article>
               <article class="slot" data-r>
                 <div class="thumb t1" aria-hidden="true"><code>&lt;DesktopTamagotchi /&gt;</code><code>status: complete</code><code>electron · react · pixi.js</code><img class="shot" src="projects/assets/tamagotchi/reef-photo.webp" alt="" width="1152" height="662" loading="lazy"><img class="shot-pet" src="projects/assets/tamagotchi/axolotl.png" alt="" width="32" height="32" loading="lazy"></div>
                 <div class="body">
@@ -166,7 +174,7 @@
             </div>
           </section>
           <section class="group" aria-labelledby="group-tools">
-            <h3 class="group-title" id="group-tools" data-r><span class="mono">dev tools</span>개발 도구</h3>
+            <h3 class="group-title" id="group-tools" data-r><span class="mono">apps &amp; tools</span>앱·도구</h3>
             <div class="slots">
               <article class="slot" data-r>
                 <div class="thumb t3" aria-hidden="true"><code>&lt;TokenMenubar /&gt;</code><code>status: complete</code><code>swift · swiftui</code><img class="shot" src="projects/assets/token-menubar/card.webp" alt="" width="1280" height="720" loading="lazy"></div>
@@ -182,6 +190,14 @@
                   <h4>GitHub 레포 개요</h4>
                   <p>GitHub 저장소의 README와 폴더 구조를 읽고, 어떤 프로젝트인지 한국어로 쉽게 알려 주는 Chrome 확장이에요.</p>
                   <p class="meta mono"><span>complete</span><span>chrome</span></p>
+                </div>
+              </article>
+              <article class="slot" data-r>
+                <div class="thumb t3" aria-hidden="true"><code>&lt;Omechu /&gt;</code><code>status: live</code><code>javascript · supabase</code><img class="shot" src="projects/assets/omechu/card.webp" alt="" width="1280" height="720" loading="lazy"></div>
+                <div class="body">
+                  <h4>오메추</h4>
+                  <p>오늘 뭐 먹을지 메뉴를 골라 주고, 그 메뉴를 파는 주변 식당까지 찾아 주는 웹사이트예요.</p>
+                  <p class="meta mono"><span>live</span><span>web</span></p>
                 </div>
               </article>
             </div>
