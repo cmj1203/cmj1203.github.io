@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ko" data-theme="light" class="project">
+<html lang="ko" class="project lc">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>라이브캔버스 · 최민주</title>
   <meta name="description" content="키 하나로 박자를 맞추면 크레파스 한붓그리기가 그려지는 웹 리듬게임 라이브캔버스예요.">
-  <meta name="theme-color" content="#faf8f3">
+  <meta name="theme-color" content="#0b0d12">
   <meta property="og:type" content="website">
   <meta property="og:title" content="라이브캔버스 · 최민주">
   <meta property="og:description" content="키 하나로 박자를 맞추면 크레파스 한붓그리기가 그려지는 웹 리듬게임이에요.">
@@ -26,12 +26,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   </noscript>
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="project.css">
+  <link rel="stylesheet" href="rhythm-game.css">
 </head>
 
 <body>
   <a class="skip" href="#features">본문으로 건너뛰기</a>
-  <div class="p-glow" aria-hidden="true"></div>
 
   <header class="top">
     <a class="logo" href="../">&lt;minju<span>/&gt;</span></a>
@@ -44,55 +43,73 @@
   </header>
 
   <main>
-    <section class="p-hero">
-      <div class="p-hero-text">
-        <p class="eyebrow mono" style="--i:0"><span class="idx">./03</span> livecanvas</p>
-        <h1 class="p-title" style="--i:1">라이브<span class="accent">캔버스</span></h1>
-        <p class="lead" style="--i:2">키 하나로 박자를 맞추면 크레파스가 선을 쓱쓱 그어 주는 웹 리듬게임이에요. <strong>곡이 끝나면 한 줄로 이어진 그림 한 장</strong>이 완성돼요!</p>
-        <ul class="p-tags mono" style="--i:3">
+    <section class="lc-hero">
+      <div class="lc-hero-text">
+        <p class="lc-live" style="--i:0"><i aria-hidden="true"></i>LIVE</p>
+        <h1 class="lc-title" style="--i:1">라이브캔버스</h1>
+        <p class="lc-lead" style="--i:2">키 하나로 박자를 맞추면 크레파스가 선을 쓱쓱 그어 주는 웹 리듬게임이에요. <strong>곡이 끝나면 한 줄로 이어진 그림 한 장</strong>이 완성돼요!</p>
+        <ul class="lc-tags" style="--i:3">
           <li>web</li>
           <li>typescript</li>
           <li>canvas</li>
           <li>web audio</li>
           <li>vite</li>
         </ul>
-        <div class="p-actions" style="--i:4">
-          <a class="p-btn" href="https://cmj1203.github.io/rhythm-game/" target="_blank" rel="noopener">
-            지금 해 보기
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
-          </a>
-          <a class="p-btn ghost" href="https://github.com/cmj1203/rhythm-game" target="_blank" rel="noopener">코드 보기</a>
+        <div class="lc-actions" style="--i:4">
+          <a class="lc-btn" href="https://cmj1203.github.io/rhythm-game/" target="_blank" rel="noopener">지금 해 보기 <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></a>
+          <a class="lc-btn secondary" href="https://github.com/cmj1203/rhythm-game" target="_blank" rel="noopener">코드 보기</a>
         </div>
       </div>
-      <figure class="p-window">
-        <div class="term-bar"><i></i><i></i><i></i><span class="mono term-title">cmj1203.github.io/rhythm-game</span></div>
-        <img class="p-shot" src="assets/rhythm-game/title.webp" alt="크레파스로 쓴 '라이브캔버스' 제목과 시작 버튼이 있는 게임 첫 화면" width="1280" height="800" fetchpriority="high">
+      <figure class="lc-canvas" role="img" aria-label="크레파스 선이 한 줄로 이어지며 개구리 그림이 그려지는 모습">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <linearGradient id="lc-line" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#efe2c6" />
+              <stop offset="0.3" stop-color="#ff7ab8" />
+              <stop offset="0.55" stop-color="#5ee1ff" />
+              <stop offset="0.8" stop-color="#ffe066" />
+              <stop offset="1" stop-color="#b79bff" />
+            </linearGradient>
+            <filter id="lc-crayon" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="2.2" numOctaves="2" seed="7" />
+              <feDisplacementMap in="SourceGraphic" scale="0.7" />
+            </filter>
+          </defs>
+          <path class="lc-ghost" d="M 3 84 C 7 84 11 84 16 84 Q 9 78 13 77 Q 17 77 21 80 Q 17 72 21 73 Q 26 74 28 78 Q 25 72 28 73 Q 32 76 34 80 C 21 77 12 73 14 64 C 16 55 24 51 32 55 C 36 59 32 68 24 71 C 19 72 19 62 25 59 C 31 57 31 65 25 67 C 22 67 24 62 26 63 C 28 59 30 54 33 50 C 25 47 23 40 28 34 C 23 21 29 15 37 17 C 44 17 47 23 45 29 Q 50 27 55 29 C 53 17 63 14 70 18 C 76 21 77 27 73 34 C 80 41 76 48 68 51 C 76 50 86 55 89 64 C 93 74 80 79 69 79 Q 74 73 77 74 Q 79 76 76 79 Q 84 72 85 76 Q 86 79 82 81 Q 91 77 91 81 Q 89 85 79 85 C 70 85 65 79 69 72 C 71 65 75 58 81 60 C 89 63 84 71 77 73 C 70 74 73 63 79 64 C 84 65 80 70 77 69 Q 77 69 78.75 55.7 C 79.25 54.84 80.66 54.72 81.9 55.44 C 83.14 56.16 83.75 57.44 83.25 58.3 C 82.75 59.16 81.34 59.28 80.1 58.56 C 78.86 57.84 78.25 56.56 78.75 55.7 C 74 56 69 53 66 49 C 57 56 39 54 32 46 C 39 49 58 51 69 43 C 61 51 41 49 33 44 Q 33 44 28.86 27.14 C 29.42 23.14 32.63 20.29 36.02 20.77 C 39.41 21.25 41.7 24.87 41.14 28.86 C 40.58 32.86 37.37 35.71 33.98 35.23 C 30.59 34.75 28.3 31.13 28.86 27.14 Q 28.86 27.14 32.91 27.78 C 33.06 25.58 34.57 23.89 36.28 24.01 C 37.99 24.13 39.25 26.01 39.09 28.22 C 38.94 30.42 37.43 32.11 35.72 31.99 C 34.01 31.87 32.75 29.99 32.91 27.78 C 39 29 38 31 36 30 C 41 33 47 36 51 36 Q 51 36 46.8 37 C 46.8 36.39 47.34 35.9 48 35.9 C 48.66 35.9 49.2 36.39 49.2 37 C 49.2 37.61 48.66 38.1 48 38.1 C 47.34 38.1 46.8 37.61 46.8 37 Q 46.8 37 52.8 37 C 52.8 36.39 53.34 35.9 54 35.9 C 54.66 35.9 55.2 36.39 55.2 37 C 55.2 37.61 54.66 38.1 54 38.1 C 53.34 38.1 52.8 37.61 52.8 37 C 59 34 61 31 60 28 Q 60 28 58.75 27.77 C 58.25 23.71 60.64 20.08 64.1 19.66 C 67.55 19.23 70.75 22.18 71.25 26.23 C 71.75 30.29 69.36 33.92 65.9 34.34 C 62.45 34.77 59.25 31.82 58.75 27.77 Q 58.75 27.77 61.82 27.39 C 61.55 25.2 62.76 23.25 64.51 23.03 C 66.27 22.81 67.91 24.42 68.18 26.61 C 68.45 28.8 67.24 30.75 65.49 30.97 C 63.73 31.19 62.09 29.58 61.82 27.39 C 68 27 67 30 65 29 C 68 34 68 39 66 44 C 66 55 68 68 59 74 C 50 80 39 75 36 67 C 31 57 40 51 48 53 C 59 53 64 62 59 68 C 54 75 41 72 39 64 C 37 57 45 53 52 56 C 60 59 60 69 53 71 Q 53 71 39.58 58 C 40.41 55.95 44.4 55.64 48.5 57.29 C 52.6 58.95 55.25 61.95 54.42 64 C 53.59 66.05 49.6 66.36 45.5 64.71 C 41.4 63.05 38.75 60.05 39.58 58 Q 39.58 58 44.39 69.47 C 43.71 67.37 46.56 64.56 50.76 63.2 C 54.97 61.83 58.93 62.43 59.61 64.53 C 60.29 66.63 57.44 69.44 53.24 70.8 C 49.03 72.17 45.07 71.57 44.39 69.47 Q 44.39 69.47 42.01 72.69 C 42.09 71.2 44.83 70.13 48.14 70.3 C 51.45 70.48 54.07 71.82 53.99 73.31 C 53.91 74.8 51.17 75.87 47.86 75.7 C 44.55 75.52 41.93 74.18 42.01 72.69 C 39 69 41 55 37 49 C 34 57 32 68 35 77 Q 28 81 30 84 Q 33 86 35 82 Q 36 89 39 87 Q 41 86 40 82 Q 46 87 47 84 Q 46 81 42 78 C 42 70 44 63 43 57 C 47 61 52 65 58 58 C 59 65 58 74 58 78 Q 51 82 53 85 Q 56 88 58 83 Q 60 90 63 87 Q 65 85 63 82 Q 69 87 71 84 Q 72 81 66 78 C 69 66 66 56 64 50 Q 64 50 60.02 63.28 C 59.48 59.45 59.93 56.22 61.03 56.07 C 62.12 55.91 63.44 58.89 63.98 62.72 C 64.52 66.55 64.07 69.78 62.97 69.93 C 61.88 70.09 60.56 67.11 60.02 63.28 C 67 74 74 83 83 84 C 88 84 92 84 97 84" />
+          <path class="lc-stroke" d="M 3 84 C 7 84 11 84 16 84 Q 9 78 13 77 Q 17 77 21 80 Q 17 72 21 73 Q 26 74 28 78 Q 25 72 28 73 Q 32 76 34 80 C 21 77 12 73 14 64 C 16 55 24 51 32 55 C 36 59 32 68 24 71 C 19 72 19 62 25 59 C 31 57 31 65 25 67 C 22 67 24 62 26 63 C 28 59 30 54 33 50 C 25 47 23 40 28 34 C 23 21 29 15 37 17 C 44 17 47 23 45 29 Q 50 27 55 29 C 53 17 63 14 70 18 C 76 21 77 27 73 34 C 80 41 76 48 68 51 C 76 50 86 55 89 64 C 93 74 80 79 69 79 Q 74 73 77 74 Q 79 76 76 79 Q 84 72 85 76 Q 86 79 82 81 Q 91 77 91 81 Q 89 85 79 85 C 70 85 65 79 69 72 C 71 65 75 58 81 60 C 89 63 84 71 77 73 C 70 74 73 63 79 64 C 84 65 80 70 77 69 Q 77 69 78.75 55.7 C 79.25 54.84 80.66 54.72 81.9 55.44 C 83.14 56.16 83.75 57.44 83.25 58.3 C 82.75 59.16 81.34 59.28 80.1 58.56 C 78.86 57.84 78.25 56.56 78.75 55.7 C 74 56 69 53 66 49 C 57 56 39 54 32 46 C 39 49 58 51 69 43 C 61 51 41 49 33 44 Q 33 44 28.86 27.14 C 29.42 23.14 32.63 20.29 36.02 20.77 C 39.41 21.25 41.7 24.87 41.14 28.86 C 40.58 32.86 37.37 35.71 33.98 35.23 C 30.59 34.75 28.3 31.13 28.86 27.14 Q 28.86 27.14 32.91 27.78 C 33.06 25.58 34.57 23.89 36.28 24.01 C 37.99 24.13 39.25 26.01 39.09 28.22 C 38.94 30.42 37.43 32.11 35.72 31.99 C 34.01 31.87 32.75 29.99 32.91 27.78 C 39 29 38 31 36 30 C 41 33 47 36 51 36 Q 51 36 46.8 37 C 46.8 36.39 47.34 35.9 48 35.9 C 48.66 35.9 49.2 36.39 49.2 37 C 49.2 37.61 48.66 38.1 48 38.1 C 47.34 38.1 46.8 37.61 46.8 37 Q 46.8 37 52.8 37 C 52.8 36.39 53.34 35.9 54 35.9 C 54.66 35.9 55.2 36.39 55.2 37 C 55.2 37.61 54.66 38.1 54 38.1 C 53.34 38.1 52.8 37.61 52.8 37 C 59 34 61 31 60 28 Q 60 28 58.75 27.77 C 58.25 23.71 60.64 20.08 64.1 19.66 C 67.55 19.23 70.75 22.18 71.25 26.23 C 71.75 30.29 69.36 33.92 65.9 34.34 C 62.45 34.77 59.25 31.82 58.75 27.77 Q 58.75 27.77 61.82 27.39 C 61.55 25.2 62.76 23.25 64.51 23.03 C 66.27 22.81 67.91 24.42 68.18 26.61 C 68.45 28.8 67.24 30.75 65.49 30.97 C 63.73 31.19 62.09 29.58 61.82 27.39 C 68 27 67 30 65 29 C 68 34 68 39 66 44 C 66 55 68 68 59 74 C 50 80 39 75 36 67 C 31 57 40 51 48 53 C 59 53 64 62 59 68 C 54 75 41 72 39 64 C 37 57 45 53 52 56 C 60 59 60 69 53 71 Q 53 71 39.58 58 C 40.41 55.95 44.4 55.64 48.5 57.29 C 52.6 58.95 55.25 61.95 54.42 64 C 53.59 66.05 49.6 66.36 45.5 64.71 C 41.4 63.05 38.75 60.05 39.58 58 Q 39.58 58 44.39 69.47 C 43.71 67.37 46.56 64.56 50.76 63.2 C 54.97 61.83 58.93 62.43 59.61 64.53 C 60.29 66.63 57.44 69.44 53.24 70.8 C 49.03 72.17 45.07 71.57 44.39 69.47 Q 44.39 69.47 42.01 72.69 C 42.09 71.2 44.83 70.13 48.14 70.3 C 51.45 70.48 54.07 71.82 53.99 73.31 C 53.91 74.8 51.17 75.87 47.86 75.7 C 44.55 75.52 41.93 74.18 42.01 72.69 C 39 69 41 55 37 49 C 34 57 32 68 35 77 Q 28 81 30 84 Q 33 86 35 82 Q 36 89 39 87 Q 41 86 40 82 Q 46 87 47 84 Q 46 81 42 78 C 42 70 44 63 43 57 C 47 61 52 65 58 58 C 59 65 58 74 58 78 Q 51 82 53 85 Q 56 88 58 83 Q 60 90 63 87 Q 65 85 63 82 Q 69 87 71 84 Q 72 81 66 78 C 69 66 66 56 64 50 Q 64 50 60.02 63.28 C 59.48 59.45 59.93 56.22 61.03 56.07 C 62.12 55.91 63.44 58.89 63.98 62.72 C 64.52 66.55 64.07 69.78 62.97 69.93 C 61.88 70.09 60.56 67.11 60.02 63.28 C 67 74 74 83 83 84 C 88 84 92 84 97 84" pathLength="1" stroke="url(#lc-line)" />
+        </svg>
       </figure>
     </section>
 
-    <section class="p-features" id="features">
-      <p class="eyebrow mono"><span class="idx">./features</span> how it plays</p>
-      <h2 class="title">이렇게 <span class="accent">그려져요!</span></h2>
-      <div class="p-grid">
-        <article class="feat">
-          <h3><span class="no mono">01</span>누를 건 키 하나</h3>
-          <div class="feat-media dark"><img class="p-shot" src="assets/rhythm-game/howto.webp" alt="크레파스가 원을 돌다가 흰 고리에 닿을 때 누르라고 알려 주는 하는 법 화면" width="720" height="450" loading="lazy"></div>
-          <p>크레파스 끝이 흰 고리에 닿는 순간 아무 키나 톡 누르면 돼요. 화면을 누르거나 터치해도 돼요!</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">02</span>박자가 선이 돼요</h3>
-          <div class="feat-media dark"><img class="p-shot" src="assets/rhythm-game/play.webp" alt="점선 길을 따라 분홍색 크레파스 선이 그어지고 52 콤보와 PERFECT가 뜬 플레이 화면" width="1280" height="800" loading="lazy"></div>
-          <p>박자를 맞출 때마다 선이 한 칸씩 그어져요. 정확하게 맞출수록 선이 진하고 굵어져요.</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">03</span>끝나면 그림이 짠!</h3>
-          <div class="feat-media dark"><img class="p-shot" style="--pos:left" src="assets/rhythm-game/result.webp" alt="한 줄로 그려진 동물 그림과 100점 결과가 나온 화면" width="1280" height="800" loading="lazy"></div>
-          <p>길은 한 줄로 이어진 그림을 따라 나 있어요. 마지막 노트가 지나면 화면이 멀어지면서 내가 그린 그림이 나타나요!</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">04</span>곡마다 다른 그림</h3>
-          <div class="feat-media dark" role="img" aria-label="고양이, 우파루파, 황제펭귄, 고래, 나비, 컵케이크, 크루아상, 관람차를 한 줄로 그린 그림 8장">
-            <div class="pics">
+    <ul class="lc-stats" aria-label="들어 있는 것">
+      <li><b style="color:#5ee1ff">109</b><span>곡</span></li>
+      <li><b style="color:#ff7ab8">369</b><span>그림</span></li>
+      <li><b style="color:#ffe066">3</b><span>난이도</span></li>
+    </ul>
+
+    <div class="lc-features" id="features">
+      <section class="lc-group lc-c1" aria-labelledby="how">
+        <h2 class="lc-group-title" id="how">이렇게 그려져요<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 Q 18 2 34 7 T 66 7 T 98 6" vector-effect="non-scaling-stroke" /></svg></h2>
+        <div class="lc-grid">
+          <article class="lc-card lc-c1">
+            <div class="lc-media"><img class="p-shot" src="assets/rhythm-game/howto.webp" alt="크레파스가 원을 돌다가 흰 고리에 닿을 때 누르라고 알려 주는 하는 법 화면" width="720" height="450" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">01</span>누를 건 키 하나</h3><p>크레파스 끝이 흰 고리에 닿는 순간 아무 키나 톡 누르면 돼요. 화면을 누르거나 터치해도 돼요!</p></div>
+          </article>
+          <article class="lc-card lc-c2">
+            <div class="lc-media"><img class="p-shot" src="assets/rhythm-game/play.webp" alt="점선 길을 따라 분홍색 크레파스 선이 그어지고 52 콤보와 PERFECT가 뜬 플레이 화면" width="1280" height="800" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">02</span>박자가 선이 돼요</h3><p>박자를 맞출 때마다 선이 한 칸씩 그어져요. 정확하게 맞출수록 선이 진하고 굵어져요.</p></div>
+          </article>
+          <article class="lc-card lc-c3">
+            <div class="lc-media"><img class="p-shot" style="--pos:left" src="assets/rhythm-game/result.webp" alt="한 줄로 그려진 동물 그림과 100점 결과가 나온 화면" width="1280" height="800" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">03</span>끝나면 그림이 짠!</h3><p>길은 한 줄로 이어진 그림을 따라 나 있어요. 마지막 노트가 지나면 화면이 멀어지면서 내가 그린 그림이 나타나요!</p></div>
+          </article>
+        </div>
+      </section>
+      <section class="lc-group lc-c2" aria-labelledby="songs">
+        <h2 class="lc-group-title" id="songs">곡과 그림<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 Q 18 2 34 7 T 66 7 T 98 6" vector-effect="non-scaling-stroke" /></svg></h2>
+        <div class="lc-grid">
+          <article class="lc-card lc-c4">
+            <div class="lc-media"><div class="pics" role="img" aria-label="고양이, 우파루파, 황제펭귄, 고래, 나비, 컵케이크, 크루아상, 관람차를 한 줄로 그린 그림 8장">
               <img src="assets/rhythm-game/pictures/cat.svg" alt="" width="100" height="100" loading="lazy">
               <img src="assets/rhythm-game/pictures/axolotl.svg" alt="" width="100" height="100" loading="lazy">
               <img src="assets/rhythm-game/pictures/emperor-penguin.svg" alt="" width="100" height="100" loading="lazy">
@@ -101,56 +118,55 @@
               <img src="assets/rhythm-game/pictures/cupcake.svg" alt="" width="100" height="100" loading="lazy">
               <img src="assets/rhythm-game/pictures/croissant.svg" alt="" width="100" height="100" loading="lazy">
               <img src="assets/rhythm-game/pictures/ferris-wheel.svg" alt="" width="100" height="100" loading="lazy">
-            </div>
-          </div>
-          <p>고양이, 우파루파, 황제펭귄, 관람차까지 한 줄로 그린 그림 369장 중에서 곡의 리듬과 잘 맞는 그림을 하나씩 골랐어요. 두 곡이 같은 그림을 쓰지 않아요!</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">05</span>곡 109개, 난이도 셋</h3>
-          <div class="feat-media dark"><img class="p-shot" src="assets/rhythm-game/menu.webp?v=2" alt="Easy 34곡, Normal 39곡, Hard 36곡 탭과 곡 목록이 보이는 곡 선택 화면" width="1440" height="900" loading="lazy"></div>
-          <p>Easy 34곡, Normal 39곡, Hard 36곡이 있어요. 노트 수와 엇박, 촘촘한 구간을 보고 난이도를 나눠요!</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">06</span>고르면서 미리듣기</h3>
-          <div class="feat-media dark"><img class="p-shot" src="assets/rhythm-game/menu.webp?v=2" alt="난이도별 곡 목록에서 한 곡을 고른 화면" width="1440" height="900" loading="lazy"></div>
-          <p>곡을 고르고 잠깐 기다리면 라이브캔버스가 중간 부분을 12초 동안 들려줘요. 마음에 드는 곡을 귀로 골라요!</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">07</span>내 기기에 박자 맞추기</h3>
-          <div class="feat-media dark"><img class="p-shot" src="assets/rhythm-game/settings.webp" alt="음량 조절 막대와 박자 맞추기 버튼이 있는 설정 화면" width="1440" height="900" loading="lazy"></div>
-          <p>곡마다 다른 소리 크기를 맞춰 두고 컴퓨터에서는 음량을 바꿔요. 딸깍 소리를 따라 누르면 기기의 소리 지연도 맞춰 줘요!</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">08</span>하는 법에서 판정 체험</h3>
-          <div class="feat-media dark"><img class="p-shot" src="assets/rhythm-game/tutorial-judgement.webp" alt="하는 법 화면에서 크레파스에 맞춰 눌러 MISS와 느림 175ms 판정을 체험한 화면" width="1440" height="900" loading="lazy"></div>
-          <p>크레파스가 도는 그림에 맞춰 눌러 보면 라이브캔버스가 판정을 알려 줘요. 빠르거나 느린 시간도 바로 보여 줘요!</p>
-        </article>
-        <article class="feat">
-          <h3><span class="no mono">09</span>폰에서도 바로</h3>
-          <div class="feat-media dark"><img class="p-shot contain" src="assets/rhythm-game/mobile.webp" alt="휴대폰 화면에 맞춰진 게임 첫 화면" width="585" height="1266" loading="lazy"></div>
-          <p>설치 없이 브라우저에서 바로 열려요. 폰에서는 화면을 톡 누르면 돼요!</p>
-        </article>
-      </div>
-    </section>
+            </div></div>
+            <div class="lc-body"><h3><span class="lc-no">04</span>곡마다 다른 그림</h3><p>고양이, 우파루파, 황제펭귄, 관람차까지 한 줄로 그린 그림 369장 중에서 곡의 리듬과 잘 맞는 그림을 하나씩 골랐어요. 두 곡이 같은 그림을 쓰지 않아요!</p></div>
+          </article>
+          <article class="lc-card lc-c5">
+            <div class="lc-media"><img class="p-shot" src="assets/rhythm-game/menu.webp?v=2" alt="Easy 34곡, Normal 39곡, Hard 36곡 탭과 곡 목록이 보이는 곡 선택 화면" width="1440" height="900" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">05</span>곡 109개, 난이도 셋</h3><p>Easy 34곡, Normal 39곡, Hard 36곡이 있어요. 노트 수와 엇박, 촘촘한 구간을 보고 난이도를 나눠요!</p></div>
+          </article>
+          <article class="lc-card lc-c6">
+            <div class="lc-media"><img class="p-shot" src="assets/rhythm-game/menu.webp?v=2" alt="난이도별 곡 목록에서 한 곡을 고른 화면" width="1440" height="900" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">06</span>고르면서 미리듣기</h3><p>곡을 고르고 잠깐 기다리면 라이브캔버스가 중간 부분을 12초 동안 들려줘요. 마음에 드는 곡을 귀로 골라요!</p></div>
+          </article>
+        </div>
+      </section>
+      <section class="lc-group lc-c3" aria-labelledby="device">
+        <h2 class="lc-group-title" id="device">내 기기에 맞게<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 Q 18 2 34 7 T 66 7 T 98 6" vector-effect="non-scaling-stroke" /></svg></h2>
+        <div class="lc-grid">
+          <article class="lc-card lc-c1">
+            <div class="lc-media"><img class="p-shot" src="assets/rhythm-game/settings.webp" alt="음량 조절 막대와 박자 맞추기 버튼이 있는 설정 화면" width="1440" height="900" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">07</span>내 기기에 박자 맞추기</h3><p>곡마다 다른 소리 크기를 맞춰 두고 컴퓨터에서는 음량을 바꿔요. 딸깍 소리를 따라 누르면 기기의 소리 지연도 맞춰 줘요!</p></div>
+          </article>
+          <article class="lc-card lc-c2">
+            <div class="lc-media"><img class="p-shot" src="assets/rhythm-game/tutorial-judgement.webp" alt="하는 법 화면에서 크레파스에 맞춰 눌러 MISS와 느림 175ms 판정을 체험한 화면" width="1440" height="900" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">08</span>하는 법에서 판정 체험</h3><p>크레파스가 도는 그림에 맞춰 눌러 보면 라이브캔버스가 판정을 알려 줘요. 빠르거나 느린 시간도 바로 보여 줘요!</p></div>
+          </article>
+          <article class="lc-card lc-c3">
+            <div class="lc-media"><img class="p-shot contain" src="assets/rhythm-game/mobile.webp" alt="휴대폰 화면에 맞춰진 게임 첫 화면" width="585" height="1266" loading="lazy"></div>
+            <div class="lc-body"><h3><span class="lc-no">09</span>폰에서도 바로</h3><p>설치 없이 브라우저에서 바로 열려요. 폰에서는 화면을 톡 누르면 돼요!</p></div>
+          </article>
+        </div>
+      </section>
+    </div>
 
-    <section class="p-facts">
+    <section class="lc-facts" aria-labelledby="facts-title">
       <div>
-        <p class="eyebrow mono"><span class="idx">./info</span> about</p>
-        <h2 class="title">이렇게 <span class="accent">만들었어요</span></h2>
-        <p class="lead">노래의 박자를 분석해서 길을 만들고, 그 길이 한붓그리기 그림 한 장이 되게 했어요. 처음에는 바느질 콘셉트였는데 크레파스 그림으로 바꿔서 완성했어요.</p>
+        <h2 id="facts-title">이렇게 <span>만들었어요</span></h2>
+        <p>노래의 박자를 분석해서 길을 만들고, 그 길이 한붓그리기 그림 한 장이 되게 했어요. 처음에는 바느질 콘셉트였는데 크레파스 그림으로 바꿔서 완성했어요.</p>
       </div>
       <dl>
-        <div class="cell"><dt class="k mono">status</dt><dd class="v">온라인 공개 중</dd></div>
-        <div class="cell"><dt class="k mono">period</dt><dd class="v">2026.10.02 ~ 2026.10.06 (5일)</dd></div>
-        <div class="cell"><dt class="k mono">play</dt><dd class="v">브라우저 (컴퓨터 · 폰) · 설치 없이 바로</dd></div>
-        <div class="cell"><dt class="k mono">built with</dt><dd class="v">TypeScript · Canvas · Web Audio · Vite</dd></div>
-        <div class="cell"><dt class="k mono">contents</dt><dd class="v">곡 109개 · 그림 369장 · 난이도 3단계</dd></div>
-        <div class="cell"><dt class="k mono">timing</dt><dd class="v">PERFECT ±0.04초 · GREAT ±0.08초 · GOOD ±0.12초</dd></div>
+        <div class="lc-cell"><dt>status</dt><dd>온라인 공개 중</dd></div>
+        <div class="lc-cell"><dt>period</dt><dd>2026.10.02 ~ 2026.10.06 (5일)</dd></div>
+        <div class="lc-cell"><dt>play</dt><dd>브라우저 (컴퓨터 · 폰) · 설치 없이 바로</dd></div>
+        <div class="lc-cell"><dt>built with</dt><dd>TypeScript · Canvas · Web Audio · Vite</dd></div>
+        <div class="lc-cell"><dt>contents</dt><dd>곡 109개 · 그림 369장 · 난이도 3단계</dd></div>
+        <div class="lc-cell"><dt>timing</dt><dd class="lc-judge"><b class="perfect">PERFECT</b> ±0.04초 · <b class="great">GREAT</b> ±0.08초 · <b class="good">GOOD</b> ±0.12초</dd></div>
       </dl>
     </section>
   </main>
 
-  <footer class="p-foot mono">
+  <footer class="lc-foot">
     <a href="../#missions">
       <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg>
       작업 목록으로
