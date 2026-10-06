@@ -212,7 +212,7 @@ html.lc :focus-visible {
 
 .lc-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 8px var(--pad-x) 0;
   padding: 18px 8px;
   border-radius: 14px;
