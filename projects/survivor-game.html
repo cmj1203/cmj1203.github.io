@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko" data-theme="light" class="project">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>던전 서바이버 · 최민주</title>
+  <meta name="description" content="몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임 던전 서바이버예요.">
+  <meta name="theme-color" content="#faf8f3">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="던전 서바이버 · 최민주">
+  <meta property="og:description" content="몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임이에요.">
+  <meta property="og:url" content="https://cmj1203.github.io/projects/survivor-game.html">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="canonical" href="https://cmj1203.github.io/projects/survivor-game.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  </noscript>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+
+<body>
+  <a class="skip" href="#features">본문으로 건너뛰기</a>
+  <div class="p-glow" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="logo" href="../">&lt;minju<span>/&gt;</span></a>
+    <div class="top-right">
+      <a class="map-btn" href="../#missions">
+        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg>
+        작업 목록
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="p-hero">
+      <div class="p-hero-text">
+        <p class="eyebrow mono" style="--i:0"><span class="idx">./01</span> dungeon survivor</p>
+        <h1 class="p-title" style="--i:1">던전 <span class="accent">서바이버</span></h1>
+        <p class="lead" style="--i:2">몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임이에요. <strong>20분을 버티고 마지막 보스를 잡으면</strong> 클리어예요!</p>
+        <ul class="p-tags mono" style="--i:3">
+          <li>web</li>
+          <li>javascript</li>
+          <li>canvas</li>
+        </ul>
+        <div class="p-actions" style="--i:4">
+          <a class="p-btn" href="https://cmj1203.github.io/survivor-game/" target="_blank" rel="noopener">
+            지금 해 보기
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+          </a>
+          <a class="p-btn ghost" href="https://github.com/cmj1203/survivor-game" target="_blank" rel="noopener">코드 보기</a>
+        </div>
+      </div>
+      <figure class="p-window">
+        <div class="term-bar"><i></i><i></i><i></i><span class="mono term-title">cmj1203.github.io/survivor-game</span></div>
+        <img class="p-shot" src="assets/survivor-game/title.webp" alt="DUNGEON SURVIVOR 제목과 게임 시작·게임 설명 버튼이 있는 시작 화면" width="1280" height="720" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="p-features" id="features">
+      <p class="eyebrow mono"><span class="idx">./features</span> how it plays</p>
+      <h2 class="title">이렇게 <span class="accent">살아남아요!</span></h2>
+      <div class="p-grid">
+        <article class="feat">
+          <h3><span class="no mono">01</span>피하기만 하면 돼요</h3>
+          <div class="feat-media dark"><img class="p-shot" src="assets/survivor-game/play.webp" alt="기사가 박쥐 떼 사이에서 빙결 광선을 쏘는 플레이 화면" width="768" height="480" loading="lazy"></div>
+          <p>WASD나 방향키로 움직이기만 하면 공격은 알아서 나가요. 몬스터를 피하는 데만 집중하면 돼요!</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">02</span>레벨업 카드 고르기</h3>
+          <div class="feat-media dark"><img class="p-shot" src="assets/survivor-game/levelup.webp" alt="레벨 2에 도달해 새 무기·새 아이템 카드 세 장 중 하나를 고르는 화면" width="760" height="475" loading="lazy"></div>
+          <p>몬스터가 떨어뜨린 초록 구슬을 모으면 레벨이 올라요. 카드 중 하나를 골라 무기나 아이템을 받아요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">03</span>무기 27가지</h3>
+          <div class="feat-media dark"><img class="p-shot" src="assets/survivor-game/weapons.webp" alt="단검, 마법봉, 검 휘두르기 같은 무기 설명 목록" width="828" height="518" loading="lazy"></div>
+          <p>단검, 회전 도끼, 번개 오라, 운석까지 무기가 27가지예요. 한 번에 6개까지 들 수 있어요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">04</span>무기 진화</h3>
+          <div class="feat-media dark"><img class="p-shot" src="assets/survivor-game/combo.webp" alt="무기와 짝 아이템을 합쳐 진화하는 무기 조합표" width="828" height="518" loading="lazy"></div>
+          <p>무기와 짝 아이템을 최대 레벨로 올리고 보물 상자를 열면 더 센 무기로 진화해요!</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">05</span>아이템 16가지</h3>
+          <div class="feat-media dark"><img class="p-shot" src="assets/survivor-game/items.webp" alt="힘, 갑옷, 튼튼함 같은 아이템 설명 목록" width="828" height="518" loading="lazy"></div>
+          <p>힘, 날개, 자석, 클로버처럼 캐릭터를 키워 주는 아이템이 16가지 있어요.</p>
+        </article>
+        <article class="feat">
+          <h3><span class="no mono">06</span>20분 버티면 보스</h3>
+          <div class="feat-media dark"><img class="p-shot contain" src="assets/survivor-game/clear.webp" alt="20분을 버티면 마지막 보스 사신 마법사가 나타난다는 설명" width="410" height="156" loading="lazy"></div>
+          <p>20분을 버티면 마지막 보스 사신 마법사가 나타나요. 잡으면 클리어!</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="p-facts">
+      <div>
+        <p class="eyebrow mono"><span class="idx">./info</span> about</p>
+        <h2 class="title">이렇게 <span class="accent">만들었어요</span></h2>
+        <p class="lead">처음 만든 게임이에요. 무기 5가지로 시작해서 6일 동안 몬스터, 무기 진화, 보스를 하나씩 더했어요.</p>
+      </div>
+      <dl>
+        <div class="cell"><dt class="k mono">status</dt><dd class="v">온라인 공개 중</dd></div>
+        <div class="cell"><dt class="k mono">period</dt><dd class="v">2026.09.17 ~ 2026.09.22 (6일)</dd></div>
+        <div class="cell"><dt class="k mono">play</dt><dd class="v">브라우저 (컴퓨터) · WASD·방향키</dd></div>
+        <div class="cell"><dt class="k mono">built with</dt><dd class="v">JavaScript · HTML5 Canvas</dd></div>
+        <div class="cell"><dt class="k mono">contents</dt><dd class="v">무기 27가지 · 아이템 16가지</dd></div>
+        <div class="cell"><dt class="k mono">goal</dt><dd class="v">20분 버티고 마지막 보스 잡기</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="p-foot mono">
+    <a href="../#missions">
+      <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg>
+      작업 목록으로
+    </a>
+    <span>&copy; 2026 최민주</span>
+  </footer>
+</body>
+
+</html>
