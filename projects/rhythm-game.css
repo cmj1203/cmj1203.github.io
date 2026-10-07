@@ -178,36 +178,65 @@ html.lc :focus-visible {
 
 .lc-canvas {
   position: relative;
+  overflow: hidden;
   margin: 0;
-  aspect-ratio: 1 / 1;
-  max-height: 560px;
+  aspect-ratio: 16 / 9;
   justify-self: center;
   width: 100%;
-  max-width: 560px;
+  max-width: 720px;
+  border: 1px solid var(--lc-separator);
+  border-radius: 14px;
+  background: var(--lc-surface);
 }
 
-.lc-canvas svg {
+.lc-canvas video {
+  display: block;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  object-fit: cover;
 }
 
-.lc-canvas .lc-stroke {
+.lc-sound {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--lc-text);
+  color: var(--lc-bg);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 160ms ease;
+}
+
+.lc-sound:hover {
+  opacity: 0.9;
+}
+
+.lc-sound svg {
+  width: 18px;
+  height: 18px;
   fill: none;
-  stroke-width: 1.5;
+  stroke: currentColor;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  filter: url(#lc-crayon);
-  animation: lc-draw 7s cubic-bezier(0.45, 0.05, 0.4, 1) 400ms forwards;
 }
 
-.lc-canvas .lc-ghost {
-  fill: none;
-  stroke: var(--lc-separator);
-  stroke-width: 0.6;
-  stroke-dasharray: 0.6 1.6;
+.lc-sound .lc-sound-on,
+.lc-sound[aria-pressed="true"] .lc-sound-off {
+  display: none;
+}
+
+.lc-sound[aria-pressed="true"] .lc-sound-on {
+  display: block;
 }
 
 .lc-stats {
@@ -462,10 +491,6 @@ html.lc :focus-visible {
   text-decoration: none;
 }
 
-@keyframes lc-draw {
-  to { stroke-dashoffset: 0; }
-}
-
 @keyframes lc-rise {
   from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: none; }
@@ -484,7 +509,7 @@ html.lc :focus-visible {
   }
 
   .lc-canvas {
-    max-width: 360px;
+    max-width: 100%;
   }
 
   .lc-stats {
@@ -526,8 +551,7 @@ html.lc :focus-visible {
     animation: none;
   }
 
-  .lc-canvas .lc-stroke {
-    animation: none;
-    stroke-dashoffset: 0;
+  .lc-sound {
+    transition: none;
   }
 }
