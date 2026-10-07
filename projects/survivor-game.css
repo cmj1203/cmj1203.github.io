@@ -23,8 +23,8 @@ html.ds :focus-visible{outline:3px solid var(--ds-y);outline-offset:3px;border-r
 .ds-btn:hover{translate:-2px -2px;box-shadow:inset 0 4px 0 var(--ds-y-hi),inset 0 -5px 0 var(--ds-y-lo),7px 7px 0 #000}
 .ds-btn.ghost:hover{box-shadow:7px 7px 0 #000;color:var(--ds-y)}
 .ds-btn:active{translate:2px 2px;box-shadow:inset 0 4px 0 var(--ds-y-hi),inset 0 -5px 0 var(--ds-y-lo),2px 2px 0 #000}
-.ds-screen{margin:0;border:4px solid #fff;background:#000;box-shadow:8px 8px 0 #000,0 0 0 8px rgba(255,214,10,.12);animation:ds-in 600ms steps(6,end) 200ms both}
-.ds-screen img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.ds-screen{position:relative;overflow:hidden;margin:0;border:4px solid #fff;background:#000;box-shadow:8px 8px 0 #000,0 0 0 8px rgba(255,214,10,.12);animation:ds-in 600ms steps(6,end) 200ms both}
+.ds-screen video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#000;image-rendering:pixelated}
 .ds-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:8px var(--pad-x) 0;list-style:none}
 .ds-stats li{display:grid;gap:4px;padding:16px 18px;border:3px solid var(--ds-line);background:var(--ds-panel);box-shadow:5px 5px 0 #000}
 .ds-stats b{color:var(--ds-y);font-family:var(--ds-px);font-size:clamp(24px,3vw,34px);font-weight:400;line-height:1.1}
@@ -49,7 +49,12 @@ html.ds :focus-visible{outline:3px solid var(--ds-y);outline-offset:3px;border-r
 .ds-cell dd{font-size:15px;font-weight:600;line-height:1.6}
 .ds-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 var(--pad-x) 40px;color:var(--ds-dim);font-family:var(--ds-px);font-size:12px}
 .ds-foot a{display:inline-flex;align-items:center;gap:8px;color:var(--ds-y);text-decoration:none}
+.ds-sound-toggle{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:7px 12px;border:3px solid #fff;border-radius:0;background:rgba(30,30,46,.92);color:#fff;box-shadow:4px 4px 0 #000;font-family:var(--ds-px);font-size:12px;cursor:pointer;transition:translate 100ms steps(2),box-shadow 100ms steps(2)}
+.ds-sound-toggle svg{width:22px;height:22px;fill:var(--ds-y);stroke:var(--ds-y);stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
 @keyframes ds-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media (max-width:1024px){.ds-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ds-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:720px){.ds-hero{grid-template-columns:1fr;padding:28px 1.2rem 20px}.ds-stats{margin:8px 1.2rem 0;gap:10px}.ds-features{padding:8px 1.2rem 48px}.ds-grid{grid-template-columns:1fr}.ds-facts{grid-template-columns:1fr;margin:0 1.2rem 48px}.ds-cell{grid-template-columns:1fr;gap:0}.ds-foot{flex-direction:column;align-items:flex-start;padding:0 1.2rem 32px}}
-@media (prefers-reduced-motion:reduce){.ds-hero-text>*,.ds-screen{animation:none}.ds-btn,.ds-btn:hover,.ds-btn:active{translate:none;transition:none}}
+@media (max-width:720px){.ds-hero{grid-template-columns:1fr;padding:28px 1.2rem 20px}.ds-sound-toggle{right:10px;bottom:10px;min-width:42px;padding:7px}.ds-sound-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.ds-stats{margin:8px 1.2rem 0;gap:10px}.ds-features{padding:8px 1.2rem 48px}.ds-grid{grid-template-columns:1fr}.ds-facts{grid-template-columns:1fr;margin:0 1.2rem 48px}.ds-cell{grid-template-columns:1fr;gap:0}.ds-foot{flex-direction:column;align-items:flex-start;padding:0 1.2rem 32px}}
+.ds-sound-toggle .ds-speaker{stroke:none}.ds-sound-toggle .ds-sound-on{display:none;fill:none}
+.ds-sound-toggle .ds-sound-off{fill:none}.ds-sound-toggle[aria-pressed="true"] .ds-sound-off{display:none}.ds-sound-toggle[aria-pressed="true"] .ds-sound-on{display:block}
+.ds-sound-toggle:hover{translate:-2px -2px;border-color:var(--ds-y);box-shadow:6px 6px 0 #000}.ds-sound-toggle:active{translate:2px 2px;box-shadow:2px 2px 0 #000}
+@media (prefers-reduced-motion:reduce){.ds-hero-text>*,.ds-screen{animation:none}.ds-btn,.ds-btn:hover,.ds-btn:active,.ds-sound-toggle,.ds-sound-toggle:hover,.ds-sound-toggle:active{translate:none;transition:none}}

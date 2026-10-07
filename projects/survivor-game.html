@@ -53,7 +53,19 @@
           <a class="ds-btn ghost" href="https://github.com/cmj1203/survivor-game" target="_blank" rel="noopener">코드 보기</a>
         </div>
       </div>
-      <figure class="ds-screen"><img src="assets/survivor-game/new-title.webp" alt="DUNGEON SURVIVOR 제목과 게임 시작, 캐릭터·난이도, 상점, 퀘스트 버튼이 있는 시작 화면" width="1280" height="720" fetchpriority="high"></figure>
+      <figure class="ds-screen">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/survivor-game/trailer-poster.webp" width="1280" height="720" aria-label="레벨업, 진화 무기, 보물 상자, 캐릭터별 전투, 보스전을 보여 주는 던전 서바이버 소개 영상">
+          <source src="assets/survivor-game/trailer.mp4" type="video/mp4">
+        </video>
+        <button class="ds-sound-toggle" type="button" aria-label="소리 켜기" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="ds-speaker" d="M4 9h4l5-4v14l-5-4H4z" />
+            <path class="ds-sound-off" d="m17 9 4 6m0-6-4 6" />
+            <path class="ds-sound-on" d="M17 8c1.5 1 2 2.3 2 4s-.5 3-2 4" />
+          </svg>
+          <span class="ds-sound-label">소리 켜기</span>
+        </button>
+      </figure>
     </section>
 
     <ul class="ds-stats" aria-label="들어 있는 것">
@@ -69,7 +81,7 @@
         <div class="ds-grid">
           <article class="ds-card">
             <div class="ds-media"><img src="assets/survivor-game/new-mobile.webp" alt="휴대폰 가로 화면에서 터치 조이스틱으로 기사를 움직이는 플레이 화면" width="1280" height="720" loading="lazy"></div>
-            <div class="ds-body"><h3><span class="ds-no">01</span>피하기만 하면 돼요</h3><p>WASD나 방향키로, 휴대폰에선 화면을 끌어서 움직이기만 하면 공격은 알아서 나가요. 몬스터를 피하는 데만 집중하면 돼요!</p></div>
+            <div class="ds-body"><h3><span class="ds-no">01</span>피하기만 하면 돼요</h3><p>WASD나 방향키로, 휴대폰에선 화면을 끌어서 움직여요. 조이스틱 중심이 손가락을 따라와 방향을 바로 바꿀 수 있고, 공격은 알아서 나가요. 단검이나 검처럼 바라보는 방향으로 나가는 무기도 있어서, 피하면서 방향도 맞춰야 해요!</p></div>
           </article>
           <article class="ds-card">
             <div class="ds-media"><img src="assets/survivor-game/new-levelup.webp" alt="Lv.3 도달 후 마법봉 강화, 빠른 공격, 성풍, 회전 도끼 카드 중 하나를 고르는 레벨 업 화면" width="1280" height="720" loading="lazy"></div>
@@ -81,7 +93,7 @@
           </article>
           <article class="ds-card">
             <div class="ds-media"><img src="assets/survivor-game/new-combo.webp" alt="무기와 짝 아이템을 합쳐 피의 검, 성스러운 봉 같은 진화 무기가 되는 조합표" width="1280" height="720" loading="lazy"></div>
-            <div class="ds-body"><h3><span class="ds-no">04</span>무기 진화 20가지</h3><p>무기와 짝 아이템을 최대 레벨로 올리고 보물 상자를 열면 더 센 무기로 진화해요. 조합표는 게임 중에 ? 버튼으로 볼 수 있어요!</p></div>
+            <div class="ds-body"><h3><span class="ds-no">04</span>무기 진화 20가지</h3><p>무기와 짝 아이템을 최대 레벨로 올리고 보물 상자를 열면 더 센 무기로 진화해요. 조합표는 ? 버튼으로 보고, 만렙 상자 룰렛에서도 받을 보상 이름을 확인해요!</p></div>
           </article>
           <article class="ds-card">
             <div class="ds-media"><img src="assets/survivor-game/new-items.webp" alt="힘, 갑옷, 튼튼함, 회복 같은 아이템 설명 목록" width="1280" height="720" loading="lazy"></div>
@@ -89,7 +101,7 @@
           </article>
           <article class="ds-card">
             <div class="ds-media"><img src="assets/survivor-game/new-intro.webp" alt="이동, 레벨 업, 보물 상자, 클리어, 바닥 아이템, 도움말이 적힌 게임 설명 화면" width="1280" height="720" loading="lazy"></div>
-            <div class="ds-body"><h3><span class="ds-no">06</span>20분 버티면 보스</h3><p>20분을 버티면 마지막 보스 사신 마법사가 나타나요. 잡으면 클리어!</p></div>
+            <div class="ds-body"><h3><span class="ds-no">06</span>20분 버티면 보스</h3><p>20분을 버티면 마지막 보스 사신 마법사가 나타나요. 잡으면 클리어! 지난 시간·처치 수는 화면에서 보고, 소리는 버튼이나 M 키로 끌 수 있어요!</p></div>
           </article>
         </div>
       </section>
@@ -115,11 +127,11 @@
     <section class="ds-facts" aria-labelledby="facts-title">
       <div>
         <h2 id="facts-title">이렇게 <span>만들었어요</span></h2>
-        <p>처음 만든 게임이에요. 무기 5가지로 시작해서 몬스터, 무기 진화, 보스를 하나씩 더했어요. 10월 6일에는 금화 상점, 퀘스트, 캐릭터, 난이도, 이어 하기를 더해서 여러 판 할수록 강해지게 했어요!</p>
+        <p>처음 만든 게임이에요. 무기 5가지로 시작해서 몬스터, 무기 진화, 보스를 하나씩 더했어요. 10월 6일에는 금화 상점, 퀘스트, 캐릭터, 난이도, 이어 하기를 더해서 여러 판 할수록 강해지게 했어요. 10월 7일에는 지난 시간·처치 수 표시, 따라오는 터치 조이스틱, 배경 음악·효과음과 소리 끄기를 더했어요!</p>
       </div>
       <dl>
         <div class="ds-cell"><dt>status</dt><dd>온라인 공개 중</dd></div>
-        <div class="ds-cell"><dt>period</dt><dd>2026.09.17 ~ 2026.10.06</dd></div>
+        <div class="ds-cell"><dt>period</dt><dd>2026.09.17 ~ 2026.10.07</dd></div>
         <div class="ds-cell"><dt>play</dt><dd>브라우저 (컴퓨터·휴대폰) · 키보드·터치 조이스틱</dd></div>
         <div class="ds-cell"><dt>built with</dt><dd>JavaScript · HTML5 Canvas</dd></div>
         <div class="ds-cell"><dt>contents</dt><dd>무기 23가지 · 진화 20가지 · 아이템 16가지 · 캐릭터 4명 · 퀘스트 13개</dd></div>
@@ -132,6 +144,47 @@
     <a href="../#missions"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg> 작업 목록으로</a>
     <span>&copy; 2026 최민주</span>
   </footer>
+  <script>
+    const trailer = document.querySelector(".ds-screen video");
+    const soundToggle = document.querySelector(".ds-sound-toggle");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function syncSoundToggle() {
+      const soundOn = !trailer.muted;
+      soundToggle.setAttribute("aria-pressed", String(soundOn));
+      soundToggle.setAttribute("aria-label", soundOn ? "소리 끄기" : "소리 켜기");
+      soundToggle.querySelector("span").textContent = soundOn ? "소리 끄기" : "소리 켜기";
+    }
+
+    function playTrailer() {
+      trailer.play().catch((error) => {
+        trailer.dataset.playbackBlocked = "";
+        console.warn("트레일러 자동재생을 시작하지 못했어요.", error);
+      });
+    }
+
+    function syncMotionPreference() {
+      if (reducedMotion.matches) {
+        trailer.pause();
+        trailer.removeAttribute("autoplay");
+        trailer.load();
+        soundToggle.hidden = true;
+        return;
+      }
+      soundToggle.hidden = false;
+      trailer.setAttribute("autoplay", "");
+      playTrailer();
+    }
+
+    soundToggle.addEventListener("click", () => {
+      trailer.muted = !trailer.muted;
+      syncSoundToggle();
+      if (trailer.paused) playTrailer();
+    });
+    reducedMotion.addEventListener("change", syncMotionPreference);
+    syncSoundToggle();
+    syncMotionPreference();
+  </script>
 </body>
 
 </html>
