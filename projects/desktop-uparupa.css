@@ -1,4 +1,4 @@
-/* 다마고치 설명 페이지 전용. 색과 모양은 앱의 상점·사용 가이드 패널(shop-theme.css, guide-theme.css)과 말풍선(bubble-theme.css)에서 가져왔다. DESIGN.md D-24 */
+/* Desktop Uparupa 설명 페이지 전용. 색과 모양은 앱의 상점·사용 가이드 패널(shop-theme.css, guide-theme.css)과 말풍선(bubble-theme.css)에서 가져왔다. DESIGN.md D-24 */
 html.tama {
   --t-surface: #f4fbfc;
   --t-raised: rgba(255, 255, 255, 0.92);
@@ -487,7 +487,7 @@ html.tama .skip {
   width: 40px;
   height: 40px;
   border-radius: 13px;
-  background: var(--t-soft) url("assets/tamagotchi/axolotl.png") center / 32px 32px no-repeat;
+  background: var(--t-soft) url("assets/desktop-uparupa/axolotl.png") center / 32px 32px no-repeat;
   box-shadow: 0 2px 6px rgba(48, 103, 112, 0.12);
   content: "";
   image-rendering: pixelated;
