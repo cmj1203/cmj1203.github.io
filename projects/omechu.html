@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ko" class="project om">
+<html lang="ko">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>오메추 · 최민주</title>
   <meta name="description" content="오늘 뭐 먹을지 메뉴를 골라 주고, 그 메뉴를 파는 주변 식당까지 찾아 주는 웹사이트 오메추예요.">
-  <meta name="theme-color" content="#f5f5f4">
+  <meta name="theme-color" content="#000000">
   <meta property="og:type" content="website">
   <meta property="og:title" content="오메추 · 최민주">
   <meta property="og:description" content="오늘 뭐 먹을지 메뉴를 골라 주고, 주변 식당까지 찾아 주는 웹사이트예요.">
@@ -14,122 +14,119 @@
   <meta property="og:locale" content="ko_KR">
   <link rel="canonical" href="https://cmj1203.github.io/projects/omechu.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  </noscript>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="omechu.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../site.css?v=20261020">
+  <link rel="stylesheet" href="omechu.css?v=20261020">
 </head>
 
 <body>
-  <a class="skip" href="#features">본문으로 건너뛰기</a>
+<a class="skip" href="#features">본문으로 건너뛰기</a>
+<header class="bar"><a class="mark" href="../">&lt;minju/&gt;</a><nav aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#me">소개</a><a href="../#contact">연락</a></nav></header>
 
-  <header class="top">
-    <a class="logo" href="../">&lt;minju<span>/&gt;</span></a>
-    <div class="top-right">
-      <a class="map-btn" href="../#missions">
-        <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg>
-        작업 목록
-      </a>
+<main>
+<section class="hero" aria-labelledby="hero-title" data-enter>
+  <h1 id="hero-title" class="hero-title"><span class="mask"><span class="rise">오메추</span></span></h1>
+  <div class="band">
+    <div class="who" data-step style="--i:0">
+      <p>오늘 메뉴 추천</p>
+      <p>오늘 뭐 먹지? 고민될 때</p>
+      <ul class="tags">
+        <li>web</li>
+        <li>javascript</li>
+        <li>supabase</li>
+        <li>openstreetmap</li>
+      </ul>
     </div>
-  </header>
+    <p class="lead" data-step style="--i:1">조건을 고르면 오늘의 메뉴를 골라 주는 웹사이트예요. <strong>그 메뉴를 파는 주변 식당과 걸어가는 시간</strong>까지 같이 알려 줘요!</p>
+    <nav class="act" aria-label="바로 가기" data-step style="--i:2">
+      <a class="btn" href="https://cmj1203.github.io/omechu/" target="_blank" rel="noopener">지금 해 보기<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+      <a class="text-link" href="https://github.com/cmj1203/omechu" target="_blank" rel="noopener">코드 보기</a>
+    </nav>
+  </div>
+  <figure class="hero-media" data-step style="--i:3">
+    <img src="assets/omechu/card.webp" alt="오늘의 메뉴로 호떡을 추천하고 위치를 넣어 주변 식당을 찾는 화면" width="1280" height="720" fetchpriority="high">
+  </figure>
+</section>
 
-  <main>
-    <section class="om-hero">
-      <div class="om-hero-text">
-        <p class="om-kicker" style="--i:0">오늘 메뉴 추천</p>
-        <h1 class="om-title" style="--i:1">오메추</h1>
-        <p class="om-sub" style="--i:2">오늘 뭐 먹지? 고민될 때</p>
-        <p class="om-lead" style="--i:3">조건을 고르면 오늘의 메뉴를 골라 주는 웹사이트예요. <strong>그 메뉴를 파는 주변 식당과 걸어가는 시간</strong>까지 같이 알려 줘요!</p>
-        <ul class="om-chips" style="--i:4">
-          <li class="on">web</li>
-          <li>javascript</li>
-          <li>supabase</li>
-          <li>openstreetmap</li>
-        </ul>
-        <div class="om-actions" style="--i:5">
-          <a class="om-btn" href="https://cmj1203.github.io/omechu/" target="_blank" rel="noopener">
-            지금 해 보기
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
-          </a>
-          <a class="om-btn ghost" href="https://github.com/cmj1203/omechu" target="_blank" rel="noopener">코드 보기</a>
-        </div>
-      </div>
-      <figure class="om-phone">
-        <img src="assets/omechu/phone.webp" alt="휴대폰에서 오늘의 메뉴로 규카츠를 추천하고, 강남역에서 걸어서 1분 거리의 규카츠 가게를 알려 주는 화면" width="780" height="1688" fetchpriority="high">
-      </figure>
-    </section>
+<ul class="stats" aria-label="들어 있는 것" data-enter>
+  <li data-step style="--i:0"><b>149</b><span>메뉴</span></li>
+  <li class="stat-wide" data-step style="--i:1"><b>약 10만 + 약 29만</b><span>OSM + 상가정보 식당</span></li>
+  <li class="stat-narrow" data-step style="--i:2"><b>2km</b><span>먼저 찾는 거리</span></li>
+</ul>
 
-    <ul class="om-stats" aria-label="들어 있는 것">
-      <li><b>149</b><span>메뉴</span></li>
-      <li><b>약 10만 + 약 29만</b><span>OSM + 상가정보 식당</span></li>
-      <li><b>2km</b><span>먼저 찾는 거리</span></li>
-    </ul>
+<section class="menu" id="features" aria-labelledby="pick">
+  <div data-enter><h2 id="pick" class="sec-title" data-step style="--i:0">메뉴</h2></div>
+  <article class="row" data-enter>
+    <div class="row-text cap" data-step style="--i:0"><h3>골라서 추천받기</h3><p>식사·간식·술 중에 종류를 고르고, 한식부터 아시아까지 나라를 고른 다음 추천받기를 눌러요. 최근에 나온 5개 메뉴는 다시 안 나와요!</p></div>
+    <img class="row-media" src="assets/omechu/start.webp" alt="종류와 나라 칩을 고르고 추천받기를 누르는 첫 화면" width="1540" height="1220" loading="lazy" data-step style="--i:1">
+  </article>
+  <article class="row" data-enter>
+    <div class="row-text cap" data-step style="--i:0"><h3>간식·술은 나라 상관없이</h3><p>간식이나 술을 고르면 나라는 '전체'로 고정돼요. 나라 구분 없이 골라 줘요!</p></div>
+    <img class="row-media" src="assets/omechu/snack-lock.webp" alt="간식을 고르자 나라가 전체로 고정되고 다른 나라 칩이 흐려진 모습" width="716" height="288" loading="lazy" data-step style="--i:1">
+  </article>
+  <article class="row" data-enter>
+    <div class="row-text cap" data-step style="--i:0"><h3>싫은 메뉴는 빼기</h3><p>'이 메뉴 빼기'를 누르면 그 메뉴를 빼고 바로 다시 골라 줘요. 마음이 바뀌면 '다시 넣기'로 되돌려요!</p></div>
+    <img class="row-media row-media--small" src="assets/omechu/exclude.webp" alt="규카츠를 빼서 다른 메뉴가 추천되고 뺀 메뉴와 다시 넣기가 보이는 모습" width="300" height="360" loading="lazy" data-step style="--i:1">
+  </article>
+</section>
 
-    <div class="om-features" id="features">
-      <section class="om-group" aria-labelledby="pick">
-        <h2 class="om-legend" id="pick"><b>메뉴</b></h2>
-        <div class="om-grid">
-          <article class="om-card">
-            <div class="om-media"><img src="assets/omechu/start.webp" alt="종류와 나라 칩을 고르고 추천받기를 누르는 첫 화면" width="1540" height="1220" loading="lazy" style="--pos:top"></div>
-            <div class="om-body"><h3><span class="om-no">01</span>골라서 추천받기</h3><p>식사·간식·술 중에 종류를 고르고, 한식부터 아시아까지 나라를 고른 다음 추천받기를 눌러요. 최근에 나온 5개 메뉴는 다시 안 나와요!</p></div>
-          </article>
-          <article class="om-card">
-            <div class="om-media fit"><img src="assets/omechu/snack-lock.webp" alt="간식을 고르자 나라가 전체로 고정되고 다른 나라 칩이 흐려진 모습" width="716" height="288" loading="lazy"></div>
-            <div class="om-body"><h3><span class="om-no">02</span>간식·술은 나라 상관없이</h3><p>간식이나 술을 고르면 나라는 '전체'로 고정돼요. 나라 구분 없이 골라 줘요!</p></div>
-          </article>
-          <article class="om-card">
-            <div class="om-media fit"><img src="assets/omechu/exclude.webp" alt="규카츠를 빼서 다른 메뉴가 추천되고 뺀 메뉴와 다시 넣기가 보이는 모습" width="300" height="360" loading="lazy"></div>
-            <div class="om-body"><h3><span class="om-no">03</span>싫은 메뉴는 빼기</h3><p>'이 메뉴 빼기'를 누르면 그 메뉴를 빼고 바로 다시 골라 줘요. 마음이 바뀌면 '다시 넣기'로 되돌려요!</p></div>
-          </article>
-        </div>
-      </section>
+<section class="near" aria-labelledby="near-title" data-enter>
+  <h2 id="near-title" class="sec-title" data-step style="--i:0">식당</h2>
+  <div class="near-grid">
+    <article class="place">
+      <img src="assets/omechu/card-pick.webp?v=2" alt="강남역에서 도보 1분 거리 규카츠 추천 식당과 카카오맵 길찾기·지도에서 보기·공유하기 버튼" width="716" height="500" loading="lazy" data-step style="--i:1">
+      <div class="cap"><h3 data-step style="--i:2">주변 식당과 걸어가는 시간</h3><p data-step style="--i:2">현재 위치나 '강남역' 같은 동네를 넣으면 그 메뉴를 파는 가까운 가게와 걸어가는 시간을 알려 줘요. 2km 안에 없으면 5km까지 넓혀 찾고, 카카오맵 길찾기와 공유하기도 바로 돼요!</p></div>
+    </article>
+    <article class="place">
+      <img class="trim" src="assets/omechu/list.webp" alt="조건에 맞는 다른 가까운 곳 목록과 가게마다 맞은 메뉴 태그, 도보 시간" width="716" height="470" loading="lazy" data-step style="--i:3">
+      <div class="cap"><h3 data-step style="--i:4">다른 가까운 곳도 한눈에</h3><p data-step style="--i:4">고른 조건에 맞는 다른 가게들도 가까운 순서로 보여 줘요. 가게마다 어떤 메뉴로 골랐는지 태그로 알려 줘요!</p></div>
+    </article>
+  </div>
+</section>
 
-      <section class="om-group" aria-labelledby="near">
-        <h2 class="om-legend" id="near"><b>식당</b></h2>
-        <div class="om-grid two">
-          <article class="om-card">
-            <div class="om-media"><img src="assets/omechu/card-pick.webp?v=2" alt="강남역에서 도보 1분 거리 규카츠 추천 식당과 카카오맵 길찾기·지도에서 보기·공유하기 버튼" width="716" height="500" loading="lazy" style="--pos:top"></div>
-            <div class="om-body"><h3><span class="om-no">04</span>주변 식당과 걸어가는 시간</h3><p>현재 위치나 '강남역' 같은 동네를 넣으면 그 메뉴를 파는 가까운 가게와 걸어가는 시간을 알려 줘요. 2km 안에 없으면 5km까지 넓혀 찾고, 카카오맵 길찾기와 공유하기도 바로 돼요!</p></div>
-          </article>
-          <article class="om-card">
-            <div class="om-media"><img src="assets/omechu/list.webp" alt="조건에 맞는 다른 가까운 곳 목록과 가게마다 맞은 메뉴 태그, 도보 시간" width="716" height="470" loading="lazy" style="--pos:top"></div>
-            <div class="om-body"><h3><span class="om-no">05</span>다른 가까운 곳도 한눈에</h3><p>고른 조건에 맞는 다른 가게들도 가까운 순서로 보여 줘요. 가게마다 어떤 메뉴로 골랐는지 태그로 알려 줘요!</p></div>
-          </article>
-        </div>
-      </section>
-    </div>
+<section class="facts" aria-labelledby="facts-title" data-enter>
+  <div class="facts-text">
+    <h2 id="facts-title" class="sec-title" data-step style="--i:0">이렇게 만들었어요</h2>
+    <p data-step style="--i:1">학교 주변 맛집을 추천하던 예전 JSP 버전을 정적 사이트와 Supabase로 다시 만들었어요. 전국 식당은 OpenStreetMap과 소상공인시장진흥공단 상가(상권)정보에서 가져오고, 매달 두 출처를 자동으로 새로 받아요. 관리자는 로그인해서 메뉴를 고치고 문 닫은 가게를 숨길 수 있어요.</p>
+  </div>
+  <dl data-step style="--i:2">
+    <div><dt>status</dt><dd>온라인 공개 중</dd></div>
+    <div><dt>period</dt><dd>2026.09.30 ~ 2026.10.01 (2일)</dd></div>
+    <div><dt>play</dt><dd>브라우저 (컴퓨터 · 휴대폰) · 설치 없이 바로</dd></div>
+    <div><dt>built with</dt><dd>HTML · CSS · JavaScript · Supabase · OpenStreetMap · 상가(상권)정보 · GitHub Pages · GitHub Actions</dd></div>
+    <div><dt>contents</dt><dd>메뉴 149개 · OpenStreetMap 약 10만 곳 · 상가정보 약 29만 곳</dd></div>
+    <div><dt>update</dt><dd>매달 2일 두 출처의 식당 정보 자동 새로고침</dd></div>
+  </dl>
+  <figure class="phone" data-step style="--i:3">
+    <img src="assets/omechu/phone.webp" alt="휴대폰에서 오늘의 메뉴로 규카츠를 추천하고, 강남역에서 걸어서 1분 거리의 규카츠 가게를 알려 주는 화면" width="780" height="1688" loading="lazy">
+  </figure>
+</section>
+</main>
 
-    <section class="om-facts" aria-labelledby="facts-title">
-      <div>
-        <h2 id="facts-title">이렇게 <span>만들었어요</span></h2>
-        <p>학교 주변 맛집을 추천하던 예전 JSP 버전을 정적 사이트와 Supabase로 다시 만들었어요. 전국 식당은 OpenStreetMap과 소상공인시장진흥공단 상가(상권)정보에서 가져오고, 매달 두 출처를 자동으로 새로 받아요. 관리자는 로그인해서 메뉴를 고치고 문 닫은 가게를 숨길 수 있어요.</p>
-      </div>
-      <dl>
-        <div class="om-cell"><dt>status</dt><dd>온라인 공개 중</dd></div>
-        <div class="om-cell"><dt>period</dt><dd>2026.09.30 ~ 2026.10.01 (2일)</dd></div>
-        <div class="om-cell"><dt>play</dt><dd>브라우저 (컴퓨터 · 휴대폰) · 설치 없이 바로</dd></div>
-        <div class="om-cell"><dt>built with</dt><dd>HTML · CSS · JavaScript · Supabase · OpenStreetMap · 상가(상권)정보 · GitHub Pages · GitHub Actions</dd></div>
-        <div class="om-cell"><dt>contents</dt><dd>메뉴 149개 · OpenStreetMap 약 10만 곳 · 상가정보 약 29만 곳</dd></div>
-        <div class="om-cell"><dt>update</dt><dd>매달 2일 두 출처의 식당 정보 자동 새로고침</dd></div>
-      </dl>
-    </section>
-  </main>
+<footer class="foot" id="contact">
+  <div class="tile tile--mail">
+    <h2>연락</h2>
+    <a class="big-link" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+  </div>
+  <a class="tile tile--gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">
+    <span class="big-link">GITHUB</span>
+    <svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 17L17 5M8 5h9v9" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+  </a>
+  <div class="tile tile--copy"><a class="back" href="../#missions">작업 목록으로</a><p class="note">© 2026 최민주</p></div>
+</footer>
 
-  <footer class="om-foot">
-    <a href="../#missions">
-      <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" /></svg>
-      작업 목록으로
-    </a>
-    <span>&copy; 2026 최민주</span>
-  </footer>
+<script>
+(() => {
+  const enter = (el) => el.classList.add('in');
+  const targets = document.querySelectorAll('[data-enter]');
+  if (!('IntersectionObserver' in window)) { targets.forEach(enter); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { enter(e.target); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+  targets.forEach((t) => { io.observe(t); });
+})();
+</script>
 </body>
-
 </html>
