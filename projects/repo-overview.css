@@ -1,0 +1,58 @@
+/* GitHub 레포 개요 설명 페이지. 토큰·머리줄·단추·바닥 타일·들어오기 움직임·구역 제목(.sec-title)·숫자(.stats)·그림 설명(.cap)·이렇게 만들었어요(.facts)는 ../site.css 에 있고, 여기에는 이 페이지의 구성만 둔다. DESIGN.md D-47 */
+/* 대표색: 확장 자체의 어두운 테마 강조색(static/styles.css 의 --accent). 비공개 저장소라 단추가 없어 쓰이는 곳은 없다 */
+:root { --accent: #58a6ff; }
+
+.hero { padding: 48px var(--margin) 0; }
+.hero-title {
+  font-size: var(--step-display); line-height: 1.02; letter-spacing: -0.035em; font-weight: 500;
+}
+
+.band {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter);
+  margin-top: 40px; align-items: start;
+}
+.band .who { grid-column: 1 / span 3; color: var(--muted); padding-top: 4px; }
+.band .tags { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 16px; font-size: var(--step-small); }
+/* 비공개 저장소라 단추 칸(10~12)이 없다. 소개 글이 4~10칸을 쓴다 */
+.band .lead { grid-column: 4 / span 7; font-size: var(--step-head); line-height: 1.35; letter-spacing: -0.015em; }
+
+.hero-media { margin-top: 48px; }
+.hero-media img { width: 100%; height: auto; background: var(--surface); }
+
+.stats { padding-inline: var(--margin); }
+
+.sections, .howto { padding: var(--section) var(--margin) 0; }
+.sections .sec-title, .howto .sec-title { margin-bottom: 40px; }
+
+/* 다섯 항목: 그림 없이 제목·한 줄 설명만 4칸씩 (3 + 2) */
+.list { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px var(--gutter); }
+.list .cap { grid-column: span 4; }
+.list .cap p { max-width: 24em; }
+
+.row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter); align-items: center; }
+.row + .row { margin-top: 88px; }
+.row-text { grid-column: 1 / span 5; grid-row: 1; }
+.row-media { grid-column: 6 / -1; grid-row: 1; width: 100%; height: auto; background: var(--surface); }
+/* 사이드패널(400px)·설정 페이지(460px)는 실제 폭 그대로 */
+.row-media--panel { width: min(100%, 400px); }
+.row-media--options { width: min(100%, 460px); }
+
+@media (max-width: 1024px) {
+  .list .cap { grid-column: span 6; }
+}
+@media (max-width: 900px) {
+  .band .who, .band .lead { grid-column: 1 / -1; }
+  .row-media { grid-column: 1 / -1; grid-row: 1; }
+  .row-text { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
+}
+@media (max-width: 720px) {
+  .hero { padding-top: 32px; }
+  .hero-title { font-size: 9.6vw; }
+  .band { margin-top: 32px; }
+  .hero-media { margin-top: 32px; }
+  /* card.webp 는 패널이 오른쪽에 있어, 휴대폰에서는 오른쪽을 남기고 자른다 */
+  .sections .sec-title, .howto .sec-title { margin-bottom: 28px; }
+  .list { gap: 32px var(--gutter); }
+  .list .cap { grid-column: 1 / -1; }
+  .row + .row { margin-top: 56px; }
+}

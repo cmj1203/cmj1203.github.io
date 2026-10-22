@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>photo2caricature · 최민주</title>
+  <meta name="description" content="인물 사진을 넣고 스타일을 고르면 캐리커처로 그려 주는 도구 photo2caricature예요. 다 그린 그림도 말로 더 고칠 수 있어요.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="photo2caricature · 최민주">
+  <meta property="og:description" content="인물 사진을 넣고 스타일을 고르면 캐리커처로 그려 주는 도구예요. 다 그린 그림도 말로 더 고칠 수 있어요.">
+  <meta property="og:url" content="https://cmj1203.github.io/projects/photo2caricature.html">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="canonical" href="https://cmj1203.github.io/projects/photo2caricature.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../site.css?v=20261020">
+  <link rel="stylesheet" href="photo2caricature.css?v=20261021">
+</head>
+
+<body>
+<a class="skip" href="#features">본문으로 건너뛰기</a>
+<header class="bar"><a class="mark" href="../">&lt;minju/&gt;</a><nav aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#me">소개</a><a href="../#contact">연락</a></nav></header>
+
+<main>
+<section class="hero" aria-labelledby="hero-title" data-enter>
+  <h1 id="hero-title" class="hero-title"><span class="mask"><span class="rise">photo2caricature</span></span></h1>
+  <div class="band">
+    <div class="who" data-step style="--i:0">
+      <p class="state"><i aria-hidden="true"></i>만드는 중</p>
+      <ul class="tags">
+        <li>python</li>
+        <li>fastapi</li>
+        <li>playwright</li>
+        <li>chatgpt</li>
+      </ul>
+    </div>
+    <p class="lead" data-step style="--i:1">인물 사진을 넣고 스타일을 고르면 캐리커처로 그려 주는 도구예요. <strong>다 그린 그림도 말로 더 고칠 수 있어요.</strong></p>
+  </div>
+  <figure class="hero-media" data-step style="--i:2">
+    <img src="assets/photo2caricature/first.webp" alt="사진 선택 칸, 다섯 가지 스타일 단추, 프롬프트 칸과 변환 단추가 있는 입력 카드와 아직 비어 있는 결과 카드" width="1600" height="1067" fetchpriority="high">
+  </figure>
+</section>
+
+<ul class="stats" aria-label="들어 있는 것" data-enter>
+  <li data-step style="--i:0"><b>5</b><span>내장 스타일</span></li>
+  <li data-step style="--i:1"><b>4</b><span>거쳐 간 생성 엔진</span></li>
+  <li data-step style="--i:2"><b>3</b><span>운영체제 실행기</span></li>
+</ul>
+
+<section class="styles" id="features" aria-labelledby="styles-title">
+  <div data-enter><h2 id="styles-title" class="sec-title" data-step style="--i:0">스타일</h2></div>
+  <article class="row" data-enter>
+    <div class="row-text cap" data-step style="--i:0"><h3>스타일 고르기</h3><p>클래식·과장·연필·수채화·웹툰 다섯 가지가 들어 있어요. 고르면 그 스타일의 기본 프롬프트가 아래 칸에 채워져요.</p></div>
+    <img class="row-media" src="assets/photo2caricature/styles.webp" alt="웹툰 스타일을 고르자 프롬프트 칸이 한국 웹툰 스타일 프롬프트로 바뀐 모습" width="1108" height="552" loading="lazy" data-step style="--i:1">
+  </article>
+  <article class="row" data-enter>
+    <div class="row-text cap" data-step style="--i:0"><h3>프롬프트 고쳐 보내기</h3><p>채워진 프롬프트에 지시를 덧붙이거나 고쳐서 보낼 수 있어요. 고친 건 그 변환에만 쓰이고, '기본값으로'를 누르면 되돌아와요.</p></div>
+    <img class="row-media" src="assets/photo2caricature/prompt-edit.webp" alt="프롬프트 끝에 지시를 덧붙이자 프롬프트 옆에 (수정됨)이 붙고 기본값으로 링크가 보이는 모습" width="1108" height="394" loading="lazy" data-step style="--i:1">
+  </article>
+  <article class="row" data-enter>
+    <div class="row-text cap" data-step style="--i:0"><h3>내 스타일 등록</h3><p>이름과 프롬프트를 적어 저장하면 스타일 단추로 추가돼요. 저장한 스타일은 ×로 지울 수 있어요.</p></div>
+    <img class="row-media" src="assets/photo2caricature/add-style.webp" alt="스타일 추가를 눌러 이름과 프롬프트를 적는 칸과 저장·취소 단추가 열린 모습" width="1108" height="656" loading="lazy" data-step style="--i:1">
+  </article>
+</section>
+
+<section class="result" aria-labelledby="result-title" data-enter>
+  <h2 id="result-title" class="sec-title" data-step style="--i:0">결과</h2>
+  <div class="result-grid">
+    <div class="cap" data-step style="--i:1"><h3>같은 설정으로 한 번 더</h3><p>같은 사진과 프롬프트로 다시 그려요.</p></div>
+    <div class="cap" data-step style="--i:2"><h3>이전 결과 수정</h3><p>방금 그린 그림에서 고칠 점을 적으면 그 그림을 이어서 고쳐요. 결과는 PNG로 저장해요.</p></div>
+  </div>
+</section>
+
+<section class="facts" aria-labelledby="facts-title" data-enter>
+  <div class="facts-text">
+    <h2 id="facts-title" class="sec-title" data-step style="--i:0">이렇게 만들었어요</h2>
+    <p data-step style="--i:1">처음엔 OpenAI 이미지 편집 API로 시작해 Gemini, 로컬 FLUX.2 Klein(mflux)을 거쳐, 지금은 로그인해 둔 ChatGPT 웹을 Playwright로 조작해서 그려요. API 키 없이 쓰고, 자동화용 Chrome 창은 최소화된 채 돌아가요. 더블클릭 실행기로 서버가 켜지고, 열어 둔 탭을 다 닫으면 서버도 꺼져요(macOS에서는 터미널 창까지).</p>
+  </div>
+  <dl data-step style="--i:2">
+    <div><dt>status</dt><dd>만드는 중</dd></div>
+    <div><dt>period</dt><dd>2026.09.21 ~ 2026.10.13</dd></div>
+    <div><dt>run</dt><dd>macOS · Windows · Linux (더블클릭 실행기 · 명령줄)</dd></div>
+    <div><dt>needs</dt><dd>Google Chrome · ChatGPT 로그인 (API 키 없음)</dd></div>
+    <div><dt>built with</dt><dd>Python · FastAPI · Typer · Playwright · uv</dd></div>
+    <div><dt>input</dt><dd>JPEG · PNG · WebP · 20MB 이하</dd></div>
+    <div><dt>styles</dt><dd>내장 5개 + 직접 등록</dd></div>
+  </dl>
+</section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="tile tile--mail">
+    <h2>연락</h2>
+    <a class="big-link" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+  </div>
+  <a class="tile tile--gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">
+    <span class="big-link">GITHUB</span>
+    <svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 17L17 5M8 5h9v9" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+  </a>
+  <div class="tile tile--copy"><a class="back" href="../#missions">작업 목록으로</a><p class="note">© 2026 최민주</p></div>
+</footer>
+
+<script>
+(() => {
+  const enter = (el) => el.classList.add('in');
+  const targets = document.querySelectorAll('[data-enter]');
+  if (!('IntersectionObserver' in window)) { targets.forEach(enter); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { enter(e.target); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+  targets.forEach((t) => { io.observe(t); });
+})();
+</script>
+</body>
+</html>
