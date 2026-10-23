@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>최민주 포트폴리오</title>
   <meta name="description" content="데스크톱 앱, 웹 게임, 자동화 도구를 기획부터 배포까지 만드는 최민주의 포트폴리오예요.">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
   <meta property="og:title" content="최민주 · 아이디어를 결과물로 완성해요">
   <meta property="og:description" content="데스크톱 앱, 웹 게임, 자동화 도구를 만드는 최민주의 포트폴리오예요.">
@@ -15,148 +15,169 @@
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://cmj1203.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="site.css?v=20261020">
-  <link rel="stylesheet" href="home.css?v=20261020">
-  <script src="home.js?v=20261020" defer></script>
+  <link rel="stylesheet" href="site.css?v=20261023">
+  <link rel="stylesheet" href="home.css?v=20261023">
+  <script src="home.js?v=20261023" defer></script>
 </head>
 
 <body>
 <a class="skip" href="#missions">본문으로 건너뛰기</a>
-<header class="bar"><a class="mark" href="./">&lt;minju/&gt;</a><nav aria-label="페이지 안 이동"><a href="#missions">만든 것</a><a href="#me">소개</a><a href="#contact">연락</a></nav></header>
+<header class="site-header">
+  <div class="site-header__in"><a class="site-header__mark" href="./">&lt;minju/&gt;</a><nav class="site-nav" aria-label="페이지 안 이동"><a href="#missions">만든 것</a><a href="#me">소개</a><a href="#contact">연락</a></nav></div>
+</header>
 
+<div class="frame">
 <main>
-<section class="hero" aria-labelledby="hero-title">
-  <h1 id="hero-title" class="hero-title"><span class="mask"><span class="rise">아이디어를 결과물로 완성해요!</span></span></h1>
-  <div class="band" data-enter>
-    <p class="who" data-step style="--i:0">최민주 · developer</p>
-    <p class="lead" data-step style="--i:1">데스크톱 앱 · 웹 게임 · 자동화 도구. 떠오른 아이디어를 <b>진짜로 돌아가는 결과물</b>로 만들어요. 기획부터 구현, 검증, 배포까지 한 번에 쭉 해요!</p>
-    <nav class="act" aria-label="바로 가기" data-step style="--i:2">
-      <a class="btn" href="#missions">만든 것 보기<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-      <a class="text-link" href="#me">소개</a>
-      <a class="text-link" href="#contact">연락하기</a>
-    </nav>
+<section class="box hero" aria-labelledby="hero-title">
+  <div class="col">
+    <h1 id="hero-title" class="row row--display">아이디어를 <svg class="h-arrow" viewBox="0 0 60 24" aria-hidden="true" focusable="false"><path d="M2 12h52M45 4l9 8-9 8" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>결과물로 완성해요!</h1>
+    <p class="row row--display">최민주 · developer</p>
+    <div class="row row--lead"><p>데스크톱 앱 · 웹 게임 · 자동화 도구. 떠오른 아이디어를 <b>진짜로 돌아가는 결과물</b>로 만들어요. 기획부터 구현, 검증, 배포까지 한 번에 쭉 해요!</p></div>
   </div>
+  <span class="sticker sticker--sign sticker--l s-sign" aria-hidden="true">PRESS START</span>
+  <img class="sticker sticker--pixel sticker--l s-mage" src="projects/assets/stickers/survivor-mage.png" width="16" height="16" alt="">
+  <img class="sticker sticker--pixel sticker--l s-pet" src="projects/assets/desktop-uparupa/axolotl.png" width="32" height="32" alt="">
+  <img class="sticker sticker--line sticker--r s-quokka" src="projects/assets/stickers/rhythm-quokka.svg" width="100" height="100" alt="">
+  <img class="sticker sticker--r s-chair" src="projects/assets/stickers/img3d-chair.webp" width="287" height="439" alt="">
+</section>
 
-  <div class="sheet">
-    <div class="run">
-      <a class="run-t" href="projects/survivor-game.html">던전 서바이버</a>
-      <a class="frames" href="projects/survivor-game.html" tabindex="-1" aria-hidden="true">
-        <video class="frame" src="projects/assets/survivor-game/trailer.mp4" poster="projects/assets/survivor-game/trailer-poster.webp" width="1280" height="720" muted loop playsinline preload="metadata" aria-hidden="true"></video>
-      </a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/desktop-uparupa.html">Desktop Uparupa</a>
-      <a class="frames" href="projects/desktop-uparupa.html" tabindex="-1" aria-hidden="true">
-        <span class="frame frame--pet"><img src="projects/assets/desktop-uparupa/reef-photo.webp" width="1152" height="662" alt="" loading="lazy"><img class="pet" src="projects/assets/desktop-uparupa/axolotl.png" width="32" height="32" alt=""></span>
-      </a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/rhythm-game.html">라이브캔버스</a>
-      <a class="frames" href="projects/rhythm-game.html" tabindex="-1" aria-hidden="true">
-        <img class="frame" src="projects/assets/rhythm-game/card.webp" width="1280" height="720" alt="라이브캔버스 화면" loading="lazy">
-      </a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/omechu.html">오메추</a>
-      <a class="frames" href="projects/omechu.html" tabindex="-1" aria-hidden="true">
-        <img class="frame" src="projects/assets/omechu/card.webp" width="1280" height="720" alt="오메추 화면" loading="lazy">
-      </a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/token-menubar.html">AI 계정 사용량 메뉴바</a>
-      <a class="frames" href="projects/token-menubar.html" tabindex="-1" aria-hidden="true"><img class="frame" src="projects/assets/token-menubar/card.webp" width="1280" height="720" alt="" loading="lazy"></a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/repo-overview.html">GitHub 레포 개요</a>
-      <a class="frames" href="projects/repo-overview.html" tabindex="-1" aria-hidden="true"><img class="frame" src="projects/assets/repo-overview/card.webp" width="1280" height="720" alt="" loading="lazy"></a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/photo2caricature.html">photo2caricature</a>
-      <a class="frames" href="projects/photo2caricature.html" tabindex="-1" aria-hidden="true"><img class="frame" src="projects/assets/photo2caricature/card.webp" width="1280" height="720" alt="" loading="lazy"></a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/img3d.html">img3d</a>
-      <a class="frames" href="projects/img3d.html" tabindex="-1" aria-hidden="true"><img class="frame" src="projects/assets/img3d/card.webp" width="1280" height="720" alt="" loading="lazy"></a>
-    </div>
-    <div class="run">
-      <a class="run-t" href="projects/omo-discord.html">omo 디스코드 봇</a>
-      <a class="frames" href="projects/omo-discord.html" tabindex="-1" aria-hidden="true"><img class="frame" src="projects/assets/omo-discord/card.webp" width="1280" height="720" alt="" loading="lazy"></a>
-    </div>
+<section class="box" id="missions" aria-labelledby="work-title">
+  <div class="col">
+    <div class="title-row"><h2 id="work-title">만든 것</h2><div class="title-row__aside"><span class="pill">SELECT STAGE</span></div></div>
+    <h3 class="row row--label">게임</h3>
+    <ul class="items">
+      <li class="item">
+        <div class="item__num"><span class="item__no">01</span><span class="item__state item__state--live">LIVE</span></div>
+        <div class="item__media">
+          <video class="item__shot" src="projects/assets/survivor-game/trailer.mp4?v=20261022" poster="projects/assets/survivor-game/trailer-poster.webp?v=20261022" width="1280" height="720" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <a class="badge" href="https://cmj1203.github.io/survivor-game/" target="_blank" rel="noopener" aria-describedby="name-01"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z"/></svg>지금 해 보기</a>
+        </div>
+        <div class="item__text">
+          <h4 class="item__name" id="name-01"><a class="item__link" href="projects/survivor-game.html">던전 서바이버</a></h4>
+          <p class="item__tech">web · javascript · canvas</p>
+          <p class="item__desc">몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임이에요. 컴퓨터와 휴대폰에서 할 수 있어요.</p>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item__num"><span class="item__no">02</span><span class="item__state">완성</span></div>
+        <div class="item__media">
+          <span class="item__shot shot-pet"><img src="projects/assets/desktop-uparupa/reef-photo.webp" width="1152" height="662" alt=""><img class="pet" src="projects/assets/desktop-uparupa/axolotl.png" width="32" height="32" alt=""></span>
+        </div>
+        <div class="item__text">
+          <h4 class="item__name"><a class="item__link" href="projects/desktop-uparupa.html">Desktop Uparupa</a></h4>
+          <p class="item__tech">macOS · Windows · electron · react · pixi.js</p>
+          <p class="item__desc">바탕화면 물속에 사는 우파루파를 키우는 macOS · Windows 앱이에요. 먹이를 주고, 같이 놀고, 꾸밀 수 있어요.</p>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item__num"><span class="item__no">03</span><span class="item__state item__state--live">LIVE</span></div>
+        <div class="item__media">
+          <img class="item__shot" src="projects/assets/rhythm-game/card.webp?v=20261022" width="1280" height="720" alt="">
+          <a class="badge" href="https://cmj1203.github.io/rhythm-game/" target="_blank" rel="noopener" aria-describedby="name-03"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z"/></svg>지금 해 보기</a>
+        </div>
+        <div class="item__text">
+          <h4 class="item__name" id="name-03"><a class="item__link" href="projects/rhythm-game.html">라이브캔버스</a></h4>
+          <p class="item__tech">web · typescript · canvas · web audio · vite</p>
+          <p class="item__desc">키 하나로 박자를 맞추면 크레파스 한붓그리기가 완성되는 웹 리듬게임이에요.</p>
+        </div>
+      </li>
+    </ul>
+    <h3 class="row row--label">앱·도구</h3>
+    <ul class="items">
+      <li class="item">
+        <div class="item__num"><span class="item__no">04</span><span class="item__state">완성</span></div>
+        <div class="item__media"><img class="item__shot" src="projects/assets/token-menubar/card.webp" width="1280" height="720" alt="" loading="lazy"></div>
+        <div class="item__text">
+          <h4 class="item__name"><a class="item__link" href="projects/token-menubar.html">AI 계정 사용량 메뉴바</a></h4>
+          <p class="item__tech">macos · swift · swiftui · keychain</p>
+          <p class="item__desc">Claude Code와 Codex 계정마다 사용량이 얼마나 남았는지 메뉴바에서 바로 볼 수 있는 macOS 앱이에요.</p>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item__num"><span class="item__no">05</span><span class="item__state">완성</span></div>
+        <div class="item__media"><img class="item__shot" src="projects/assets/repo-overview/card.webp" width="1280" height="720" alt="" loading="lazy"></div>
+        <div class="item__text">
+          <h4 class="item__name"><a class="item__link" href="projects/repo-overview.html">GitHub 레포 개요</a></h4>
+          <p class="item__tech">chrome extension · manifest v3 · typescript · bun</p>
+          <p class="item__desc">GitHub 저장소의 README와 폴더 구조를 읽고, 어떤 프로젝트인지 한국어로 쉽게 알려 주는 Chrome 확장이에요.</p>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item__num"><span class="item__no">06</span><span class="item__state item__state--live">LIVE</span></div>
+        <div class="item__media">
+          <img class="item__shot" src="projects/assets/omechu/card.webp?v=20261022" width="1280" height="720" alt="" loading="lazy">
+          <a class="badge" href="https://cmj1203.github.io/omechu/" target="_blank" rel="noopener" aria-describedby="name-06"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z"/></svg>지금 해 보기</a>
+        </div>
+        <div class="item__text">
+          <h4 class="item__name" id="name-06"><a class="item__link" href="projects/omechu.html">오메추</a></h4>
+          <p class="item__tech">web · javascript · supabase · openstreetmap</p>
+          <p class="item__desc">오늘 뭐 먹을지 메뉴를 골라 주고, 그 메뉴를 파는 주변 식당까지 찾아 주는 웹사이트예요.</p>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item__num"><span class="item__no">07</span><span class="item__state">만드는 중</span></div>
+        <div class="item__media"><img class="item__shot" src="projects/assets/photo2caricature/card.webp" width="1280" height="720" alt="" loading="lazy"></div>
+        <div class="item__text">
+          <h4 class="item__name"><a class="item__link" href="projects/photo2caricature.html">photo2caricature</a></h4>
+          <p class="item__tech">python · fastapi · playwright · chatgpt</p>
+          <p class="item__desc">인물 사진을 넣고 스타일을 고르면 캐리커처로 그려 주는 도구예요. 다 그린 그림도 말로 더 고칠 수 있어요.</p>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item__num"><span class="item__no">08</span><span class="item__state">만드는 중</span></div>
+        <div class="item__media"><img class="item__shot" src="projects/assets/img3d/card.webp" width="1280" height="720" alt="" loading="lazy"></div>
+        <div class="item__text">
+          <h4 class="item__name"><a class="item__link" href="projects/img3d.html">img3d</a></h4>
+          <p class="item__tech">python · pytorch · gradio · trellis.2 · triposr</p>
+          <p class="item__desc">사진 한 장을 올리면 빙글빙글 돌려 볼 수 있는 3D 모델로 만들어 주는 도구예요. 인물·물건도, 방 같은 공간도 돼요.</p>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item__num"><span class="item__no">09</span><span class="item__state">만드는 중</span></div>
+        <div class="item__media"><img class="item__shot" src="projects/assets/omo-discord/card.webp" width="1280" height="720" alt="" loading="lazy"></div>
+        <div class="item__text">
+          <h4 class="item__name"><a class="item__link" href="projects/omo-discord.html">omo 디스코드 봇</a></h4>
+          <p class="item__tech">discord bot · bun · typescript · discord.js</p>
+          <p class="item__desc">휴대폰 디스코드에서 컴퓨터의 AI 코딩 세션을 보고 일을 시킬 수 있는 봇이에요. 세션마다 스레드로 나뉘어요.</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
-<section class="work" id="missions" aria-labelledby="work-title">
-  <h2 id="work-title" class="sec-title">만든 것</h2>
-  <div class="index">
-    <div class="group" data-enter>
-      <h3 class="group-t" data-step style="--i:0">게임</h3>
-      <ul class="index__list">
-        <li data-step style="--i:1"><a class="index__row" href="projects/survivor-game.html" data-preview="projects/assets/survivor-game/card.webp?v=2">
-          <img class="index__thumb" src="projects/assets/survivor-game/card.webp?v=2" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">던전 서바이버</span><span class="index__state">자세히</span>
-          <span class="index__desc">몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임이에요. 컴퓨터와 휴대폰에서 할 수 있어요.</span></a></li>
-        <li data-step style="--i:2"><a class="index__row" href="projects/desktop-uparupa.html" data-preview="projects/assets/desktop-uparupa/reef-photo.webp" data-pet>
-          <span class="index__thumb index__thumb--pet"><img src="projects/assets/desktop-uparupa/reef-photo.webp" width="1152" height="662" alt="" loading="lazy"><img class="pet" src="projects/assets/desktop-uparupa/axolotl.png" width="32" height="32" alt=""></span>
-          <span class="index__name">Desktop Uparupa</span><span class="index__state">자세히</span>
-          <span class="index__desc">바탕화면 물속에 사는 우파루파를 키우는 macOS · Windows 앱이에요. 먹이를 주고, 같이 놀고, 꾸밀 수 있어요.</span></a></li>
-        <li data-step style="--i:3"><a class="index__row" href="projects/rhythm-game.html" data-preview="projects/assets/rhythm-game/card.webp">
-          <img class="index__thumb" src="projects/assets/rhythm-game/card.webp" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">라이브캔버스</span><span class="index__state">자세히</span>
-          <span class="index__desc">키 하나로 박자를 맞추면 크레파스 한붓그리기가 완성되는 웹 리듬게임이에요.</span></a></li>
-      </ul>
-    </div>
-    <div class="group" data-enter>
-      <h3 class="group-t" data-step style="--i:0">앱·도구</h3>
-      <ul class="index__list">
-        <li data-step style="--i:1"><a class="index__row" href="projects/token-menubar.html" data-preview="projects/assets/token-menubar/card.webp">
-          <img class="index__thumb" src="projects/assets/token-menubar/card.webp" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">AI 계정 사용량 메뉴바</span><span class="index__state">자세히</span>
-          <span class="index__desc">Claude Code와 Codex 계정마다 사용량이 얼마나 남았는지 메뉴바에서 바로 볼 수 있는 macOS 앱이에요.</span></a></li>
-        <li data-step style="--i:2"><a class="index__row" href="projects/repo-overview.html" data-preview="projects/assets/repo-overview/card.webp">
-          <img class="index__thumb" src="projects/assets/repo-overview/card.webp" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">GitHub 레포 개요</span><span class="index__state">자세히</span>
-          <span class="index__desc">GitHub 저장소의 README와 폴더 구조를 읽고, 어떤 프로젝트인지 한국어로 쉽게 알려 주는 Chrome 확장이에요.</span></a></li>
-        <li data-step style="--i:3"><a class="index__row" href="projects/omechu.html" data-preview="projects/assets/omechu/card.webp">
-          <img class="index__thumb" src="projects/assets/omechu/card.webp" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">오메추</span><span class="index__state">자세히</span>
-          <span class="index__desc">오늘 뭐 먹을지 메뉴를 골라 주고, 그 메뉴를 파는 주변 식당까지 찾아 주는 웹사이트예요.</span></a></li>
-        <li data-step style="--i:4"><a class="index__row" href="projects/photo2caricature.html" data-preview="projects/assets/photo2caricature/card.webp">
-          <img class="index__thumb" src="projects/assets/photo2caricature/card.webp" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">photo2caricature</span><span class="index__state">자세히</span>
-          <span class="index__desc">인물 사진을 넣고 스타일을 고르면 캐리커처로 그려 주는 도구예요. 다 그린 그림도 말로 더 고칠 수 있어요.</span></a></li>
-        <li data-step style="--i:5"><a class="index__row" href="projects/img3d.html" data-preview="projects/assets/img3d/card.webp">
-          <img class="index__thumb" src="projects/assets/img3d/card.webp" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">img3d</span><span class="index__state">자세히</span>
-          <span class="index__desc">사진 한 장을 올리면 빙글빙글 돌려 볼 수 있는 3D 모델로 만들어 주는 도구예요. 인물·물건도, 방 같은 공간도 돼요.</span></a></li>
-        <li data-step style="--i:6"><a class="index__row" href="projects/omo-discord.html" data-preview="projects/assets/omo-discord/card.webp">
-          <img class="index__thumb" src="projects/assets/omo-discord/card.webp" width="1280" height="720" alt="" loading="lazy">
-          <span class="index__name">omo 디스코드 봇</span><span class="index__state">자세히</span>
-          <span class="index__desc">휴대폰 디스코드에서 컴퓨터의 AI 코딩 세션을 보고 일을 시킬 수 있는 봇이에요. 세션마다 스레드로 나뉘어요.</span></a></li>
-      </ul>
-    </div>
-    <div class="index__frame" aria-hidden="true"><img src="projects/assets/survivor-game/card.webp?v=2" width="1280" height="720" alt="" loading="lazy"><img class="pet" src="projects/assets/desktop-uparupa/axolotl.png" width="32" height="32" alt=""></div>
+<section class="box" id="me" aria-labelledby="me-title">
+  <div class="col">
+    <div class="title-row"><h2 id="me-title">소개</h2></div>
+    <div class="statement"><p>안녕하세요, 최민주예요! 데스크톱 앱, 웹 게임, 자동화 도구를 만들어요. <b>작게 시작해서 돌아가는 결과물까지 완성</b>하고, 만든 건 누구나 볼 수 있게 올려 둬요!</p></div>
   </div>
-</section>
-
-<section class="about" id="me" aria-labelledby="me-title" data-enter>
-  <h2 id="me-title" class="sec-title" data-step style="--i:0">소개</h2>
-  <p class="statement" data-step style="--i:1">안녕하세요, 최민주예요! 데스크톱 앱, 웹 게임, 자동화 도구를 만들어요. <b>작게 시작해서 돌아가는 결과물까지 완성</b>하고, 만든 건 누구나 볼 수 있게 올려 둬요!</p>
+  <img class="sticker sticker--r s-teapot" src="projects/assets/stickers/img3d-teapot.webp" width="422" height="333" alt="" loading="lazy">
 </section>
 </main>
 
-<footer class="foot" id="contact">
-  <div class="tile tile--mail">
-    <h2>연락</h2>
-    <a class="big-link" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
-  <a class="tile tile--gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">
-    <span class="big-link">GITHUB</span>
-    <svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 17L17 5M8 5h9v9" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-  </a>
-  <div class="tile tile--copy"><p class="note">© 2026 최민주</p></div>
+</div>
+
+<footer class="box site-footer" id="contact">
+  <div class="col">
+    <div class="title-row"><h2 id="contact-title">연락</h2></div>
+    <div class="contact">
+      <a class="contact__cell contact__mail" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+      <a class="contact__cell contact__gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">GITHUB<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></a>
+      <p class="contact__cell contact__copy">© 2026 최민주</p>
+    </div>
+  </div>
 </footer>
+</div>
+
+<nav class="dock" aria-label="바로 가기">
+  <a class="dock__btn" href="#missions"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 2.5h4v4h-4zM9.5 2.5h4v4h-4zM2.5 9.5h4v4h-4zM9.5 9.5h4v4h-4z"/></svg></span>만든 것 보기</a>
+  <a class="dock__btn" href="#contact"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h12v9H2zM2.5 4l5.5 4.5L13.5 4"/></svg></span>연락하기</a>
+</nav>
 </body>
 </html>

@@ -1,90 +1,33 @@
-.hero { padding: 48px var(--margin) 0; }
-.hero-title {
-  font-size: var(--step-display); line-height: 1.02; letter-spacing: -0.035em; font-weight: 500;
-}
+/* 메인에만 있는 것: 첫 줄 화살표, Uparupa 그림 칸, 소개 문장, 스티커 자리. 공통 부품과 토큰은 site.css (DESIGN.md D-50~) */
+.h-arrow { display: inline-block; width: 1.6em; height: 0.62em; margin-right: 0.24em; vertical-align: 0.02em; }
 
-.band {
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter);
-  margin-top: 40px; align-items: start;
-}
-.band .who { grid-column: 1 / span 3; color: var(--muted); padding-top: 4px; }
-.band .lead { grid-column: 4 / span 6; font-size: var(--step-head); line-height: 1.35; letter-spacing: -0.015em; text-wrap: pretty; }
-.band .lead b { font-weight: 600; }
-.band .act { grid-column: 10 / span 3; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.shot-pet { position: relative; }
+.shot-pet > img:first-child { width: 100%; height: 100%; object-fit: cover; }
+.shot-pet .pet { position: absolute; left: 55%; top: 28%; width: 20%; height: auto; image-rendering: pixelated; }
 
-.sheet { display: flex; flex-wrap: wrap; gap: 28px 20px; margin-top: 64px; }
-.run { position: relative; transition: opacity var(--t-hover) ease; }
-.run-t { display: block; font-size: var(--step-small); margin-bottom: 8px; text-decoration: none; }
-.frames { display: flex; flex-wrap: wrap; gap: 8px; }
-.frame { height: 160px; width: auto; background: var(--surface); }
-.frame--pet { position: relative; display: block; aspect-ratio: 1152 / 662; }
-.frame--pet > img:first-child { width: 100%; height: 100%; object-fit: cover; }
-.pet { position: absolute; left: 55%; top: 28%; width: 20%; height: auto; image-rendering: pixelated; }
-.js .frame { opacity: 0; transform: scale(0.98); transition: opacity 480ms var(--ease-out), transform 480ms var(--ease-out); transition-delay: var(--d, 0ms); }
-.js .frame.in { opacity: 1; transform: none; }
-@media (hover: hover) and (pointer: fine) {
-  .sheet:has(.run:hover) .run:not(:hover) { opacity: 0.35; }
-}
+.statement { padding: var(--sp-10) var(--pad-cell) var(--sp-12); font-size: var(--fs-statement); font-weight: 500; line-height: 1.65; }
+.statement > p { max-width: 34em; }
 
-.sec-title { font-size: var(--step-head); line-height: 1.1; letter-spacing: -0.02em; }
-.work { padding: var(--section) var(--margin) 0; }
-.work .sec-title { margin-bottom: 40px; }
-.index { position: relative; }
-.group + .group { margin-top: 64px; }
-.group-t { font-size: var(--step-body); font-weight: 600; color: var(--muted); margin-bottom: 12px; }
-.index__row {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--gutter); row-gap: 6px;
-  padding: 16px 0; color: inherit; text-decoration: none;
-  transition: opacity var(--t-hover) ease;
-}
-.index__name { font-size: var(--step-head); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
-.index__state { font-size: var(--step-small); color: var(--muted); align-self: center; }
-a.index__row .index__state { color: var(--ink); }
-.index__desc { grid-column: 1 / -1; color: var(--muted); max-width: 38em; }
-.index__thumb { grid-column: 1 / -1; order: -1; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 8px; }
-.index__thumb--pet { position: relative; display: block; }
-.index__thumb--pet > img:first-child { width: 100%; height: 100%; object-fit: cover; }
-.index__frame { display: none; }
-@media (hover: hover) and (pointer: fine) and (min-width: 900px) {
-  .index { display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); column-gap: 64px; align-items: start; }
-  .group { grid-column: 1; }
-  .index__thumb { display: none; }
-  .index:has(.index__row:hover, a.index__row:focus-visible) .index__row:not(:hover, :focus-visible) { opacity: 0.4; }
-  .index__frame {
-    display: block; grid-column: 2; grid-row: 1 / span 2; position: sticky; top: 96px;
-    aspect-ratio: 4 / 3; background: var(--surface);
-  }
-  .index__frame img:first-child { width: 100%; height: 100%; object-fit: cover; }
-  .index__frame .pet { display: none; }
-  .index__frame.has-pet .pet { display: block; }
-}
+.s-sign { --w: 212px; --y: 20px; --r: 9deg; --over: 0.42; --i: 0; }
+.s-mage { --w: 96px; --y: 100px; --over: -0.55; --i: 1; }
+.s-pet { --w: 128px; --b: -22px; --over: 0.42; --i: 2; }
+.s-quokka { --w: 150px; --y: calc(var(--fs-display) * 1.3 + var(--sp-5) * 2 - var(--w) * 0.87); --over: 0.34; --i: 3; }
+.s-chair { --w: 124px; --b: -4px; --over: 0.22; --i: 4; }
+.s-teapot { --w: 168px; --b: -30px; --r: -6deg; --over: 0.22; }
 
-.about {
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter);
-  margin-top: var(--section); padding: 120px var(--margin) 136px; align-items: start;
-  background: var(--surface);
+@media (max-width: 1099px) {
+  .s-sign { --w: 150px; --y: -30px; --over: 0.5; }
+  .s-mage { --w: 64px; --y: 104px; --over: 0.25; }
+  .s-pet { --w: 80px; --b: -20px; --over: 0.4; }
+  .s-quokka { --w: 100px; --over: 0.45; }
+  .s-chair { --w: 80px; --over: 0.3; }
+  .s-teapot { --w: 112px; --over: 0.4; }
 }
-.about .sec-title { grid-column: 1 / span 3; }
-.statement { grid-column: 4 / span 8; font-size: var(--step-statement); line-height: 1.3; letter-spacing: -0.02em; }
-.statement b { font-weight: 600; }
-
-@media (max-width: 900px) {
-  .band .who { grid-column: 1 / -1; }
-  .band .lead { grid-column: 1 / -1; }
-  .band .act { grid-column: 1 / -1; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 20px; }
-  .about .sec-title, .statement { grid-column: 1 / -1; }
-}
-@media (max-width: 720px) {
-  .hero { padding-top: 32px; }
-  .hero-title { font-size: 9.6vw; }
-  .band { margin-top: 32px; }
-  .sheet { margin-top: 64px; gap: 24px 12px; }
-  .frames { gap: 6px; }
-  .frame { height: 92px; }
-  .work .sec-title { margin-bottom: 28px; }
-  .group + .group { margin-top: 48px; }
-  .index__row { padding: 20px 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .js .frame { transform: none; transition: opacity 300ms ease; transition-delay: 0ms; }
+@media (max-width: 719px) {
+  .s-sign { --w: 120px; --y: auto; --b: calc(100% - 12px); --r: -5deg; --over: 1; --x: 2px; }
+  .s-mage { display: none; }
+  .s-pet { --w: 56px; --b: calc(100% - 4px); --over: 1; --x: 140px; }
+  .s-chair { --w: 44px; --b: calc(100% - 3px); --over: 1; --x: 92px; }
+  .s-quokka { --w: 70px; --y: auto; --b: calc(100% - var(--w) * 0.13); --over: 1; --x: 4px; }
+  .s-teapot { --w: 84px; --b: calc(100% - 4px); --r: -4deg; --over: 1; --x: 8px; }
 }

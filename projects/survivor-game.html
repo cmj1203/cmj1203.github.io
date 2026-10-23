@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>던전 서바이버 · 최민주</title>
   <meta name="description" content="몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임 던전 서바이버예요.">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
   <meta property="og:title" content="던전 서바이버 · 최민주">
   <meta property="og:description" content="몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임이에요.">
@@ -14,32 +14,31 @@
   <meta property="og:locale" content="ko_KR">
   <link rel="canonical" href="https://cmj1203.github.io/projects/survivor-game.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261020">
-  <link rel="stylesheet" href="survivor-game.css?v=20261020">
+  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="survivor-game.css?v=20261023">
 </head>
 
 <body>
 <a class="skip" href="#features">본문으로 건너뛰기</a>
-<header class="bar"><a class="mark" href="../">&lt;minju/&gt;</a><nav aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#me">소개</a><a href="../#contact">연락</a></nav></header>
+<header class="site-header">
+  <div class="site-header__in"><a class="site-header__mark" href="../">&lt;minju/&gt;</a><nav class="site-nav" aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#me">소개</a><a href="../#contact">연락</a></nav></div>
+</header>
 
+<div class="frame">
 <main>
-<section class="hero" aria-labelledby="title">
-  <h1 id="title" class="title"><span class="mask"><span class="rise">DUNGEON SURVIVOR</span></span></h1>
-  <div class="band" data-enter>
-    <div class="who" data-step style="--i:0">
-      <p>STAGE 01 · 게임</p>
+<section class="box hero" aria-labelledby="title">
+  <div class="col">
+    <h1 id="title" class="row row--display">DUNGEON SURVIVOR</h1>
+    <p class="row row--meta">STAGE 01 · 게임 <span class="pill">LIVE</span></p>
+    <div class="row row--lead"><p>몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임 <strong>던전 서바이버</strong>예요. 컴퓨터와 휴대폰에서 플레이할 수 있어요. <strong>20분을 버티고 마지막 보스를 잡으면</strong> 클리어예요.</p></div>
+    <div class="tags-row">
       <ul class="tags"><li>web</li><li>javascript</li><li>canvas</li></ul>
+      <a class="tags-row__link" href="https://github.com/cmj1203/survivor-game" target="_blank" rel="noopener">코드 보기<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></a>
     </div>
-    <p class="lead" data-step style="--i:1">몰려오는 몬스터 사이에서 살아남는 뱀서라이크 웹 게임 <strong>던전 서바이버</strong>예요. 컴퓨터와 휴대폰에서 플레이할 수 있어요. <strong>20분을 버티고 마지막 보스를 잡으면</strong> 클리어예요.</p>
-    <nav class="act" aria-label="바로 가기" data-step style="--i:2">
-      <a class="btn" href="https://cmj1203.github.io/survivor-game/" target="_blank" rel="noopener">지금 해 보기<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-      <a class="text-link" href="https://github.com/cmj1203/survivor-game" target="_blank" rel="noopener">코드 보기</a>
-    </nav>
-    <figure class="screen" data-step style="--i:3">
-      <video autoplay muted loop playsinline preload="metadata" poster="assets/survivor-game/trailer-poster.webp" width="1280" height="720" aria-label="레벨업, 진화 무기, 보물 상자, 캐릭터별 전투, 보스전을 보여 주는 던전 서바이버 소개 영상">
+    <figure class="hero-media">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/survivor-game/trailer-poster.webp" width="1280" height="720" aria-label="던전, 얼음 동굴, 용암 굴에서 견습 마법사가 몬스터 떼와 싸우는 던전 서바이버 소개 영상">
         <source src="assets/survivor-game/trailer.mp4" type="video/mp4">
       </video>
       <button class="sound" type="button" aria-label="소리 켜기" aria-pressed="false">
@@ -51,103 +50,124 @@
         <span>소리 켜기</span>
       </button>
     </figure>
+    <ul class="stats" aria-label="들어 있는 것">
+      <li><b>23</b><span>무기</span></li>
+      <li><b>20</b><span>무기 진화</span></li>
+      <li><b>15</b><span>아이템</span></li>
+      <li><b>5</b><span>캐릭터</span></li>
+    </ul>
   </div>
-  <ul class="stats" aria-label="들어 있는 것" data-enter>
-    <li data-step style="--i:0"><b>23</b><span>무기</span></li>
-    <li data-step style="--i:1"><b>20</b><span>무기 진화</span></li>
-    <li data-step style="--i:2"><b>16</b><span>아이템</span></li>
-    <li data-step style="--i:3"><b>4</b><span>캐릭터</span></li>
-  </ul>
+  <img class="sticker sticker--pixel sticker--l s-mage" src="assets/stickers/survivor-mage.png" width="16" height="16" alt="">
+  <img class="sticker sticker--pixel sticker--r s-ghost" src="assets/stickers/survivor-ghost.png" width="16" height="16" alt="">
+  <img class="sticker sticker--pixel sticker--l s-coin" src="assets/stickers/survivor-coin.png" width="16" height="16" alt="">
 </section>
 
-<section class="run" id="features" aria-labelledby="run-title">
-  <div data-enter><h2 id="run-title" class="sec-title" data-step style="--i:0">한 판 버티기</h2></div>
-  <article class="feat" data-enter>
-    <img data-step style="--i:2" src="assets/survivor-game/new-mobile.webp" alt="휴대폰 가로 화면에서 터치 조이스틱으로 기사를 움직이는 플레이 화면" width="1280" height="720" loading="lazy">
-    <div class="feat-text cap"><h3 data-step style="--i:0">피하기만 하면 돼요</h3><p data-step style="--i:1">WASD나 방향키로, 휴대폰에선 화면을 끌어서 움직여요.</p></div>
-  </article>
-  <article class="feat" data-enter>
-    <img data-step style="--i:2" src="assets/survivor-game/new-levelup.webp" alt="Lv.3 도달 후 마법봉 강화, 빠른 공격, 성풍, 회전 도끼 카드 중 하나를 고르는 레벨 업 화면" width="1280" height="720" loading="lazy">
-    <div class="feat-text cap"><h3 data-step style="--i:0">레벨업 카드 고르기</h3><p data-step style="--i:1">몬스터가 떨어뜨린 초록 구슬을 모으면 레벨이 올라요. 카드 중 하나를 골라 무기나 아이템을 받고, 한 번은 다시 뽑을 수도 있어요!</p></div>
-  </article>
-  <article class="feat" data-enter>
-    <img data-step style="--i:2" src="assets/survivor-game/new-weapons.webp" alt="단검, 마법봉, 회전 도끼, 번개 오라 같은 무기 설명 목록" width="1280" height="720" loading="lazy">
-    <div class="feat-text cap"><h3 data-step style="--i:0">무기 23가지</h3><p data-step style="--i:1">단검, 회전 도끼, 번개 오라, 던지는 망치까지 무기가 23가지예요. 무기마다 공격 모양이 달라요!</p></div>
-  </article>
-  <article class="feat" data-enter>
-    <img data-step style="--i:2" src="assets/survivor-game/new-combo.webp" alt="무기와 짝 아이템을 합쳐 피의 검, 성스러운 봉 같은 진화 무기가 되는 조합표" width="1280" height="720" loading="lazy">
-    <div class="feat-text cap"><h3 data-step style="--i:0">무기 진화 20가지</h3><p data-step style="--i:1">무기와 짝 아이템을 최대 레벨로 올리고 보물 상자를 열면 더 센 무기로 진화해요. 조합표는 ? 버튼으로 보고, 만렙 상자 룰렛에서도 받을 보상 이름을 확인해요!</p></div>
-  </article>
-  <article class="feat" data-enter>
-    <img data-step style="--i:2" src="assets/survivor-game/new-items.webp" alt="힘, 갑옷, 튼튼함, 회복 같은 아이템 설명 목록" width="1280" height="720" loading="lazy">
-    <div class="feat-text cap"><h3 data-step style="--i:0">아이템 16가지</h3><p data-step style="--i:1">힘, 갑옷, 촛대, 클로버처럼 캐릭터를 키워 주는 아이템이 16가지 있어요.</p></div>
-  </article>
-  <article class="feat" data-enter>
-    <img data-step style="--i:2" src="assets/survivor-game/new-intro.webp" alt="이동, 레벨 업, 보물 상자, 클리어, 바닥 아이템, 도움말이 적힌 게임 설명 화면" width="1280" height="720" loading="lazy">
-    <div class="feat-text cap"><h3 data-step style="--i:0">20분 버티면 보스</h3><p data-step style="--i:1">20분을 버티면 마지막 보스 사신 마법사가 나타나요. 잡으면 클리어! 지난 시간·처치 수는 화면에서 보고, 소리는 버튼이나 M 키로 끌 수 있어요!</p></div>
-  </article>
+<section class="box" id="features" aria-labelledby="run-title">
+  <div class="col">
+    <div class="title-row"><h2 id="run-title">한 판 버티기</h2></div>
+    <div class="features">
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-mobile.webp" alt="휴대폰 가로 화면에서 터치 조이스틱으로 견습 마법사를 움직이는 플레이 화면" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>피하기만 하면 돼요</h3><p>WASD나 방향키로, 휴대폰에선 화면을 끌어서 움직여요.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-levelup.webp" alt="Lv.21 도달 후 팔보호대, 회복, 화염병, 단검 강화 카드 중 하나를 고르는 레벨 업 화면, 아래에 다시 뽑기와 건너뛰기 버튼" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>레벨업 카드 고르기</h3><p>몬스터가 떨어뜨린 경험치 구슬을 모으면 레벨이 올라요. 카드 중 하나를 골라 무기나 아이템을 받고, 카드에는 진화 짝도 표시돼요. 다시 뽑기와 건너뛰기는 상점에서 사요.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-weapons.webp" alt="단검, 마법봉, 회전 도끼, 번개 오라 같은 무기 설명 목록" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>무기 23가지</h3><p>단검, 회전 도끼, 번개 오라, 던지는 망치까지 무기가 23가지예요. 무기마다 공격 모양이 달라요.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-combo.webp" alt="무기와 짝 아이템을 합쳐 피의 검, 성스러운 봉 같은 진화 무기가 되는 조합표" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>무기 진화 20가지</h3><p>무기와 짝 아이템을 최대 레벨로 올리고 보물 상자를 열면 더 센 무기로 진화해요. 조합표는 ? 버튼으로 봐요. 상자를 열면 보상 구슬이 돌다가 멈추고, 더 강화할 게 없으면 금화를 받아요.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-items.webp" alt="힘, 갑옷, 튼튼함, 회복 같은 아이템 설명 목록" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>아이템 15가지</h3><p>힘, 갑옷, 촛대, 클로버처럼 캐릭터를 키워 주는 아이템이 15가지 있어요.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-intro.webp" alt="이동, 레벨 업, 보물 상자, 바닥 아이템, 도움말이 적힌 게임 설명 화면" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>20분 버티면 보스</h3><p>20분을 버티면 마지막 보스가 나타나요. 잡으면 클리어예요. 지난 시간·처치 수는 화면에서 보고, 소리는 버튼이나 M 키로 끌 수 있어요.</p></div>
+      </article>
+      <article class="feature feature--wide">
+        <figure class="feature__media"><img src="assets/survivor-game/new-boss.webp" alt="용암 굴에서 보스 악마와 싸우는 플레이 화면, 위에 보스 체력 바" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>스테이지마다 다른 적과 보스</h3><p>얼음 동굴, 용암 굴, 저주받은 어둠에는 그곳에만 나오는 몬스터가 있어요. 보스도 던전은 사신 마법사, 얼음 동굴은 예티, 용암 굴은 악마, 저주받은 어둠은 죽음의 기사예요.</p></div>
+      </article>
+    </div>
+  </div>
+  <img class="sticker sticker--pixel sticker--r s-knight" src="assets/stickers/survivor-deathknight.png" width="16" height="16" alt="" loading="lazy">
+  <img class="sticker sticker--pixel sticker--r s-yeti" src="assets/stickers/survivor-yeti.png" width="16" height="16" alt="" loading="lazy">
+  <img class="sticker sticker--pixel sticker--r s-demon" src="assets/stickers/survivor-demon.png" width="16" height="16" alt="" loading="lazy">
 </section>
 
-<section class="meta" aria-labelledby="meta-title">
-  <div data-enter><h2 id="meta-title" class="sec-title" data-step style="--i:0">판마다 더 강해지기</h2></div>
-  <article class="wide" data-enter>
-    <img data-step style="--i:2" src="assets/survivor-game/new-select.webp" alt="기사, 사냥꾼, 광전사, 성녀 캐릭터와 난이도를 고르는 화면" width="1280" height="720" loading="lazy">
-    <div class="feat-text cap"><h3 data-step style="--i:0">캐릭터 4명, 난이도 4단계</h3><p data-step style="--i:1">기사로 시작하고 퀘스트를 깨면 사냥꾼, 광전사, 성녀가 풀려요. 캐릭터마다 시작 무기와 규칙이 달라요. 보통을 클리어하면 어려움, 매우 어려움, 지옥이 차례로 열려요. 난이도마다 얼음 동굴, 용암 굴, 저주받은 어둠으로 배경이 바뀌고 적의 모습과 특성도 달라져요!</p></div>
-  </article>
-  <div class="pair">
-    <article class="half" data-enter>
-      <img data-step style="--i:2" src="assets/survivor-game/new-shop.webp" alt="공격력, 최대 체력, 이동 속도, 자석 범위, 경험치, 금화 획득을 금화로 올리는 상점 화면" width="1280" height="720" loading="lazy">
-      <div class="feat-text cap"><h3 data-step style="--i:0">금화 상점</h3><p data-step style="--i:1">판이 끝나면 죽어도 금화를 받아요. 상점에서 공격력이나 최대 체력 같은 능력을 계속 올려 두고, 언제든 공짜로 환불해요!</p></div>
-    </article>
-    <article class="half" data-enter>
-      <img data-step style="--i:2" src="assets/survivor-game/new-quests.webp" alt="첫 걸음, 성장, 5분 버티기 같은 퀘스트와 보상 목록" width="1280" height="720" loading="lazy">
-      <div class="feat-text cap"><h3 data-step style="--i:0">퀘스트 35개</h3><p data-step style="--i:1">1분 버티기, 레벨 10 도달 같은 퀘스트를 깨면 새 무기와 캐릭터가 풀려요. 캐릭터별 클리어나 지옥 난이도 클리어, 얼음 동굴에서 10분 버티기 같은 퀘스트 22개는 금화를 줘요. 죽은 판에서도 진행돼요!</p></div>
-    </article>
+<section class="box" aria-labelledby="meta-title">
+  <div class="col">
+    <div class="title-row"><h2 id="meta-title">판마다 더 강해지기</h2></div>
+    <div class="features">
+      <article class="feature feature--wide">
+        <figure class="feature__media"><img src="assets/survivor-game/new-select.webp" alt="견습 마법사, 사냥꾼, 광전사, 성녀, 무기상 캐릭터와 난이도를 고르는 화면" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>캐릭터 5명, 난이도 4단계</h3><p>견습 마법사로 시작하고 퀘스트를 깬 뒤 금화를 내면 사냥꾼, 광전사, 성녀, 시작 무기를 직접 고르는 무기상이 풀려요. 캐릭터마다 시작 무기와 규칙이 달라요. 보통을 클리어하면 어려움, 매우 어려움, 지옥이 차례로 열려요. 난이도마다 얼음 동굴, 용암 굴, 저주받은 어둠으로 배경과 몬스터가 바뀌어요.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-shop.webp" alt="공격력, 최대 체력, 이동 속도, 자석 범위, 경험치, 행운을 금화로 올리는 상점 화면" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>금화 상점</h3><p>판이 끝나면 죽어도 금화를 받아요. 상점에서 공격력이나 최대 체력 같은 능력을 계속 올려 두고, 다시 뽑기·건너뛰기·부활·1.5배속도 사요. 저주를 올리면 적이 세지는 대신 금화를 더 받고, 언제든 공짜로 환불해요.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/survivor-game/new-quests.webp" alt="재앙, 보물 왕, 진화의 대가 같은 퀘스트와 진행 막대, 보상 목록" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>퀘스트 55개</h3><p>2분 버티기, 레벨 15 도달 같은 퀘스트를 깨면 새 무기와 캐릭터, 상점 항목이 풀려요. 캐릭터별 클리어나 지옥 난이도 클리어, 얼음 동굴에서 15분 버티기 같은 퀘스트 36개는 금화를 줘요. 죽은 판에서도 진행돼요.</p></div>
+      </article>
+    </div>
   </div>
+  <img class="sticker sticker--pixel sticker--l s-chest" src="assets/stickers/survivor-chest.png" width="16" height="16" alt="" loading="lazy">
 </section>
 
-<section class="facts" aria-labelledby="facts-title" data-enter>
-  <div class="facts-text">
-    <h2 id="facts-title" class="sec-title" data-step style="--i:0">이렇게 <span>만들었어요</span></h2>
-    <p data-step style="--i:1">처음 만든 게임이에요. 무기 5가지로 시작해서 몬스터, 무기 진화, 보스를 하나씩 더했어요. 10월 6일에는 금화 상점, 퀘스트, 캐릭터, 난이도, 이어 하기를 더해서 여러 판 할수록 강해지게 했어요. 10월 7일에는 지난 시간·처치 수 표시, 따라오는 터치 조이스틱, 배경 음악·효과음과 소리 끄기를 더했어요. 10월 9일에는 난이도마다 다른 배경과 적 특성을 더하고 맵도 1.5배로 넓혔어요!</p>
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었어요</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>처음 만든 게임이에요. 무기 5가지로 시작해서 몬스터, 무기 진화, 보스를 하나씩 더했어요. 10월 6일에는 금화 상점, 퀘스트, 캐릭터, 난이도, 이어 하기를 더해서 여러 판 할수록 강해지게 했어요. 10월 7일에는 지난 시간·처치 수 표시, 따라오는 터치 조이스틱, 배경 음악·효과음과 소리 끄기를 더했어요. 10월 9일에는 난이도마다 다른 배경과 적 특성을 더하고 맵도 1.5배로 넓혔어요. 10월 12일부터는 주인공을 견습 마법사로 바꾸고 상점 항목과 퀘스트를 늘렸어요. 10월 15일에는 상자 창을 새로 만들고, 이어 하기가 적과 상자까지 되살리게 하고, 1.5배속을 더했어요. 10월 16일부터 21일까지는 얼음 동굴·용암 굴·저주받은 어둠마다 전용 몬스터와 보스(예티·악마·죽음의 기사)를 만들고 맵을 3배로 넓혔어요.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>온라인 공개 중</dd></div>
+        <div><dt>period</dt><dd>2026.09.17 ~ 2026.10.21</dd></div>
+        <div><dt>play</dt><dd>브라우저 (컴퓨터·휴대폰) · 키보드·터치 조이스틱</dd></div>
+        <div><dt>built with</dt><dd>JavaScript · HTML5 Canvas</dd></div>
+        <div><dt>contents</dt><dd>무기 23가지 · 진화 20가지 · 아이템 15가지 · 캐릭터 5명 · 퀘스트 55개</dd></div>
+        <div><dt>goal</dt><dd>20분 버티고 마지막 보스 잡기</dd></div>
+      </dl>
+    </div>
   </div>
-  <dl data-step style="--i:2">
-    <div><dt>status</dt><dd>온라인 공개 중</dd></div>
-    <div><dt>period</dt><dd>2026.09.17 ~ 2026.10.09</dd></div>
-    <div><dt>play</dt><dd>브라우저 (컴퓨터·휴대폰) · 키보드·터치 조이스틱</dd></div>
-    <div><dt>built with</dt><dd>JavaScript · HTML5 Canvas</dd></div>
-    <div><dt>contents</dt><dd>무기 23가지 · 진화 20가지 · 아이템 16가지 · 캐릭터 4명 · 퀘스트 35개</dd></div>
-    <div><dt>goal</dt><dd>20분 버티고 마지막 보스 잡기</dd></div>
-  </dl>
 </section>
 </main>
 
-<footer class="foot" id="contact">
-  <div class="tile tile--mail">
-    <h2>연락</h2>
-    <a class="big-link" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
-  <a class="tile tile--gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">
-    <span class="big-link">GITHUB</span>
-    <svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 17L17 5M8 5h9v9" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-  </a>
-  <div class="tile tile--copy"><a class="back" href="../#missions">작업 목록으로</a><p class="note">© 2026 최민주</p></div>
+</div>
+
+<footer class="box site-footer" id="contact">
+  <div class="col">
+    <div class="title-row"><h2>연락</h2></div>
+    <div class="contact">
+      <a class="contact__cell contact__mail" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+      <a class="contact__cell contact__gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">GITHUB<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></a>
+      <p class="contact__cell contact__copy">© 2026 최민주</p>
+    </div>
+  </div>
 </footer>
+</div>
+
+<nav class="dock" aria-label="바로 가기">
+  <a class="dock__btn" href="https://cmj1203.github.io/survivor-game/" target="_blank" rel="noopener"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z"/></svg></span>지금 해 보기</a>
+  <a class="dock__btn" href="../#missions"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8h-11M6.5 4l-4 4 4 4"/></svg></span>작업 목록으로</a>
+</nav>
 
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-
-  const enterOnce = (targets, onEnter) => {
-    if (!('IntersectionObserver' in window)) { targets.forEach(onEnter); return; }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { onEnter(e.target); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
-    targets.forEach((t) => { io.observe(t); });
-  };
-  enterOnce(document.querySelectorAll('[data-enter]'), (el) => { el.classList.add('in'); });
-
-  const trailer = document.querySelector('.screen video');
+  const trailer = document.querySelector('.hero-media video');
   const sound = document.querySelector('.sound');
   if (!trailer || !sound) return;
   const label = sound.querySelector('span');

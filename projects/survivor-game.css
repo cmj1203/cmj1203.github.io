@@ -1,70 +1,27 @@
-/* 던전 서바이버 설명 페이지의 구성만 둔다. 색·글자 크기·간격·움직임 토큰과 머리줄(.bar)·단추(.btn)·바닥(.foot)·들어오기([data-enter])·구역 제목(.sec-title)·숫자(.stats)·그림 설명(.cap)·이렇게 만들었어요(.facts)는 ../site.css. DESIGN.md D-47 */
-body { --accent: #ffcf3d; }
+/* 던전 서바이버 설명 페이지에만 있는 것: 스티커 자리. 틀과 부품은 ../site.css (DESIGN.md D-50~) */
+.s-mage { --w: 128px; --y: 36px; --over: 0.3; --i: 0; }
+.s-ghost { --w: 96px; --y: -30px; --over: 0.35; --i: 1; }
+.s-coin { --w: 64px; --b: 210px; --over: 0.25; --i: 2; }
+.s-knight { --w: 96px; --b: 176px; --over: -0.5; }
+.s-yeti { --w: 96px; --b: 96px; --over: 0.12; }
+.s-demon { --w: 96px; --b: 16px; --over: -0.45; }
+.s-chest { --w: 96px; --y: 132px; --r: -6deg; --over: 0.15; }
 
-.hero { padding: 48px var(--margin) 0; }
-.title { font-size: var(--step-display); line-height: 1.02; letter-spacing: -0.035em; font-weight: 500; }
-
-.band {
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter);
-  margin-top: 40px; align-items: start;
+@media (max-width: 1099px) {
+  .s-mage { --w: 80px; --y: 28px; --over: 0.35; }
+  .s-ghost { --w: 64px; --y: -24px; --over: 0.4; }
+  .s-coin { --w: 48px; --over: 0.3; }
+  .s-knight { --w: 56px; --b: 128px; --over: 0.1; }
+  .s-yeti { --w: 56px; --b: 72px; --over: 0.1; }
+  .s-demon { --w: 56px; --b: 16px; --over: 0.1; }
+  .s-chest { --w: 64px; --y: 96px; --over: 0.25; }
 }
-.who { grid-column: 1 / span 3; color: var(--muted); padding-top: 4px; }
-.tags { display: flex; flex-wrap: wrap; gap: 0 12px; margin-top: 8px; font-size: var(--step-small); }
-.lead { grid-column: 4 / span 6; font-size: var(--step-head); line-height: 1.35; letter-spacing: -0.015em; }
-.act { grid-column: 10 / span 3; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
-
-.screen { grid-column: 1 / -1; position: relative; margin-top: 32px; background: var(--surface); }
-.screen video { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-.sound {
-  position: absolute; right: 16px; bottom: 16px;
-  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 12px 14px;
-  border: 0; background: var(--ink); color: var(--bg);
-  font: inherit; font-size: var(--step-small); font-weight: 600; line-height: 1; cursor: pointer;
-  transition: transform var(--t-press) var(--ease-out);
-}
-.sound:active { transform: scale(0.97); }
-.sound[hidden] { display: none; }
-.sound svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
-.sound .sound-speaker { fill: currentColor; stroke: none; }
-.sound .sound-on { display: none; }
-.sound[aria-pressed="true"] .sound-off { display: none; }
-.sound[aria-pressed="true"] .sound-on { display: block; }
-
-.run, .meta { padding: var(--section) var(--margin) 0; }
-.run .sec-title, .meta .sec-title { margin-bottom: 40px; }
-.feat img, .wide img, .half img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--surface); }
-
-.feat, .wide { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter); }
-.feat { align-items: center; }
-.wide { align-items: end; }
-.feat + .feat { margin-top: 88px; }
-.feat img { grid-column: 1 / span 7; grid-row: 1; }
-.wide img { grid-column: 1 / span 8; grid-row: 1; }
-.feat .feat-text { grid-column: 8 / span 5; grid-row: 1; }
-.wide .feat-text { grid-column: 9 / span 4; grid-row: 1; }
-.half .feat-text { margin-top: 20px; }
-.feat:nth-of-type(even) img { grid-column: 6 / span 7; }
-.feat:nth-of-type(even) .feat-text { grid-column: 1 / span 5; }
-
-.pair { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter); margin-top: 88px; }
-.half { grid-column: span 6; }
-
-@media (max-width: 900px) {
-  .who, .lead, .act { grid-column: 1 / -1; }
-  .act { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 20px; }
-  .wide img, .feat img, .feat:nth-of-type(even) img { grid-column: 1 / -1; grid-row: 1; }
-  .wide .feat-text, .feat .feat-text, .feat:nth-of-type(even) .feat-text { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
-}
-@media (max-width: 720px) {
-  .hero { padding-top: 32px; }
-  .band { margin-top: 32px; }
-  .screen { margin-top: 20px; }
-  .sound { right: 10px; bottom: 10px; padding: 12px; }
-  .sound span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .feat + .feat, .pair { margin-top: 56px; }
-  .half { grid-column: 1 / -1; }
-  .half + .half { margin-top: 44px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .sound, .text-link { transition: none; }
+@media (max-width: 719px) {
+  .s-mage { --w: 56px; --y: auto; --b: calc(100% - 4px); --over: 1; --x: 8px; }
+  .s-coin { --w: 36px; --b: calc(100% - 2px); --over: 1; --x: 80px; }
+  .s-ghost { --w: 48px; --y: auto; --b: calc(100% - 4px); --over: 1; --x: 8px; }
+  .s-knight { --w: 40px; --b: calc(100% - 3px); --over: 1; --x: 104px; }
+  .s-yeti { --w: 40px; --b: calc(100% - 3px); --over: 1; --x: 56px; }
+  .s-demon { --w: 40px; --b: calc(100% - 3px); --over: 1; --x: 8px; }
+  .s-chest { --w: 44px; --y: auto; --b: calc(100% - 3px); --r: 0deg; --over: 1; --x: 8px; }
 }

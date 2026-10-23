@@ -1,57 +1,20 @@
-/* AI 계정 사용량 메뉴바 설명 페이지. 토큰·머리줄·단추·바닥 타일·들어오기 움직임·구역 제목(.sec-title)·숫자(.stats)·그림 설명(.cap)·이렇게 만들었어요(.facts)는 ../site.css 에 있고, 여기에는 이 페이지의 구성만 둔다. DESIGN.md D-47 */
-:root { --accent: #0a84ff; }
+/* AI 계정 사용량 메뉴바 설명 페이지에만 있는 것: 스티커 자리, 숫자 칸 셋, 세로 팝오버 그림. 틀과 부품은 ../site.css (DESIGN.md D-50~) */
+.s-icon { --w: 128px; --y: 36px; --over: 0.3; --i: 0; }
+.s-icon-2 { --w: 80px; --b: 160px; --r: 8deg; --over: 0.2; }
 
-.hero { padding: 48px var(--margin) 0; }
-.hero-title {
-  font-size: var(--step-display); line-height: 1.02; letter-spacing: -0.035em; font-weight: 500;
+.stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* 팝오버 그림(720×1144 · 720×854)은 세로라 16:9로 자르지 않고 회색 칸에 다 보인다 */
+.feature__media > img { aspect-ratio: auto; object-fit: contain; }
+.feature--wide .feature__text { display: grid; align-content: center; }
+
+@media (max-width: 1099px) {
+  .s-icon { --w: 80px; --y: 28px; --over: 0.35; }
+  .s-icon-2 { --w: 56px; --b: 120px; --over: 0.1; }
 }
-
-.band {
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter);
-  margin-top: 40px; align-items: start;
-}
-.band .who { grid-column: 1 / span 3; color: var(--muted); padding-top: 4px; }
-.band .tags { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 16px; font-size: var(--step-small); }
-/* 공개 주소·공개 저장소가 없어 단추 칸(10~12)이 없다. 소개 글이 4칸부터 11칸까지 차지한다 */
-.band .lead { grid-column: 4 / span 8; font-size: var(--step-head); line-height: 1.35; letter-spacing: -0.015em; }
-
-.hero-media { margin-top: 48px; }
-.hero-media img { width: 100%; height: auto; background: var(--surface); }
-
-.stats { padding-inline: var(--margin); }
-.stats li { grid-column: span 4; }
-
-.tabs, .states { padding: var(--section) var(--margin) 0; }
-.tabs .sec-title, .states .sec-title { margin-bottom: 40px; }
-
-/* 탭 셋을 나란히: 글이 위, 그림이 아래. 탭마다 보이는 계정 수가 달라 그림 높이가 다른 것은 그대로 둔다 */
-.tab-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px var(--gutter); grid-template-rows: auto auto; }
-.tab { grid-column: span 4; grid-row: span 2; display: grid; grid-template-rows: subgrid; row-gap: 24px; }
-.tab img { width: 100%; height: auto; background: var(--surface); }
-
-.row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter); align-items: center; }
-.row + .row { margin-top: 88px; }
-.row-text { grid-column: 1 / span 5; grid-row: 1; }
-.row-media { grid-column: 9 / -1; grid-row: 1; width: 100%; height: auto; background: var(--surface); }
-
-@media (max-width: 900px) {
-  .band .who, .band .lead { grid-column: 1 / -1; }
-  .tab { grid-column: 1 / -1; grid-row: auto; display: block; }
-  .tab img { margin-top: 20px; width: min(100%, 420px); }
-  .row-media { grid-column: 1 / -1; grid-row: 1; width: min(100%, 420px); }
-  .row-text { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
-}
-@media (max-width: 720px) {
-  .hero { padding-top: 32px; }
-  .hero-title { font-size: 9.6vw; }
-  .band { margin-top: 32px; }
-  .hero-media { margin-top: 32px; }
-  /* 카드 그림은 오른쪽에 팝오버가 있어 4:3으로 자를 때 오른쪽을 남긴다 */
-  .stats li { grid-column: span 6; }
-  .tabs .sec-title, .states .sec-title { margin-bottom: 28px; }
-  .tab-grid { gap: 48px var(--gutter); }
-  .row + .row { margin-top: 56px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .text-link { transition: none; }
+@media (max-width: 719px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .s-icon { --w: 56px; --y: auto; --b: calc(100% - 4px); --over: 1; --x: 8px; }
+  .s-icon-2 { --w: 44px; --b: calc(100% - 3px); --r: 0deg; --over: 1; --x: 8px; }
 }

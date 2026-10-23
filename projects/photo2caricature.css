@@ -1,50 +1,6 @@
-/* photo2caricature 설명 페이지. 토큰·머리줄·단추·바닥 타일·들어오기 움직임·구역 제목(.sec-title)·숫자(.stats)·그림 설명(.cap)·이렇게 만들었어요(.facts)는 ../site.css 에 있고, 여기에는 이 페이지의 구성만 둔다. DESIGN.md D-47
-   대표색 --accent 는 앱의 주황(변환 단추·고른 스타일 칩 색) 하나. 공개 주소가 없어 "지금 해 보기" 단추가 없으니, 첫 화면 상태 글("만드는 중") 앞 네모 점 한 곳에만 쓴다. */
-body { --accent: #e8552b; }
-
-.hero { padding: 48px var(--margin) 0; }
-.hero-title {
-  font-size: var(--step-display); line-height: 1.02; letter-spacing: -0.035em; font-weight: 500;
-}
-
-.band {
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter);
-  margin-top: 40px; align-items: start;
-}
-.band .who { grid-column: 1 / span 3; color: var(--muted); padding-top: 4px; }
-.state { display: flex; align-items: center; gap: 10px; }
-.state i { width: 10px; height: 10px; flex: none; background: var(--accent); }
-.band .tags { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 16px; font-size: var(--step-small); }
-/* 단추 칸(10~12)이 없어 소개 글이 4~10칸을 쓴다 */
-.band .lead { grid-column: 4 / span 7; font-size: var(--step-head); line-height: 1.35; letter-spacing: -0.015em; }
-
-.hero-media { margin-top: 48px; }
-.hero-media img { width: 100%; height: auto; background: var(--surface); }
-
-.stats { padding-inline: var(--margin); }
-
-.styles, .result { padding: var(--section) var(--margin) 0; }
-.styles .sec-title, .result .sec-title { margin-bottom: 40px; }
-.row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter); align-items: center; }
-.row + .row { margin-top: 88px; }
-.row-text { grid-column: 1 / span 5; grid-row: 1; }
-.row-media { grid-column: 6 / -1; grid-row: 1; width: 100%; height: auto; background: var(--surface); }
-
-.result-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 40px var(--gutter); }
-.result-grid .cap { grid-column: span 6; }
-
-@media (max-width: 900px) {
-  .band .who, .band .lead { grid-column: 1 / -1; }
-  .row-media { grid-column: 1 / -1; grid-row: 1; }
-  .row-text { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
-}
-@media (max-width: 720px) {
-  .hero { padding-top: 32px; }
-  .hero-title { font-size: 9.6vw; }
-  .band { margin-top: 32px; }
-  .hero-media { margin-top: 32px; }
-  .styles .sec-title, .result .sec-title { margin-bottom: 28px; }
-  .row + .row { margin-top: 56px; }
-  .result-grid { row-gap: 32px; }
-  .result-grid .cap { grid-column: 1 / -1; }
-}
+/* photo2caricature 설명 페이지에만 있는 것: 16:9가 아닌 그림을 자르지 않기, 숫자 칸 3개. 틀과 부품은 ../site.css (DESIGN.md D-50~)
+   원본 레포에 자체 로고·아이콘이 없어 스티커는 붙이지 않는다. */
+.hero-media > img { aspect-ratio: auto; }
+.feature__media > img { object-fit: contain; }
+.stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 719px) { :root { --gap-top: var(--sp-8); } }

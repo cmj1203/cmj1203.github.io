@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>img3d · 최민주</title>
   <meta name="description" content="사진 한 장을 올리면 빙글빙글 돌려 볼 수 있는 3D 모델로 만들어 주는 도구 img3d예요. 인물·물건도, 방 같은 공간도 돼요.">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
   <meta property="og:title" content="img3d · 최민주">
   <meta property="og:description" content="사진 한 장을 올리면 빙글빙글 돌려 볼 수 있는 3D 모델로 만들어 주는 도구예요.">
@@ -14,123 +14,126 @@
   <meta property="og:locale" content="ko_KR">
   <link rel="canonical" href="https://cmj1203.github.io/projects/img3d.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261020">
-  <link rel="stylesheet" href="img3d.css?v=20261021">
+  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="img3d.css?v=20261023">
 </head>
 
 <body>
 <a class="skip" href="#features">본문으로 건너뛰기</a>
-<header class="bar"><a class="mark" href="../">&lt;minju/&gt;</a><nav aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#me">소개</a><a href="../#contact">연락</a></nav></header>
+<header class="site-header">
+  <div class="site-header__in"><a class="site-header__mark" href="../">&lt;minju/&gt;</a><nav class="site-nav" aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#me">소개</a><a href="../#contact">연락</a></nav></div>
+</header>
 
+<div class="frame">
 <main>
-<section class="hero" aria-labelledby="hero-title" data-enter>
-  <h1 id="hero-title" class="hero-title"><span class="mask"><span class="rise">img3d</span></span></h1>
-  <div class="band">
-    <ul class="tags" data-step style="--i:0">
-      <li>python</li>
-      <li>pytorch</li>
-      <li>gradio</li>
-      <li>trellis.2</li>
-      <li>triposr</li>
+<section class="box hero" aria-labelledby="hero-title">
+  <div class="col">
+    <h1 id="hero-title" class="row row--display">img3d</h1>
+    <p class="row row--meta">STAGE 08 <span class="pill">만드는 중</span></p>
+    <div class="row row--lead"><p>사진 한 장을 올리면 <strong>빙글빙글 돌려 볼 수 있는 3D 모델</strong>로 만들어 주는 도구예요. 인물·물건도, 방 같은 공간도 돼요.</p></div>
+    <div class="tags-row">
+      <ul class="tags"><li>python</li><li>pytorch</li><li>gradio</li><li>trellis.2</li><li>triposr</li></ul>
+    </div>
+    <figure class="hero-media">
+      <img src="assets/img3d/card.webp" alt="의자 사진을 올리고 TRELLIS.2 엔진으로 만든 3D 의자를 돌려 보는 img3d 웹 화면. 삼각형 199,999개, 텍스처 2048×2048, 180.2초가 걸렸다는 정보와 GLB 내려받기 칸" width="1280" height="720" fetchpriority="high">
+    </figure>
+    <ul class="stats" aria-label="들어 있는 것">
+      <li><b>3</b><span>엔진</span></li>
+      <li><b>2</b><span>모드 · 인물·물체와 공간</span></li>
+      <li><b>360°</b><span>돌려 보는 메시</span></li>
     </ul>
-    <p class="lead" data-step style="--i:1">사진 한 장을 올리면 <strong>빙글빙글 돌려 볼 수 있는 3D 모델</strong>로 만들어 주는 도구예요. 인물·물건도, 방 같은 공간도 돼요.</p>
-    <div class="act" data-step style="--i:2">
-      <a class="btn btn--down" href="#features">결과 보기<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-    </div>
   </div>
-  <figure class="hero-media" data-step style="--i:3">
-    <img src="assets/img3d/card.webp" alt="의자 사진을 올리고 TRELLIS.2 엔진으로 만든 3D 의자를 돌려 보는 img3d 웹 화면. 삼각형 199,999개, 텍스처 2048×2048, 180.2초가 걸렸다는 정보와 GLB 내려받기 칸" width="1280" height="720" fetchpriority="high">
-  </figure>
+  <img class="sticker sticker--l s-chair" src="assets/stickers/img3d-chair.webp" width="287" height="439" alt="">
+  <img class="sticker sticker--r s-teapot" src="assets/stickers/img3d-teapot.webp" width="422" height="333" alt="">
 </section>
 
-<ul class="stats" aria-label="들어 있는 것" data-enter>
-  <li data-step style="--i:0"><b>3</b><span>엔진</span></li>
-  <li data-step style="--i:1"><b>2</b><span>모드 · 인물·물체와 공간</span></li>
-  <li data-step style="--i:2"><b>360°</b><span>돌려 보는 메시</span></li>
-</ul>
-
-<section class="turn" id="features" aria-labelledby="turn-title">
-  <div data-enter><h2 id="turn-title" class="sec-title" data-step style="--i:0">돌려 보기</h2></div>
-  <article class="row" data-enter>
-    <div class="cap" data-step style="--i:0"><h3>의자 · TRELLIS.2</h3><p>사진에서 배경을 떼어 내고 360° 메시를 만들어요. 삼각형 20만 개와 2048px 텍스처가 기본값이에요.</p></div>
-    <div class="views" data-step style="--i:1">
-      <img src="assets/img3d/chair-1.webp" alt="TRELLIS.2로 만든 3D 의자를 앞에서 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/chair-2.webp" alt="3D 의자를 비스듬히 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/chair-3.webp" alt="3D 의자를 옆에서 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/chair-4.webp" alt="3D 의자를 뒤에서 본 모습" width="512" height="512" loading="lazy">
-    </div>
-  </article>
-  <article class="row" data-enter>
-    <div class="cap" data-step style="--i:0"><h3>주전자 · TRELLIS.2</h3><p>사진에 안 나온 뒤쪽까지 만들어요. 결과는 PBR 텍스처가 붙은 GLB 한 파일이에요.</p></div>
-    <div class="views" data-step style="--i:1">
-      <img src="assets/img3d/teapot-1.webp" alt="TRELLIS.2로 만든 빨간 3D 주전자를 앞에서 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/teapot-2.webp" alt="3D 주전자를 비스듬히 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/teapot-3.webp" alt="3D 주전자를 옆에서 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/teapot-4.webp" alt="3D 주전자를 뒤에서 본 모습" width="512" height="512" loading="lazy">
-    </div>
-  </article>
-  <article class="row" data-enter>
-    <div class="cap" data-step style="--i:0"><h3>방 · 공간 모드</h3><p>공간 사진은 깊이를 재서 카메라 기준 장면 메시로 만들어요. 실내·실외 중 하나를 골라요.</p></div>
-    <div class="views" data-step style="--i:1">
-      <img src="assets/img3d/room-1.webp" alt="침대 위 고양이가 있는 방 사진으로 만든 장면 메시를 정면에서 본 모습" width="400" height="400" loading="lazy">
-      <img src="assets/img3d/room-2.webp" alt="방 장면 메시를 비스듬히 본 모습" width="400" height="400" loading="lazy">
-      <img src="assets/img3d/room-3.webp" alt="방 장면 메시를 옆에서 본 모습. 깊이에 따라 앞뒤로 벌어진 면" width="400" height="400" loading="lazy">
-      <img src="assets/img3d/room-4.webp" alt="방 장면 메시를 반대쪽에서 본 모습" width="400" height="400" loading="lazy">
-    </div>
-  </article>
-  <article class="row" data-enter>
-    <div class="cap" data-step style="--i:0"><h3>아바타 · 얼굴 판</h3><p>사진 한 장으로 만든 3D는 눈·입이 움푹 파여요. 정면 그림의 얼굴을 매끈한 판으로 만들어 메시 얼굴에 붙여요.</p></div>
-    <div class="views" data-step style="--i:1">
-      <img src="assets/img3d/avatar-1.webp" alt="제페토 아바타 그림으로 만든 3D 아바타를 앞에서 본 모습. 얼굴 판을 붙여 눈·입이 매끈하다" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/avatar-2.webp" alt="3D 아바타를 비스듬히 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/avatar-3.webp" alt="3D 아바타를 옆에서 본 모습" width="512" height="512" loading="lazy">
-      <img src="assets/img3d/avatar-4.webp" alt="3D 아바타를 뒤에서 본 모습" width="512" height="512" loading="lazy">
-    </div>
-  </article>
+<section class="box" id="features" aria-labelledby="turn-title">
+  <div class="col">
+    <div class="title-row"><h2 id="turn-title">돌려 보기</h2></div>
+    <article class="feature turn">
+      <div class="feature__text"><h3>의자 · TRELLIS.2</h3><p>사진에서 배경을 떼어 내고 360° 메시를 만들어요. 삼각형 20만 개와 2048px 텍스처가 기본값이에요.</p></div>
+      <div class="turn__views">
+        <img src="assets/img3d/chair-1.webp" alt="TRELLIS.2로 만든 3D 의자를 앞에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/chair-2.webp" alt="3D 의자를 비스듬히 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/chair-3.webp" alt="3D 의자를 옆에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/chair-4.webp" alt="3D 의자를 뒤에서 본 모습" width="512" height="512" loading="lazy">
+      </div>
+    </article>
+    <article class="feature turn">
+      <div class="feature__text"><h3>주전자 · TRELLIS.2</h3><p>사진에 안 나온 뒤쪽까지 만들어요. 결과는 PBR 텍스처가 붙은 GLB 한 파일이에요.</p></div>
+      <div class="turn__views">
+        <img src="assets/img3d/teapot-1.webp" alt="TRELLIS.2로 만든 빨간 3D 주전자를 앞에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/teapot-2.webp" alt="3D 주전자를 비스듬히 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/teapot-3.webp" alt="3D 주전자를 옆에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/teapot-4.webp" alt="3D 주전자를 뒤에서 본 모습" width="512" height="512" loading="lazy">
+      </div>
+    </article>
+    <article class="feature turn">
+      <div class="feature__text"><h3>방 · 공간 모드</h3><p>공간 사진은 깊이를 재서 카메라 기준 장면 메시로 만들어요. 실내·실외 중 하나를 골라요.</p></div>
+      <div class="turn__views">
+        <img src="assets/img3d/room-1.webp" alt="침대 위 고양이가 있는 방 사진으로 만든 장면 메시를 정면에서 본 모습" width="400" height="400" loading="lazy">
+        <img src="assets/img3d/room-2.webp" alt="방 장면 메시를 비스듬히 본 모습" width="400" height="400" loading="lazy">
+        <img src="assets/img3d/room-3.webp" alt="방 장면 메시를 옆에서 본 모습. 깊이에 따라 앞뒤로 벌어진 면" width="400" height="400" loading="lazy">
+        <img src="assets/img3d/room-4.webp" alt="방 장면 메시를 반대쪽에서 본 모습" width="400" height="400" loading="lazy">
+      </div>
+    </article>
+    <article class="feature turn">
+      <div class="feature__text"><h3>아바타 · 얼굴 판</h3><p>사진 한 장으로 만든 3D는 눈·입이 움푹 파여요. 정면 그림의 얼굴을 매끈한 판으로 만들어 메시 얼굴에 붙여요.</p></div>
+      <div class="turn__views">
+        <img src="assets/img3d/avatar-1.webp" alt="제페토 아바타 그림으로 만든 3D 아바타를 앞에서 본 모습. 얼굴 판을 붙여 눈·입이 매끈하다" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/avatar-2.webp" alt="3D 아바타를 비스듬히 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/avatar-3.webp" alt="3D 아바타를 옆에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/avatar-4.webp" alt="3D 아바타를 뒤에서 본 모습" width="512" height="512" loading="lazy">
+      </div>
+    </article>
+  </div>
+  <img class="sticker sticker--r s-room" src="assets/stickers/img3d-room.webp" width="394" height="263" alt="" loading="lazy">
 </section>
 
-<section class="facts" aria-labelledby="facts-title" data-enter>
-  <div class="facts-text">
-    <h2 id="facts-title" class="sec-title" data-step style="--i:0">이렇게 만들었어요</h2>
-    <p data-step style="--i:1">사진에서 배경을 떼어 낸 다음 TRELLIS.2·TripoSR·릴리프 세 엔진 중 하나로 360° 메시를 만들고 GLB로 저장해요. 공간 사진은 Depth Anything V2로 깊이를 재서 미터 단위 장면 메시로 만들어요. 명령줄 img3d와 Gradio 웹 화면 둘 다 있고, 맥(Apple Silicon)에서 돌려요.</p>
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었어요</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>사진에서 배경을 떼어 낸 다음 TRELLIS.2·TripoSR·릴리프 세 엔진 중 하나로 360° 메시를 만들고 GLB로 저장해요. 공간 사진은 Depth Anything V2로 깊이를 재서 미터 단위 장면 메시로 만들어요. 명령줄 img3d와 Gradio 웹 화면 둘 다 있고, 맥(Apple Silicon)에서 돌려요.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>만드는 중</dd></div>
+        <div><dt>period</dt><dd>2026.10.01 ~ 2026.10.13</dd></div>
+        <div><dt>run</dt><dd>내 컴퓨터에서 · 명령줄 img3d · 브라우저 화면 (Gradio)</dd></div>
+        <div><dt>built with</dt><dd>Python · PyTorch · Gradio · trimesh · rembg · Depth Anything V2 · TRELLIS.2 · TripoSR</dd></div>
+        <div><dt>engines</dt><dd>TRELLIS.2 (360° + PBR 텍스처, 몇 분) · TripoSR (수십 초) · Relief (정면 릴리프 + 사진 텍스처)</dd></div>
+        <div><dt>output</dt><dd>GLB · Y-up · 미터 단위 · 바닥 y=0</dd></div>
+        <div><dt>tests</dt><dd>pytest 자동 검사 30개</dd></div>
+      </dl>
+    </div>
   </div>
-  <dl data-step style="--i:2">
-    <div><dt>status</dt><dd>만드는 중</dd></div>
-    <div><dt>period</dt><dd>2026.10.01 ~ 2026.10.13</dd></div>
-    <div><dt>run</dt><dd>내 컴퓨터에서 · 명령줄 img3d · 브라우저 화면 (Gradio)</dd></div>
-    <div><dt>built with</dt><dd>Python · PyTorch · Gradio · trimesh · rembg · Depth Anything V2 · TRELLIS.2 · TripoSR</dd></div>
-    <div><dt>engines</dt><dd>TRELLIS.2 (360° + PBR 텍스처, 몇 분) · TripoSR (수십 초) · Relief (정면 릴리프 + 사진 텍스처)</dd></div>
-    <div><dt>output</dt><dd>GLB · Y-up · 미터 단위 · 바닥 y=0</dd></div>
-    <div><dt>tests</dt><dd>pytest 자동 검사 30개</dd></div>
-  </dl>
 </section>
 </main>
 
-<footer class="foot" id="contact">
-  <div class="tile tile--mail">
-    <h2>연락</h2>
-    <a class="big-link" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
-  <a class="tile tile--gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">
-    <span class="big-link">GITHUB</span>
-    <svg class="arrow" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 17L17 5M8 5h9v9" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-  </a>
-  <div class="tile tile--copy"><a class="back" href="../#missions">작업 목록으로</a><p class="note">© 2026 최민주</p></div>
-</footer>
+</div>
 
-<script>
-(() => {
-  const enter = (el) => el.classList.add('in');
-  const targets = document.querySelectorAll('[data-enter]');
-  if (!('IntersectionObserver' in window)) { targets.forEach(enter); return; }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { enter(e.target); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
-  targets.forEach((t) => { io.observe(t); });
-})();
-</script>
+<footer class="box site-footer" id="contact">
+  <div class="col">
+    <div class="title-row"><h2>연락</h2></div>
+    <div class="contact">
+      <a class="contact__cell contact__mail" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+      <a class="contact__cell contact__gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">GITHUB<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></a>
+      <p class="contact__cell contact__copy">© 2026 최민주</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<nav class="dock" aria-label="바로 가기">
+  <a class="dock__btn" href="#features"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M4 9.5l4 4 4-4"/></svg></span>결과 보기</a>
+  <a class="dock__btn" href="../#missions"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8h-11M6.5 4l-4 4 4 4"/></svg></span>작업 목록으로</a>
+</nav>
 </body>
+
 </html>

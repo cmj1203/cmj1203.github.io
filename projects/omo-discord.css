@@ -1,74 +1,41 @@
-/* omo 디스코드 봇 설명 페이지. 토큰·머리줄·단추·바닥 타일·들어오기 움직임·구역 제목(.sec-title)·숫자(.stats)·그림 설명(.cap)·이렇게 만들었어요(.facts)는 ../site.css 에 있고, 여기에는 이 페이지의 구성만 둔다. DESIGN.md D-47
-   대표색 --accent 는 디스코드 블러플 하나(대표 그림 왼쪽 바탕색). 공개 주소도 저장소 링크도 없어 단추가 없으니, 쓰는 곳이 없다(숫자는 다른 페이지처럼 흰색).
-   봇 화면은 사용자의 비공개 대화라 그림이 대표 그림 한 장뿐이고, 기능은 줄글 대신 쓰는 흐름 도식(.flow, 인라인 SVG 두 벌)으로 보여 준다(사용자 10-21 "줄글로 설명하지말고").
-   도식 색 셋: 나 = --accent(블러플), 봇 = 디스코드 초록, omo 세션 = --faint. 박스는 같은 색의 옅은 면 + 1.5px 선, 알약 라벨은 --bg 면. */
-body { --accent: #5865f2; --flow-me: var(--accent); --flow-bot: #3ba55d; --flow-sess: var(--faint); }
+/* omo 디스코드 봇 설명 페이지에만 있는 것: 숫자 칸 2열, 쓰는 흐름 도식. 틀과 부품은 ../site.css (DESIGN.md D-50~)
+   omo-discord 저장소에 그림 파일이 없어 스티커는 붙이지 않는다.
+   봇 화면은 사용자의 비공개 대화라 그림은 대표 그림 한 장뿐이고, 기능은 쓰는 흐름 도식(.flow, 인라인 SVG 두 벌)으로 보여 준다(사용자 10-21 "줄글로 설명하지말고"). */
 
-.hero { padding: 48px var(--margin) 0; }
-.hero-title { font-size: var(--step-display); line-height: 1.02; letter-spacing: -0.035em; font-weight: 500; }
+.stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-.band {
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter);
-  margin-top: 40px; align-items: start;
-}
-.who { grid-column: 1 / span 3; color: var(--muted); padding-top: 4px; }
-.tags { display: flex; flex-wrap: wrap; gap: 0 12px; margin-top: 8px; font-size: var(--step-small); }
-/* 단추 칸(10~12)이 없어서 소개 글이 4~10칸을 쓴다 */
-.lead { grid-column: 4 / span 7; font-size: var(--step-head); line-height: 1.35; letter-spacing: -0.015em; }
-
-.hero-media { margin-top: 48px; }
-.hero-media img { width: 100%; height: auto; background: var(--surface); }
-
-.stats { padding-inline: var(--margin); }
-
-.sec {
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gutter); align-items: start;
-  padding: var(--section) var(--margin) 0;
-}
-.sec .sec-title { grid-column: 1 / span 4; }
-.caps { grid-column: 5 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px var(--gutter); }
-.caps .cap p { max-width: 24em; }
-
-/* 쓰는 흐름 도식. 제목도 도식도 12칸 전체를 쓴다.
-   글자 크기는 SVG 안 단위라 화면 너비에 비례해 줄어든다: PC용은 가로 1376 기준(1440px 화면에서 1:1)이고 900px 화면에서 0.61배가 되므로 가장 작은 글자를 21.5로 둬 13px 이상을 지킨다. 휴대폰용은 가로 350 기준(390px 화면에서 1:1), 가장 작은 글자 12. */
-.sec--flow .sec-title, .flow { grid-column: 1 / -1; }
-.flow { margin-top: 24px; }
-.flow svg { display: block; width: 100%; height: auto; }
+/* 쓰는 흐름 도식: 레퍼런스 평면도처럼 흰 종이 위 도면으로 그린다. 칸 선 말고 선을 쓰는 곳은 여기뿐이다.
+   줄(PC는 나·봇·omo 세션, 휴대폰은 단계)은 --cell 면. 박스는 흰 면에 선: 나 = 검정 2px, 봇 = --cell 면 + 검정 1px, omo 세션 = --ink-soft 1px.
+   글은 모두 검정. 글이 오가는 화살표는 검은 실선, 자동은 --ink-soft 점선. 알약 라벨은 흰 면 + 검은 1px 선.
+   선은 vector-effect 로 화면 px 그대로 그려 도식 크기와 상관없이 칸 선과 같은 굵기로 보인다.
+   글자 크기는 SVG 안 단위라 도식 폭에 비례한다. PC용(가로 1376)은 칸이 736px 이상일 때만 써서 가장 작은 글자(21.5)가 11.5px 아래로 내려가지 않게 하고(1280 화면 11.75px, 1440 화면 13.2px),
+   더 좁으면 세로 도식(가로 350, 가장 작은 글자 12)을 가운데에 둔다. 칸 폭은 1100px 경계에서 옆 칸 때문에 줄었다 늘어서 화면 폭 대신 컨테이너 쿼리로 고른다. */
+.flow-row { padding-inline: 0; }
+.flow { container-type: inline-size; }
+.flow svg { width: 100%; height: auto; }
 .flow .flow-m { display: none; }
+@container (max-width: 735.98px) {
+  .flow .flow-pc { display: none; }
+  .flow .flow-m { display: block; max-width: 420px; margin-inline: auto; }
+}
 .flow text { fill: var(--ink); }
-.flow .lane { fill: var(--surface); }
-.flow .hd, .flow .ls, .flow .bs, .flow .lg text { fill: var(--muted); }
-.flow .ln, .flow .bt { font-weight: 600; }
+.flow .ln, .flow .bt { font-weight: 700; }
 .flow .hd, .flow .pl text { font-weight: 500; }
-.flow .pl rect { fill: var(--bg); }
-.flow .bx rect { fill-opacity: .2; stroke-width: 1.5; }
-.flow .bx--me rect { fill: var(--flow-me); stroke: var(--flow-me); }
-.flow .bx--bot rect { fill: var(--flow-bot); stroke: var(--flow-bot); }
-.flow .bx--sess rect { fill: var(--flow-sess); stroke: var(--flow-sess); }
-.flow .ar { fill: none; stroke: var(--ink); stroke-width: 2; }
-.flow .ar--auto { stroke: var(--flow-bot); stroke-dasharray: 8 6; }
+.flow .lane { fill: var(--cell); }
+.flow .bx rect, .flow .pl rect, .flow .ar { vector-effect: non-scaling-stroke; }
+.flow .bx rect { fill: var(--paper); stroke: var(--ink); stroke-width: 1px; }
+.flow .bx--me rect { stroke-width: 2px; }
+.flow .bx--bot rect { fill: var(--cell); }
+.flow .bx--sess rect { stroke: var(--ink-soft); }
+.flow .pl rect { fill: var(--paper); stroke: var(--ink); stroke-width: 1px; }
+.flow .ar { fill: none; stroke: var(--ink); stroke-width: 1.5px; }
+.flow .ar--auto { stroke: var(--ink-soft); stroke-dasharray: 6 4; }
 .flow .ah { fill: var(--ink); }
-.flow .ah--auto { fill: var(--flow-bot); }
+.flow .ah--auto { fill: var(--ink-soft); }
+/* 아래 글자 크기와 알약 모서리는 SVG 안 단위다(도식과 같이 줄어든다) */
 .flow-pc .ln, .flow-pc .bt { font-size: 24px; }
 .flow-pc .hd, .flow-pc .ls, .flow-pc .bs, .flow-pc .pl text, .flow-pc .lg text { font-size: 21.5px; }
+.flow-pc .pl rect { rx: 18px; }
 .flow-m .bt { font-size: 14px; }
 .flow-m .hd, .flow-m .bs, .flow-m .pl text, .flow-m .lg text { font-size: 12px; }
-.flow-m .ar { stroke-width: 1.5; }
-.flow-m .ar--auto { stroke-dasharray: 5 4; }
-
-@media (max-width: 900px) {
-  .who, .lead { grid-column: 1 / -1; }
-  .sec .sec-title, .caps { grid-column: 1 / -1; }
-  .caps { margin-top: 8px; }
-}
-@media (max-width: 899.98px) {
-  .flow .flow-pc { display: none; }
-  .flow .flow-m { display: block; max-width: 640px; }
-}
-@media (max-width: 720px) {
-  .hero { padding-top: 32px; }
-  .hero-title { font-size: 9.6vw; }
-  .band { margin-top: 32px; }
-  .hero-media { margin-top: 32px; }
-  .caps { grid-template-columns: 1fr; gap: 36px; }
-}
+.flow-m .pl rect { rx: 11px; }
