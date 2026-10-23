@@ -1,4 +1,4 @@
-/* 메인에만 있는 것: 첫 줄 화살표, Uparupa 그림 칸, 소개 문장, 스티커 자리. 공통 부품과 토큰은 site.css (DESIGN.md D-50~) */
+/* 메인에만 있는 것: 첫 줄 화살표, Uparupa 그림 칸, 소개 문장. 공통 부품과 토큰은 site.css (DESIGN.md D-50~) */
 .h-arrow { display: inline-block; width: 1.6em; height: 0.62em; margin-right: 0.24em; vertical-align: 0.02em; }
 
 .shot-pet { position: relative; }
@@ -8,26 +8,7 @@
 .statement { padding: var(--sp-10) var(--pad-cell) var(--sp-12); font-size: var(--fs-statement); font-weight: 500; line-height: 1.65; }
 .statement > p { max-width: 34em; }
 
-.s-sign { --w: 212px; --y: 20px; --r: 9deg; --over: 0.42; --i: 0; }
-.s-mage { --w: 96px; --y: 100px; --over: -0.55; --i: 1; }
-.s-pet { --w: 128px; --b: -22px; --over: 0.42; --i: 2; }
-.s-quokka { --w: 150px; --y: calc(var(--fs-display) * 1.3 + var(--sp-5) * 2 - var(--w) * 0.87); --over: 0.34; --i: 3; }
-.s-chair { --w: 124px; --b: -4px; --over: 0.22; --i: 4; }
-.s-teapot { --w: 168px; --b: -30px; --r: -6deg; --over: 0.22; }
 
-@media (max-width: 1099px) {
-  .s-sign { --w: 150px; --y: -30px; --over: 0.5; }
-  .s-mage { --w: 64px; --y: 104px; --over: 0.25; }
-  .s-pet { --w: 80px; --b: -20px; --over: 0.4; }
-  .s-quokka { --w: 100px; --over: 0.45; }
-  .s-chair { --w: 80px; --over: 0.3; }
-  .s-teapot { --w: 112px; --over: 0.4; }
-}
-@media (max-width: 719px) {
-  .s-sign { --w: 120px; --y: auto; --b: calc(100% - 12px); --r: -5deg; --over: 1; --x: 2px; }
-  .s-mage { display: none; }
-  .s-pet { --w: 56px; --b: calc(100% - 4px); --over: 1; --x: 140px; }
-  .s-chair { --w: 44px; --b: calc(100% - 3px); --over: 1; --x: 92px; }
-  .s-quokka { --w: 70px; --y: auto; --b: calc(100% - var(--w) * 0.13); --over: 1; --x: 4px; }
-  .s-teapot { --w: 84px; --b: calc(100% - 4px); --r: -4deg; --over: 1; --x: 8px; }
-}
+
+/* 메인은 스티커가 없어(사용자 10-23 "다 빼") 휴대폰에서 스티커 자리 여백을 쓰지 않는다 */
+@media (max-width: 719px) { .frame { --gap-top: var(--sp-8); } }
