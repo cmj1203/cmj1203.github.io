@@ -98,6 +98,7 @@ html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--head-h) + var(--sp-4));
+  scroll-padding-bottom: calc(var(--dock-h) + var(--dock-bottom) + var(--sp-4));
   scrollbar-color: var(--ink) var(--paper);
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -147,7 +148,7 @@ button { font: inherit; letter-spacing: inherit; }
 }
 .site-header__mark { font-size: var(--fs-name); font-weight: 700; text-decoration: none; }
 .site-nav { display: flex; gap: var(--sp-6); font-weight: 500; }
-.site-nav a { text-decoration: none; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
 @media (hover: hover) and (pointer: fine) {
   .site-header__mark:hover, .site-nav a:hover { text-decoration: underline; }
 }
@@ -196,6 +197,9 @@ main > * + * { margin-top: var(--gap-box); }
   font-size: var(--fs-small); font-weight: 700; line-height: 1; letter-spacing: 0.04em; white-space: nowrap;
 }
 .pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--paper); }
+/* 공개(LIVE)만 검정 채움, 완성·만드는 중은 흰 바탕에 검은 테두리 */
+.pill--plain { background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.pill--plain::before { background: var(--ink); }
 
 /* 칸 묶음 공통: 칸마다 오른쪽·아래 선, 묶음을 1px 바깥으로 밀어 바깥 선과 겹친다 */
 .items, .features, .stats, .contact { display: grid; margin: 0 -1px -1px 0; }
@@ -317,7 +321,11 @@ main > * + * { margin-top: var(--gap-box); }
 .sound[hidden] { display: none; }
 .sound svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; }
 .sound .sound-speaker { fill: currentColor; stroke: none; }
-.sound .sound-on { display: none; }
+.sound .sound-on, .video-toggle .i-play { display: none; }
+.video-toggle[aria-pressed="true"] .i-pause { display: none; }
+.video-toggle[aria-pressed="true"] .i-play { display: block; }
+.video-toggle { right: auto; left: calc(var(--pad-media) + var(--sp-3)); }
+.video-toggle svg { stroke-linejoin: round; }
 .sound[aria-pressed="true"] .sound-off { display: none; }
 .sound[aria-pressed="true"] .sound-on { display: block; }
 @media (max-width: 719px) {
@@ -345,14 +353,14 @@ main > * + * { margin-top: var(--gap-box); }
 
 .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .facts__text { padding: var(--sp-6) var(--pad-cell) var(--sp-8); border-right: var(--line); }
-.facts__table { display: grid; grid-auto-rows: 1fr; }
+.facts__table { display: grid; grid-auto-rows: auto; align-content: start; }
 .facts__table > div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); }
 .facts__table > div + div { border-top: var(--line); }
-.facts__table dt { padding: var(--sp-4) var(--pad-cell); border-right: var(--line); font-weight: 700; }
+.facts__table dt { padding: var(--sp-4) var(--pad-cell); border-right: var(--line); font-weight: 700; white-space: nowrap; }
 .facts__table dd { padding: var(--sp-4) var(--pad-cell); }
 
 .marquee {
-  overflow: hidden; padding-block: var(--sp-8);
+  position: relative; overflow: hidden; padding-block: var(--sp-8);
   background: var(--ink); color: var(--paper);
   font-size: var(--fs-marquee); font-weight: 500; line-height: 1.2; white-space: nowrap;
 }
@@ -361,6 +369,30 @@ main > * + * { margin-top: var(--gap-box); }
 @keyframes marquee { to { translate: -50% 0; } }
 @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
 @media (max-width: 719px) { .marquee { padding-block: var(--sp-5); } }
+html.marquee-paused .marquee__track { animation-play-state: paused; }
+
+/* 움직임 멈춤 단추(site.js): data-motion="이름", <html> 의 "이름-paused" 클래스로 아이콘·글을 바꾼다 */
+/* 띠 글자가 멈춤 단추에 닿기 전에 사라지게 */
+.marquee__track { mask-image: linear-gradient(to right, #000 calc(100% - 72px), transparent calc(100% - 56px)); }
+.marquee__toggle {
+  position: absolute; top: 50%; right: var(--sp-3); translate: 0 -50%;
+  display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  border: 1px solid var(--paper); background: var(--ink); color: var(--paper); cursor: pointer;
+  box-shadow: 0 0 0 var(--sp-3) var(--ink);
+  transition: scale var(--t-press) var(--ease-out);
+}
+.marquee__toggle:active { scale: 0.96; }
+.marquee__toggle:focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; }
+.marquee__toggle .motion-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.marquee__toggle svg, .motion-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linejoin: round; }
+button.tags-row__link { min-height: 44px; border-block: 0; border-right: 0; background: none; color: inherit; cursor: pointer; }
+@media (hover: hover) and (pointer: fine) { .tags-row__link.motion-toggle:hover svg { translate: none; } }
+.motion-label { display: inline-grid; }
+.motion-label > * { grid-area: 1 / 1; }
+[data-motion] .i-play, [data-motion] .motion-label__off { visibility: hidden; }
+:is(html.marquee-paused [data-motion="marquee"], html.sprites-paused [data-motion="sprites"]) :is(.i-play, .motion-label__off) { visibility: visible; }
+:is(html.marquee-paused [data-motion="marquee"], html.sprites-paused [data-motion="sprites"]) :is(.i-pause, .motion-label__on) { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) { [data-motion] { display: none; } }
 
 .contact { grid-template-columns: 2fr 1fr 1fr; }
 .contact__cell {
@@ -399,6 +431,9 @@ main > * + * { margin-top: var(--gap-box); }
 
 @media (max-width: 719px) {
   .title-row__aside { min-width: 0; }
+  /* 태그가 두 줄로 꺾여도 줄 사이 가로선이 끝까지 이어지고, 코드 보기와 선이 겹치지 않게 */
+  .tags > li { flex: 1 0 auto; }
+  .tags-row__link { border-left: 0; }
   .items, .features { grid-template-columns: minmax(0, 1fr); }
   .items > .item:last-child:nth-child(odd), .feature--wide { display: flex; }
   .items > .item:last-child:nth-child(odd) .item__media, .feature--wide .feature__media { border-right: 0; border-bottom: var(--line); }
@@ -415,6 +450,6 @@ main > * + * { margin-top: var(--gap-box); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .item__num, .item__shot, .badge, .sticker, .dock__btn, .sound, .tags-row__link svg, .contact__gh svg { transition: none; }
+  .item__num, .item__shot, .badge, .sticker, .dock__btn, .sound, .marquee__toggle, .tags-row__link svg, .contact__gh svg { transition: none; }
   .item:hover .item__shot, .sticker:hover { translate: none; }
 }

@@ -6,7 +6,8 @@
 /* 숫자 뒤 "가지"는 한 단계 작게 */
 .stats small { margin-left: 0.08em; font-size: var(--fs-statement); font-weight: 500; letter-spacing: var(--track-display); }
 /* 기능 묶음으로 가는 칸 링크 */
-.tags a { font-weight: 700; text-decoration: none; }
+nav.tags-row .tags > li { padding: 0; }
+nav.tags-row .tags a { display: flex; padding: var(--sp-3) var(--pad-cell); font-weight: 700; text-decoration: none; }
 @media (hover: hover) and (pointer: fine) { .tags a:hover { text-decoration: underline; } }
 
 /* ---------- 기능 묶음 ---------- */
@@ -136,6 +137,8 @@
   .s-hat { --w: 48px; --y: auto; --b: calc(100% - 3px); --r: 0deg; --over: 1; --x: 8px; }
   .s-sleep { --w: 48px; --b: calc(100% - 3px); --over: 1; --x: 8px; }
 }
+
+html.sprites-paused :is(.strip img, .drift) { animation-play-state: paused; }
 
 @media (prefers-reduced-motion: reduce) {
   .strip img, .drift { animation: none; }

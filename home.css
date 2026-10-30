@@ -1,14 +1,14 @@
-/* 메인에만 있는 것: 첫 줄 화살표, Uparupa 그림 칸, 소개 문장. 공통 부품과 토큰은 site.css (DESIGN.md D-50~) */
-.h-arrow { display: inline-block; width: 1.6em; height: 0.62em; margin-right: 0.24em; vertical-align: 0.02em; }
+/* 메인에만 있는 것: 첫 상자 여백. 공통 부품과 토큰은 site.css (DESIGN.md D-50~) */
 
-.shot-pet { position: relative; }
-.shot-pet > img:first-child { width: 100%; height: 100%; object-fit: cover; }
-.shot-pet .pet { position: absolute; left: 55%; top: 28%; width: 20%; height: auto; image-rendering: pixelated; }
-
-.statement { padding: var(--sp-10) var(--pad-cell) var(--sp-12); font-size: var(--fs-statement); font-weight: 500; line-height: 1.65; }
-.statement > p { max-width: 34em; }
 
 
 
 /* 메인은 스티커가 없어(사용자 10-23 "다 빼") 휴대폰에서 스티커 자리 여백을 쓰지 않는다 */
 @media (max-width: 719px) { .frame { --gap-top: var(--sp-8); } }
+
+/* 홈 첫 상자: 프로젝트 목록에 더 빨리 닿게 소개 줄·숫자 칸 여백을 줄인다 */
+.hero .row--lead { padding-block: var(--sp-6); }
+.hero .stats > li { padding-block: var(--sp-4); }
+@media (max-width: 719px) {
+  .hero .row--lead { padding-block: var(--sp-4); }
+}

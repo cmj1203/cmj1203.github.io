@@ -17,6 +17,4 @@
 
 @media (max-width: 719px) {
   .stats { grid-template-columns: minmax(0, 1fr); }
-  /* 태그 네 개가 두 줄로 꺾여도 줄 사이 가로선이 끝까지 이어지게 칸을 늘린다 */
-  .tags > li { flex: 1 0 auto; }
 }

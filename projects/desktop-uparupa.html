@@ -16,8 +16,10 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261023">
-  <link rel="stylesheet" href="desktop-uparupa.css?v=20261023">
+  <link rel="stylesheet" href="../site.css?v=20261029c">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
+  <link rel="stylesheet" href="desktop-uparupa.css?v=20261029b">
 </head>
 
 <body>
@@ -38,6 +40,7 @@
     </div>
     <nav class="tags-row" aria-label="기능 묶음">
       <ul class="tags"><li><a href="#care">돌보기</a></li><li><a href="#play">같이 놀기</a></li><li><a href="#style">꾸미기</a></li><li><a href="#sea">바다와 하루</a></li></ul>
+      <button class="tags-row__link motion-toggle" type="button" data-motion="sprites"><span class="motion-label"><span class="motion-label__on">움직임 멈춤</span><span class="motion-label__off">움직임 재생</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg></button>
     </nav>
     <figure class="hero-media">
       <div class="stage stage--hero" role="img" aria-label="바닷속 배경에 집과 작은 성, 불가사리가 놓여 있고 우파루파 한 마리는 헤엄치고, 한 마리는 말풍선으로 말을 거는 모습">
@@ -60,6 +63,24 @@
   <img class="sticker sticker--pixel sticker--l s-heart" src="assets/desktop-uparupa/heart.svg" width="7" height="6" alt="">
 </section>
 
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>우파루파 도트 그림부터 바탕화면에 붙어 있는 창까지 한 달쯤 걸려 만들었습니다. 자동 검사 955개를 통과했고, macOS 설치본에서도 잘 돌아가는 걸 확인했습니다.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>Microsoft Store 공개 중 (Windows)</dd></div>
+        <div><dt>period</dt><dd>2026.09.22 ~ 2026.10.22 (약 한 달)</dd></div>
+        <div><dt>target</dt><dd>macOS 13 이상 · Windows 10 22H2 이상</dd></div>
+        <div><dt>built with</dt><dd>Electron · React · pixi.js · TypeScript</dd></div>
+        <div><dt>contents</dt><dd>먹이 4가지 · 머리 장식 12가지 · 수조 소품 8가지</dd></div>
+        <div><dt>guide</dt><dd>사용 가이드 8장 · 한 장씩 넘기는 도트 도감</dd></div>
+        <div><dt>checks</dt><dd>자동 검사 955개 통과</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 <div id="features">
 <section class="box" id="care" aria-labelledby="care-title">
   <div class="col">
@@ -67,7 +88,7 @@
     <div class="features">
       <article class="feature">
         <figure class="feature__media"><img class="shot" src="assets/desktop-uparupa/shop-market.webp" alt="기분, 호감도, 포만감과 먹이 목록이 보이는 상점 화면" width="1600" height="1067" loading="lazy"></figure>
-        <div class="feature__text"><h3>냠냠 먹이 주기</h3><p>상점에서 사료, 물벼룩, 실지렁이, 민물새우를 사서 주면 냠냠 먹습니다. 먹이마다 포만감과 호감도가 다르게 오릅니다. 포만감이 가득 차면 더 먹지 않고, 냉장고에 보관해 두면 배고플 때 알아서 꺼내 먹습니다.</p></div>
+        <div class="feature__text"><h3>먹이 주기</h3><p>상점에서 사료, 물벼룩, 실지렁이, 민물새우를 사서 주면 냠냠 먹습니다. 먹이마다 포만감과 호감도가 다르게 오릅니다. 포만감이 가득 차면 더 먹지 않고, 냉장고에 보관해 두면 배고플 때 알아서 꺼내 먹습니다.</p></div>
       </article>
       <article class="feature">
         <figure class="feature__media">
@@ -95,7 +116,7 @@
             <div class="sprites"><span class="pair"><img class="sprite" style="--w:32" src="assets/desktop-uparupa/axolotl.png" alt="" width="32" height="32" loading="lazy"><img class="sprite heart" style="--w:7" src="assets/desktop-uparupa/heart.svg" alt="" width="7" height="6" loading="lazy"></span></div>
           </div>
         </figure>
-        <div class="feature__text"><h3>쓱쓱 쓰다듬기</h3><p>커서로 우파루파 몸을 쓱쓱 문지르면 좋아합니다. 호감도와 코인이 조금씩 오릅니다(하루 12번까지).</p></div>
+        <div class="feature__text"><h3>쓰다듬기</h3><p>커서로 우파루파 몸을 쓱쓱 문지르면 좋아합니다. 호감도와 코인이 조금씩 오릅니다(하루 12번까지).</p></div>
       </article>
       <article class="feature">
         <figure class="feature__media">
@@ -126,7 +147,7 @@
             <span class="place" style="right:12%;bottom:8%"><span class="strip" style="--f:4;--d:0.8s"><img src="assets/desktop-uparupa/axolotl-walk.png" alt="" width="128" height="32" loading="lazy"></span></span>
           </div>
         </figure>
-        <div class="feature__text"><h3>살랑살랑 헤엄치기</h3><p>우파루파가 바탕화면 물속을 스스로 돌아다닙니다. 살랑살랑 헤엄치기도 하고, 뒤뚱뒤뚱 걷기도 합니다.</p></div>
+        <div class="feature__text"><h3>헤엄치기</h3><p>우파루파가 바탕화면 물속을 스스로 돌아다닙니다. 살랑살랑 헤엄치기도 하고, 뒤뚱뒤뚱 걷기도 합니다.</p></div>
       </article>
       <article class="feature">
         <figure class="feature__media">
@@ -158,7 +179,7 @@
             </div>
           </div>
         </figure>
-        <div class="feature__text"><h3>코딩할 때 옆에서 톡톡</h3><p>Claude Code나 터미널 창 위에 올려 두면 타자에 맞춰 톡톡 박자를 맞춥니다. Claude Code가 대답을 끝내면 깡충 뛰고 '!'로 불러 줍니다.</p></div>
+        <div class="feature__text"><h3>코딩할 때 반응</h3><p>Claude Code나 터미널 창 위에 올려 두면 타자에 맞춰 톡톡 박자를 맞춥니다. Claude Code가 대답을 끝내면 깡충 뛰고 '!'로 불러 줍니다.</p></div>
       </article>
     </div>
   </div>
@@ -234,7 +255,7 @@
             <div class="sprites"><img class="sprite" style="--w:32" src="assets/desktop-uparupa/pet-sleep.png" alt="" width="288" height="288" loading="lazy"></div>
           </div>
         </figure>
-        <div class="feature__text"><h3>밤에는 쿨쿨</h3><p>밤 10시부터 아침 7시 사이에 90초 동안 혼자 두면 눈을 감고 쿨쿨 잠듭니다.</p></div>
+        <div class="feature__text"><h3>밤에 잠들기</h3><p>밤 10시부터 아침 7시 사이에 90초 동안 혼자 두면 눈을 감고 쿨쿨 잠듭니다.</p></div>
       </article>
       <article class="feature feature--wide">
         <figure class="feature__media">
@@ -253,30 +274,14 @@
 </section>
 </div>
 
-<section class="box" aria-labelledby="facts-title">
-  <div class="col">
-    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
-    <div class="facts">
-      <div class="facts__text"><p>우파루파 도트 그림부터 바탕화면에 붙어 있는 창까지 한 달쯤 걸려 만들었습니다. 자동 검사 955개를 통과했고, macOS 설치본에서도 잘 돌아가는 걸 확인했습니다. 아직 내려받는 곳은 없습니다.</p></div>
-      <dl class="facts__table">
-        <div><dt>status</dt><dd>Microsoft Store 공개 중 (Windows)</dd></div>
-        <div><dt>period</dt><dd>2026.09.22 ~ 2026.10.22 (약 한 달)</dd></div>
-        <div><dt>target</dt><dd>macOS 13 이상 · Windows 10 22H2 이상</dd></div>
-        <div><dt>built with</dt><dd>Electron · React · pixi.js · TypeScript</dd></div>
-        <div><dt>contents</dt><dd>먹이 4가지 · 머리 장식 12가지 · 수조 소품 8가지</dd></div>
-        <div><dt>guide</dt><dd>사용 가이드 8장 · 한 장씩 넘기는 도트 도감</dd></div>
-        <div><dt>checks</dt><dd>자동 검사 955개 통과</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
 </main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
 
 <footer class="box site-footer" id="contact">

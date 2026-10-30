@@ -16,7 +16,9 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="../site.css?v=20261029c">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
   <link rel="stylesheet" href="photo2caricature.css?v=20261023">
 </head>
 
@@ -31,7 +33,7 @@
 <section class="box hero" aria-labelledby="hero-title">
   <div class="col">
     <h1 id="hero-title" class="row row--display">photo2caricature</h1>
-    <p class="row row--meta">STAGE 07 <span class="pill">만드는 중</span></p>
+    <p class="row row--meta">STAGE 07 <span class="pill pill--plain">만드는 중</span></p>
     <div class="row row--lead"><p>인물 사진을 넣고 스타일을 고르면 캐리커처로 그려 주는 도구입니다. <strong>다 그린 그림도 말로 더 고칠 수 있습니다.</strong></p></div>
     <div class="tags-row">
       <ul class="tags"><li>python</li><li>fastapi</li><li>playwright</li><li>chatgpt</li></ul>
@@ -44,6 +46,24 @@
       <li><b>4</b><span>거쳐 간 생성 엔진</span></li>
       <li><b>3</b><span>운영체제 실행기</span></li>
     </ul>
+  </div>
+</section>
+
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>처음엔 OpenAI 이미지 편집 API로 시작해 Gemini, 로컬 FLUX.2 Klein(mflux)을 거쳐, 지금은 로그인해 둔 ChatGPT 웹을 Playwright로 조작해서 그립니다. API 키 없이 쓰고, 자동화용 Chrome 창은 최소화된 채 돌아갑니다. 더블클릭 실행기로 서버가 켜지고, 열어 둔 탭을 다 닫으면 서버도 꺼집니다(macOS에서는 터미널 창까지).</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>만드는 중</dd></div>
+        <div><dt>period</dt><dd>2026.09.21 ~ 2026.10.13</dd></div>
+        <div><dt>run</dt><dd>macOS · Windows · Linux (더블클릭 실행기 · 명령줄)</dd></div>
+        <div><dt>needs</dt><dd>Google Chrome · ChatGPT 로그인 (API 키 없음)</dd></div>
+        <div><dt>built with</dt><dd>Python · FastAPI · Typer · Playwright · uv</dd></div>
+        <div><dt>input</dt><dd>JPEG · PNG · WebP · 20MB 이하</dd></div>
+        <div><dt>styles</dt><dd>내장 5개 + 직접 등록</dd></div>
+      </dl>
+    </div>
   </div>
 </section>
 
@@ -81,30 +101,14 @@
   </div>
 </section>
 
-<section class="box" aria-labelledby="facts-title">
-  <div class="col">
-    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
-    <div class="facts">
-      <div class="facts__text"><p>처음엔 OpenAI 이미지 편집 API로 시작해 Gemini, 로컬 FLUX.2 Klein(mflux)을 거쳐, 지금은 로그인해 둔 ChatGPT 웹을 Playwright로 조작해서 그립니다. API 키 없이 쓰고, 자동화용 Chrome 창은 최소화된 채 돌아갑니다. 더블클릭 실행기로 서버가 켜지고, 열어 둔 탭을 다 닫으면 서버도 꺼집니다(macOS에서는 터미널 창까지).</p></div>
-      <dl class="facts__table">
-        <div><dt>status</dt><dd>만드는 중</dd></div>
-        <div><dt>period</dt><dd>2026.09.21 ~ 2026.10.13</dd></div>
-        <div><dt>run</dt><dd>macOS · Windows · Linux (더블클릭 실행기 · 명령줄)</dd></div>
-        <div><dt>needs</dt><dd>Google Chrome · ChatGPT 로그인 (API 키 없음)</dd></div>
-        <div><dt>built with</dt><dd>Python · FastAPI · Typer · Playwright · uv</dd></div>
-        <div><dt>input</dt><dd>JPEG · PNG · WebP · 20MB 이하</dd></div>
-        <div><dt>styles</dt><dd>내장 5개 + 직접 등록</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
 </main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
 
 <footer class="box site-footer" id="contact">

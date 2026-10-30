@@ -16,7 +16,9 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="../site.css?v=20261029c">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
   <link rel="stylesheet" href="token-menubar.css?v=20261023">
 </head>
 
@@ -31,7 +33,7 @@
 <section class="box hero" aria-labelledby="hero-title">
   <div class="col">
     <h1 id="hero-title" class="row row--display">AI 계정 사용량 메뉴바</h1>
-    <p class="row row--meta">STAGE 04 · macOS 메뉴바 앱 <span class="pill">완성</span></p>
+    <p class="row row--meta">STAGE 04 · macOS 메뉴바 앱 <span class="pill pill--plain">완성</span></p>
     <div class="row row--lead"><p>Claude Code와 Codex 계정마다 사용량이 얼마나 남았는지 메뉴바에서 바로 볼 수 있는 macOS 앱입니다.</p></div>
     <div class="tags-row">
       <ul class="tags"><li>macos</li><li>swift</li><li>swiftui</li><li>keychain</li></ul>
@@ -46,6 +48,23 @@
     </ul>
   </div>
   <img class="sticker sticker--l s-icon" src="assets/stickers/token-menubar-icon.png" width="512" height="512" alt="">
+</section>
+
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>Claude 프로필(~/.claude, ~/.claude-*)과 Codex(~/.codex)를 자동으로 찾고, 다른 프로필 폴더는 계정 추가로 등록합니다. 같은 계정으로 로그인한 프로필 여러 개는 카드 하나로 합칩니다. Claude 토큰이 만료되면 CLI가 쓰는 같은 Keychain 항목에 갱신값을 저장하고, 다른 곳으로 복사하지 않습니다. 카드의 계정은 설정 파일이 아니라 한도를 조회한 토큰의 프로필 API 응답으로 정합니다. Claude 대화 기록은 사용량이 든 줄과 새로 붙은 부분만 읽어, 메모리 사용이 최고 11.9GB에서 189MB로 줄었습니다.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>완성</dd></div>
+        <div><dt>period</dt><dd>2026.09.23 ~ 2026.10.22</dd></div>
+        <div><dt>run</dt><dd>macOS 15 이상 · 메뉴바</dd></div>
+        <div><dt>built with</dt><dd>Swift · SwiftUI · AppKit · Keychain · Swift Package Manager · Swift Testing</dd></div>
+        <div><dt>accounts</dt><dd>Claude Code · Codex</dd></div>
+        <div><dt>tests</dt><dd>자동 검사 167개</dd></div>
+      </dl>
+    </div>
+  </div>
 </section>
 
 <section class="box" id="features" aria-labelledby="tabs-title">
@@ -85,29 +104,14 @@
   <img class="sticker sticker--r s-icon-2" src="assets/stickers/token-menubar-icon.png" width="512" height="512" alt="" loading="lazy">
 </section>
 
-<section class="box" aria-labelledby="facts-title">
-  <div class="col">
-    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
-    <div class="facts">
-      <div class="facts__text"><p>Claude 프로필(~/.claude, ~/.claude-*)과 Codex(~/.codex)를 자동으로 찾고, 다른 프로필 폴더는 계정 추가로 등록합니다. 같은 계정으로 로그인한 프로필 여러 개는 카드 하나로 합칩니다. Claude 토큰이 만료되면 CLI가 쓰는 같은 Keychain 항목에 갱신값을 저장하고, 다른 곳으로 복사하지 않습니다. 카드의 계정은 설정 파일이 아니라 한도를 조회한 토큰의 프로필 API 응답으로 정합니다. Claude 대화 기록은 사용량이 든 줄과 새로 붙은 부분만 읽어, 메모리 사용이 최고 11.9GB에서 189MB로 줄었습니다.</p></div>
-      <dl class="facts__table">
-        <div><dt>status</dt><dd>완성</dd></div>
-        <div><dt>period</dt><dd>2026.09.23 ~ 2026.10.22</dd></div>
-        <div><dt>run</dt><dd>macOS 15 이상 · 메뉴바</dd></div>
-        <div><dt>built with</dt><dd>Swift · SwiftUI · AppKit · Keychain · Swift Package Manager · Swift Testing</dd></div>
-        <div><dt>accounts</dt><dd>Claude Code · Codex</dd></div>
-        <div><dt>tests</dt><dd>자동 검사 167개</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
 </main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
 
 <footer class="box site-footer" id="contact">

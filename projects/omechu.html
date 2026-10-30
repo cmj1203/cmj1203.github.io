@@ -16,7 +16,9 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="../site.css?v=20261029c">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
   <link rel="stylesheet" href="omechu.css?v=20261023">
 </head>
 
@@ -31,7 +33,7 @@
 <section class="box hero" aria-labelledby="hero-title">
   <div class="col">
     <h1 id="hero-title" class="row row--display">오메추</h1>
-    <p class="row row--meta">STAGE 06&nbsp;· 오늘 메뉴 추천&nbsp;· 오늘 뭐 먹지? 고민될 때 <span class="pill">LIVE</span></p>
+    <p class="row row--meta">STAGE 06 · 웹사이트 <span class="pill">LIVE</span></p>
     <div class="row row--lead"><p>조건을 고르면 오늘의 메뉴를 골라 주는 웹사이트입니다. <strong>그 메뉴를 파는 주변 식당과 걸어가는 시간</strong>까지 같이 알려 줍니다.</p></div>
     <div class="tags-row">
       <ul class="tags"><li>web</li><li>javascript</li><li>supabase</li><li>openstreetmap</li></ul>
@@ -45,6 +47,26 @@
       <li><b>약 10만 + 약 62만</b><span>OSM + 상가정보 식당</span></li>
       <li><b>2km</b><span>먼저 찾는 거리</span></li>
     </ul>
+  </div>
+</section>
+
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>학교 주변 맛집을 추천하던 예전 JSP 버전을 정적 사이트와 Supabase로 다시 만들었습니다. 전국 식당은 OpenStreetMap과 소상공인시장진흥공단 상가(상권)정보에서 가져오고, 매달 두 출처와 업무추진비 기록을 자동으로 새로 받습니다. 식품 인허가 자료로 문 닫은 가게 1만 2천여 곳을 걸러 내고, 관리자는 로그인해서 메뉴를 고치고 사용자가 ⚠로 알린 가게를 숨길 수 있습니다.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>온라인 공개 중</dd></div>
+        <div><dt>period</dt><dd>2026.09.30 ~ 2026.10.22 (23일)</dd></div>
+        <div><dt>play</dt><dd>브라우저 (컴퓨터 · 휴대폰) · 설치 없이 바로</dd></div>
+        <div><dt>built with</dt><dd>HTML · CSS · JavaScript · Supabase · OpenStreetMap · 상가(상권)정보 · 카카오 지도 API · GitHub Pages · GitHub Actions</dd></div>
+        <div><dt>contents</dt><dd>메뉴 149개 · OpenStreetMap 약 10만 곳 · 상가정보 약 62만 곳 · 공무원 맛집 2,644곳</dd></div>
+        <div><dt>update</dt><dd>매달 2일 식당 정보 · 폐업 · 공무원 맛집 자동 새로고침</dd></div>
+      </dl>
+    </div>
+    <figure class="phone-media">
+      <img src="assets/omechu/phone.webp?v=20261022" alt="휴대폰에서 오늘의 메뉴로 감자탕을 추천하고, 강남역에서 걸어서 7분 거리의 감자탕 가게를 알려 주는 화면" width="780" height="1688" loading="lazy">
+    </figure>
   </div>
 </section>
 
@@ -104,32 +126,14 @@
   </div>
 </section>
 
-<section class="box" aria-labelledby="facts-title">
-  <div class="col">
-    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
-    <div class="facts">
-      <div class="facts__text"><p>학교 주변 맛집을 추천하던 예전 JSP 버전을 정적 사이트와 Supabase로 다시 만들었습니다. 전국 식당은 OpenStreetMap과 소상공인시장진흥공단 상가(상권)정보에서 가져오고, 매달 두 출처와 업무추진비 기록을 자동으로 새로 받습니다. 식품 인허가 자료로 문 닫은 가게 1만 2천여 곳을 걸러 내고, 관리자는 로그인해서 메뉴를 고치고 사용자가 ⚠로 알린 가게를 숨길 수 있습니다.</p></div>
-      <dl class="facts__table">
-        <div><dt>status</dt><dd>온라인 공개 중</dd></div>
-        <div><dt>period</dt><dd>2026.09.30 ~ 2026.10.22 (23일)</dd></div>
-        <div><dt>play</dt><dd>브라우저 (컴퓨터 · 휴대폰) · 설치 없이 바로</dd></div>
-        <div><dt>built with</dt><dd>HTML · CSS · JavaScript · Supabase · OpenStreetMap · 상가(상권)정보 · 카카오 지도 API · GitHub Pages · GitHub Actions</dd></div>
-        <div><dt>contents</dt><dd>메뉴 149개 · OpenStreetMap 약 10만 곳 · 상가정보 약 62만 곳 · 공무원 맛집 2,644곳</dd></div>
-        <div><dt>update</dt><dd>매달 2일 식당 정보 · 폐업 · 공무원 맛집 자동 새로고침</dd></div>
-      </dl>
-    </div>
-    <figure class="phone-media">
-      <img src="assets/omechu/phone.webp?v=20261022" alt="휴대폰에서 오늘의 메뉴로 감자탕을 추천하고, 강남역에서 걸어서 7분 거리의 감자탕 가게를 알려 주는 화면" width="780" height="1688" loading="lazy">
-    </figure>
-  </div>
-</section>
 </main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
 
 <footer class="box site-footer" id="contact">

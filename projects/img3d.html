@@ -16,7 +16,9 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="../site.css?v=20261029c">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
   <link rel="stylesheet" href="img3d.css?v=20261023">
 </head>
 
@@ -31,7 +33,7 @@
 <section class="box hero" aria-labelledby="hero-title">
   <div class="col">
     <h1 id="hero-title" class="row row--display">img3d</h1>
-    <p class="row row--meta">STAGE 08 <span class="pill">만드는 중</span></p>
+    <p class="row row--meta">STAGE 08 <span class="pill pill--plain">만드는 중</span></p>
     <div class="row row--lead"><p>사진 한 장을 올리면 <strong>빙글빙글 돌려 볼 수 있는 3D 모델</strong>로 만들어 주는 도구입니다. 인물·물건도, 방 같은 공간도 됩니다.</p></div>
     <div class="tags-row">
       <ul class="tags"><li>python</li><li>pytorch</li><li>gradio</li><li>trellis.2</li><li>triposr</li></ul>
@@ -47,6 +49,24 @@
   </div>
   <img class="sticker sticker--l s-chair" src="assets/stickers/img3d-chair.webp" width="287" height="439" alt="">
   <img class="sticker sticker--r s-teapot" src="assets/stickers/img3d-teapot.webp" width="422" height="333" alt="">
+</section>
+
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>사진에서 배경을 떼어 낸 다음 TRELLIS.2·TripoSR·릴리프 세 엔진 중 하나로 360° 메시를 만들고 GLB로 저장합니다. 공간 사진은 Depth Anything V2로 깊이를 재서 미터 단위 장면 메시로 만듭니다. 명령줄 img3d와 Gradio 웹 화면 둘 다 있고, 맥(Apple Silicon)에서 돌립니다.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>만드는 중</dd></div>
+        <div><dt>period</dt><dd>2026.10.01 ~ 2026.10.13</dd></div>
+        <div><dt>run</dt><dd>내 컴퓨터에서 · 명령줄 img3d · 브라우저 화면 (Gradio)</dd></div>
+        <div><dt>built with</dt><dd>Python · PyTorch · Gradio · trimesh · rembg · Depth Anything V2 · TRELLIS.2 · TripoSR</dd></div>
+        <div><dt>engines</dt><dd>TRELLIS.2 (360° + PBR 텍스처, 몇 분) · TripoSR (수십 초) · Relief (정면 릴리프 + 사진 텍스처)</dd></div>
+        <div><dt>output</dt><dd>GLB · Y-up · 미터 단위 · 바닥 y=0</dd></div>
+        <div><dt>tests</dt><dd>pytest 자동 검사 30개</dd></div>
+      </dl>
+    </div>
+  </div>
 </section>
 
 <section class="box" id="features" aria-labelledby="turn-title">
@@ -92,30 +112,14 @@
   <img class="sticker sticker--r s-room" src="assets/stickers/img3d-room.webp" width="394" height="263" alt="" loading="lazy">
 </section>
 
-<section class="box" aria-labelledby="facts-title">
-  <div class="col">
-    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
-    <div class="facts">
-      <div class="facts__text"><p>사진에서 배경을 떼어 낸 다음 TRELLIS.2·TripoSR·릴리프 세 엔진 중 하나로 360° 메시를 만들고 GLB로 저장합니다. 공간 사진은 Depth Anything V2로 깊이를 재서 미터 단위 장면 메시로 만듭니다. 명령줄 img3d와 Gradio 웹 화면 둘 다 있고, 맥(Apple Silicon)에서 돌립니다.</p></div>
-      <dl class="facts__table">
-        <div><dt>status</dt><dd>만드는 중</dd></div>
-        <div><dt>period</dt><dd>2026.10.01 ~ 2026.10.13</dd></div>
-        <div><dt>run</dt><dd>내 컴퓨터에서 · 명령줄 img3d · 브라우저 화면 (Gradio)</dd></div>
-        <div><dt>built with</dt><dd>Python · PyTorch · Gradio · trimesh · rembg · Depth Anything V2 · TRELLIS.2 · TripoSR</dd></div>
-        <div><dt>engines</dt><dd>TRELLIS.2 (360° + PBR 텍스처, 몇 분) · TripoSR (수십 초) · Relief (정면 릴리프 + 사진 텍스처)</dd></div>
-        <div><dt>output</dt><dd>GLB · Y-up · 미터 단위 · 바닥 y=0</dd></div>
-        <div><dt>tests</dt><dd>pytest 자동 검사 30개</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
 </main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
 
 <footer class="box site-footer" id="contact">

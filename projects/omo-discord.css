@@ -9,7 +9,7 @@
    글은 모두 검정. 글이 오가는 화살표는 검은 실선, 자동은 --ink-soft 점선. 알약 라벨은 흰 면 + 검은 1px 선.
    선은 vector-effect 로 화면 px 그대로 그려 도식 크기와 상관없이 칸 선과 같은 굵기로 보인다.
    글자 크기는 SVG 안 단위라 도식 폭에 비례한다. PC용(가로 1376)은 칸이 736px 이상일 때만 써서 가장 작은 글자(21.5)가 11.5px 아래로 내려가지 않게 하고(1280 화면 11.75px, 1440 화면 13.2px),
-   더 좁으면 세로 도식(가로 350, 가장 작은 글자 12)을 가운데에 둔다. 칸 폭은 1100px 경계에서 옆 칸 때문에 줄었다 늘어서 화면 폭 대신 컨테이너 쿼리로 고른다. */
+   더 좁으면 세로 도식(가로 350, 가장 작은 글자 14)을 가운데에 둔다. 칸 폭은 1100px 경계에서 옆 칸 때문에 줄었다 늘어서 화면 폭 대신 컨테이너 쿼리로 고른다. */
 .flow-row { padding-inline: 0; }
 .flow { container-type: inline-size; }
 .flow svg { width: 100%; height: auto; }
@@ -36,6 +36,6 @@
 .flow-pc .ln, .flow-pc .bt { font-size: 24px; }
 .flow-pc .hd, .flow-pc .ls, .flow-pc .bs, .flow-pc .pl text, .flow-pc .lg text { font-size: 21.5px; }
 .flow-pc .pl rect { rx: 18px; }
-.flow-m .bt { font-size: 14px; }
-.flow-m .hd, .flow-m .bs, .flow-m .pl text, .flow-m .lg text { font-size: 12px; }
-.flow-m .pl rect { rx: 11px; }
+.flow-m .bt { font-size: 16px; }
+.flow-m .hd, .flow-m .bs, .flow-m .pl text, .flow-m .lg text { font-size: 14px; }
+.flow-m .pl rect { rx: 13px; }

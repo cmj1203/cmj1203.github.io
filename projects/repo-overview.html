@@ -16,7 +16,9 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="../site.css?v=20261029c">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
   <link rel="stylesheet" href="repo-overview.css?v=20261023">
 </head>
 
@@ -31,7 +33,7 @@
 <section class="box hero" aria-labelledby="hero-title">
   <div class="col">
     <h1 id="hero-title" class="row row--display">GitHub 레포 개요</h1>
-    <p class="row row--meta"><span>STAGE 05 · Chrome 확장</span><span>Chrome · Edge · Brave · Arc</span><span class="pill">완성</span></p>
+    <p class="row row--meta"><span>STAGE 05 · Chrome 확장</span><span>Chrome · Edge · Brave · Arc</span><span class="pill pill--plain">완성</span></p>
     <div class="row row--lead"><p>GitHub 저장소의 README와 폴더 구조를 읽고, <strong>어떤 프로젝트인지 한국어로 쉽게</strong> 알려 주는 Chrome 확장입니다.</p></div>
     <div class="tags-row">
       <ul class="tags"><li>chrome extension</li><li>manifest v3</li><li>typescript</li><li>bun</li></ul>
@@ -48,6 +50,25 @@
   </div>
   <img class="sticker sticker--pixel sticker--l s-icon" src="assets/stickers/repo-overview-icon.png" width="128" height="128" alt="">
   <img class="sticker sticker--pixel sticker--r s-icon-sm" src="assets/stickers/repo-overview-icon.png" width="128" height="128" alt="">
+</section>
+
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>서버 없이 확장 안에서만 돕니다. 레포의 README·파일 트리·루트 매니페스트를 GitHub API로 읽고(소스 파일 내용은 읽지 않습니다), 고른 AI에게 보내 한국어 개요를 받습니다. Claude Code 모드는 127.0.0.1에만 열린 로컬 브리지를 거치고, 브리지는 처음 연결한 확장 하나에만 응답합니다. 받은 마크다운은 DOMPurify로 거른 뒤에 화면에 넣습니다.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>완성</dd></div>
+        <div><dt>period</dt><dd>2026.09.21 ~ 2026.10.13 (약 3주 · 커밋 24개)</dd></div>
+        <div><dt>browser</dt><dd>Chrome 116 이상 사이드패널 · Chrome 114~115와 Arc는 새 탭</dd></div>
+        <div><dt>built with</dt><dd>TypeScript · Bun · Chrome Extension Manifest V3 · marked · DOMPurify</dd></div>
+        <div><dt>ai</dt><dd>Claude Code (로컬 브리지) · OpenAI gpt-4o-mini · Anthropic claude-3-5-haiku-latest</dd></div>
+        <div><dt>permissions</dt><dd>activeTab · sidePanel · storage</dd></div>
+        <div><dt>github token</dt><dd>선택 · 넣으면 시간당 요청 60회 → 5,000회</dd></div>
+        <div><dt>checks</dt><dd>자동 검사 368개 통과</dd></div>
+      </dl>
+    </div>
+  </div>
 </section>
 
 <section class="box" id="features" aria-labelledby="sections-title">
@@ -94,31 +115,14 @@
   <img class="sticker sticker--pixel sticker--r s-icon-howto" src="assets/stickers/repo-overview-icon.png" width="128" height="128" alt="" loading="lazy">
 </section>
 
-<section class="box" aria-labelledby="facts-title">
-  <div class="col">
-    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
-    <div class="facts">
-      <div class="facts__text"><p>서버 없이 확장 안에서만 돕니다. 레포의 README·파일 트리·루트 매니페스트를 GitHub API로 읽고(소스 파일 내용은 읽지 않습니다), 고른 AI에게 보내 한국어 개요를 받습니다. Claude Code 모드는 127.0.0.1에만 열린 로컬 브리지를 거치고, 브리지는 처음 연결한 확장 하나에만 응답합니다. 받은 마크다운은 DOMPurify로 거른 뒤에 화면에 넣습니다.</p></div>
-      <dl class="facts__table">
-        <div><dt>status</dt><dd>완성</dd></div>
-        <div><dt>period</dt><dd>2026.09.21 ~ 2026.10.13 (약 3주 · 커밋 24개)</dd></div>
-        <div><dt>browser</dt><dd>Chrome 116 이상 사이드패널 · Chrome 114~115와 Arc는 새 탭</dd></div>
-        <div><dt>built with</dt><dd>TypeScript · Bun · Chrome Extension Manifest V3 · marked · DOMPurify</dd></div>
-        <div><dt>ai</dt><dd>Claude Code (로컬 브리지) · OpenAI gpt-4o-mini · Anthropic claude-3-5-haiku-latest</dd></div>
-        <div><dt>permissions</dt><dd>activeTab · sidePanel · storage</dd></div>
-        <div><dt>github token</dt><dd>선택 · 넣으면 시간당 요청 60회 → 5,000회</dd></div>
-        <div><dt>checks</dt><dd>자동 검사 368개 통과</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
 </main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
 
 <footer class="box site-footer" id="contact">

@@ -16,7 +16,9 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="../site.css?v=20261023">
+  <link rel="stylesheet" href="../site.css?v=20261029c">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
   <link rel="stylesheet" href="rhythm-game.css?v=20261023">
 </head>
 
@@ -41,6 +43,10 @@
       <video autoplay muted loop playsinline preload="metadata" poster="assets/rhythm-game/trailer-poster.webp" width="1280" height="720">
         <source src="assets/rhythm-game/trailer.mp4" type="video/mp4">
       </video>
+      <button class="sound video-toggle" type="button" aria-label="영상 멈춤" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M9 6v12M15 6v12"/><path class="i-play" d="M8 5.5v13l10.5-6.5z"/></svg>
+        <span>영상 멈춤</span>
+      </button>
       <button class="sound" type="button" aria-label="영상 소리 켜기" aria-pressed="false">
         <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 1.5 4 4m0-4-4 4" /></svg>
         <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12-1.5a6 6 0 0 1 0 9m2.5-11.5a9 9 0 0 1 0 12" /></svg>
@@ -55,6 +61,23 @@
   <img class="sticker sticker--line sticker--l s-duck" src="assets/stickers/rhythm-game-duck.svg" width="100" height="100" alt="">
   <img class="sticker sticker--line sticker--r s-piano" src="assets/stickers/rhythm-game-piano.svg" width="100" height="100" alt="">
   <img class="sticker sticker--line sticker--l s-manatee" src="assets/stickers/rhythm-game-manatee.svg" width="100" height="100" alt="">
+</section>
+
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <div class="facts__text"><p>노래의 박자를 분석해서 길을 만들고, 그 길이 한붓그리기 그림 한 장이 되게 했습니다. 처음에는 바느질 콘셉트였는데 크레파스 그림으로 바꿔서 완성했습니다. 스윙이나 셋잇단 곡은 박을 셋으로 나눈 자리에도 노트를 놓습니다. 곡은 박자 일치, 리듬 다양함, 반복, 그림 적합 점수로 걸러 60곡만 남기고, 새 곡은 박이 또렷한지 검사 도구로 먼저 거릅니다. 마지막에는 직접 만든 피아노 곡 Last Fortress를 더했습니다.</p></div>
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>온라인 공개 중</dd></div>
+        <div><dt>period</dt><dd>2026.10.02 ~ 2026.10.22 (21일)</dd></div>
+        <div><dt>play</dt><dd>브라우저 (컴퓨터 · 폰) · 설치 없이 바로</dd></div>
+        <div><dt>built with</dt><dd>TypeScript · Canvas · Web Audio · Vite</dd></div>
+        <div><dt>contents</dt><dd>곡 61개 · 난이도 3단계</dd></div>
+        <div><dt>timing</dt><dd><b>PERFECT</b> ±0.04초 · <b>GREAT</b> ±0.08초 · <b>GOOD</b> ±0.12초</dd></div>
+      </dl>
+    </div>
+  </div>
 </section>
 
 <section class="box" id="features" aria-labelledby="how">
@@ -139,29 +162,14 @@
   </div>
 </div>
 
-<section class="box" aria-labelledby="facts-title">
-  <div class="col">
-    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
-    <div class="facts">
-      <div class="facts__text"><p>노래의 박자를 분석해서 길을 만들고, 그 길이 한붓그리기 그림 한 장이 되게 했습니다. 처음에는 바느질 콘셉트였는데 크레파스 그림으로 바꿔서 완성했습니다. 스윙이나 셋잇단 곡은 박을 셋으로 나눈 자리에도 노트를 놓습니다. 곡은 박자 일치, 리듬 다양함, 반복, 그림 적합 점수로 걸러 60곡만 남기고, 새 곡은 박이 또렷한지 검사 도구로 먼저 거릅니다. 마지막에는 직접 만든 피아노 곡 Last Fortress를 더했습니다.</p></div>
-      <dl class="facts__table">
-        <div><dt>status</dt><dd>온라인 공개 중</dd></div>
-        <div><dt>period</dt><dd>2026.10.02 ~ 2026.10.22 (21일)</dd></div>
-        <div><dt>play</dt><dd>브라우저 (컴퓨터 · 폰) · 설치 없이 바로</dd></div>
-        <div><dt>built with</dt><dd>TypeScript · Canvas · Web Audio · Vite</dd></div>
-        <div><dt>contents</dt><dd>곡 61개 · 난이도 3단계</dd></div>
-        <div><dt>timing</dt><dd><b>PERFECT</b> ±0.04초 · <b>GREAT</b> ±0.08초 · <b>GOOD</b> ±0.12초</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
 </main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
   </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
 
 <footer class="box site-footer" id="contact">
@@ -185,10 +193,11 @@
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const trailer = document.querySelector('.hero-media video');
-  const sound = document.querySelector('.sound');
-  if (!trailer || !sound) return;
+  const sound = document.querySelector('.sound:not(.video-toggle)');
+  const motion = document.querySelector('.video-toggle');
+  if (!trailer || !sound || !motion) return;
   const label = sound.querySelector('span');
-  const play = () => trailer.play().catch(() => {});
+  const play = () => { if (!trailer.dataset.userPaused) trailer.play().catch(() => {}); };
   let onScreen = true;
 
   const syncSound = () => {
@@ -198,13 +207,20 @@
     label.textContent = on ? '소리 끄기' : '소리 켜기';
   };
   // 소개 영상: 소리 없이 반복, 화면 밖이면 멈춤, 움직임 줄이기면 재생하지 않음
+  // 사용자가 멈추면 data-user-paused 를 남겨, 화면에 다시 들어와도 자동 재생하지 않는다
+  const syncPause = () => {
+    const paused = Boolean(trailer.dataset.userPaused);
+    motion.setAttribute('aria-pressed', String(paused));
+    motion.setAttribute('aria-label', paused ? '영상 재생' : '영상 멈춤');
+    motion.querySelector('span').textContent = paused ? '영상 재생' : '영상 멈춤';
+  };
   const syncMotion = () => {
     if (reduce.matches) {
       trailer.pause(); trailer.removeAttribute('autoplay'); trailer.load();
-      sound.hidden = true;
+      sound.hidden = true; motion.hidden = true;
       return;
     }
-    sound.hidden = false;
+    sound.hidden = false; motion.hidden = false;
     trailer.setAttribute('autoplay', '');
     if (onScreen) play();
   };
@@ -221,8 +237,19 @@
     syncSound();
     if (trailer.paused) play();
   });
+  motion.addEventListener('click', () => {
+    if (trailer.dataset.userPaused) {
+      delete trailer.dataset.userPaused;
+      play();
+    } else {
+      trailer.dataset.userPaused = 'true';
+      trailer.pause();
+    }
+    syncPause();
+  });
   reduce.addEventListener('change', syncMotion);
   syncSound();
+  syncPause();
   syncMotion();
 })();
 </script>
