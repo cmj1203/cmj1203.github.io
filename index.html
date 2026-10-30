@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" class="home-page">
 
 <head>
   <meta charset="utf-8">
@@ -8,7 +8,7 @@
   <meta name="description" content="데스크톱 앱, 웹 게임, 자동화 도구를 기획부터 배포까지 만드는 최민주의 포트폴리오입니다.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="최민주 · 바이브 코딩으로 만든 프로젝트 9개">
+  <meta property="og:title" content="최민주 포트폴리오">
   <meta property="og:description" content="데스크톱 앱, 웹 게임, 자동화 도구를 만드는 최민주의 포트폴리오입니다.">
   <meta property="og:url" content="https://cmj1203.github.io/">
   <meta property="og:locale" content="ko_KR">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="site.css?v=20261029c">
   <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
   <script src="site.js?v=20261029d" defer></script>
-  <link rel="stylesheet" href="home.css?v=20261029">
+  <link rel="stylesheet" href="home.css?v=20261030b">
   <script src="home.js?v=20261023" defer></script>
 </head>
 
@@ -32,16 +32,27 @@
 
 <div class="frame">
 <main>
-<section class="box hero" aria-labelledby="hero-title">
+<section class="box hero" id="contact" aria-labelledby="hero-title">
   <div class="col">
-    <h1 id="hero-title" class="row row--display">바이브 코딩으로 만든 프로젝트 9개</h1>
-    <div class="row row--lead"><p>최민주 · 2026.09 – 2026.10 · 웹 게임, 데스크톱 앱, 업무 도구</p></div>
+    <h1 id="hero-title" class="row row--display">최민주 포트폴리오</h1>
+    <div class="row row--lead"><p>최민주 · 2026.09 – 2026.10 · <span>웹 게임</span>, <span>데스크톱 앱</span>, <span>업무 도구</span></p></div>
     <ul class="stats" aria-label="프로젝트 상태">
       <li><b>9</b><span>전체</span></li>
       <li><b>4</b><span>LIVE</span></li>
       <li><b>2</b><span>완성</span></li>
       <li><b>3</b><span>만드는 중</span></li>
     </ul>
+    <div class="hero__action">
+      <a class="dock__btn" href="#missions"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 2.5h4v4h-4zM9.5 2.5h4v4h-4zM2.5 9.5h4v4h-4zM9.5 9.5h4v4h-4z"/></svg></span>만든 것 보기</a>
+    </div>
+    <footer class="hero__contact">
+      <div class="title-row"><h2 id="contact-title">연락</h2></div>
+      <div class="contact">
+        <a class="contact__cell contact__mail" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+        <a class="contact__cell contact__gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">GITHUB<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></a>
+        <p class="contact__cell contact__copy">© 2026 최민주</p>
+      </div>
+    </footer>
   </div>
 </section>
 
@@ -148,10 +159,6 @@
       </li>
     </ul>
   </div>
-</section>
-
-</main>
-
 <div class="marquee">
   <div class="marquee__track" aria-hidden="true">
     <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span>
@@ -159,22 +166,9 @@
   </div>
   <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
-
-<footer class="box site-footer" id="contact">
-  <div class="col">
-    <div class="title-row"><h2 id="contact-title">연락</h2></div>
-    <div class="contact">
-      <a class="contact__cell contact__mail" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
-      <a class="contact__cell contact__gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">GITHUB<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></a>
-      <p class="contact__cell contact__copy">© 2026 최민주</p>
-    </div>
-  </div>
-</footer>
+</section>
+</main>
 </div>
 
-<nav class="dock" aria-label="바로 가기">
-  <a class="dock__btn" href="#missions"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 2.5h4v4h-4zM9.5 2.5h4v4h-4zM2.5 9.5h4v4h-4zM9.5 9.5h4v4h-4z"/></svg></span>만든 것 보기</a>
-  <a class="dock__btn" href="#contact"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h12v9H2zM2.5 4l5.5 4.5L13.5 4"/></svg></span>연락하기</a>
-</nav>
 </body>
 </html>

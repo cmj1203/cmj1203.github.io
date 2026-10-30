@@ -1,14 +1,66 @@
-/* 메인에만 있는 것: 첫 상자 여백. 공통 부품과 토큰은 site.css (DESIGN.md D-50~) */
+/* 홈 표지와 화면 경계. 공통 부품은 site.css, 홈 토큰은 DESIGN.md D-58. */
+.home-page {
+  --home-screen-h: calc(100svh - var(--head-h));
+  --home-title: clamp(32px, 5.6vw, 80px);
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--head-h);
+  scroll-padding-bottom: 0;
+}
 
+.home-page body { padding-bottom: 0; }
+.frame { padding-top: 0; }
+main > * + * { margin-top: 0; }
+.frame > * + * { margin-top: 0; }
+.hero, #missions {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
 
+.hero {
+  display: grid;
+  min-block-size: var(--home-screen-h);
+  border-block: 0;
+}
+.hero > .col {
+  display: grid;
+  grid-template-rows: minmax(min-content, 1fr) auto auto auto auto;
+}
+.hero .row--display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--sp-12);
+  font-size: var(--home-title);
+  font-weight: 700;
+  line-height: 1.18;
+}
+.hero .row--lead { padding: var(--sp-6) var(--pad-cell); }
+.hero .row--lead span { white-space: nowrap; }
+.hero .stats > li { padding-block: var(--sp-6); }
+.hero__action {
+  display: flex;
+  justify-content: center;
+  padding: var(--sp-8) var(--pad-cell);
+}
+.hero__action .dock__btn { flex: 0 1 var(--dock-w); width: var(--dock-w); }
 
+.hero__contact > * + * { border-top: var(--line); }
+.hero__contact .title-row > h2 {
+  padding-block: var(--sp-2);
+  font-size: var(--fs-small);
+}
+.hero__contact .contact__cell {
+  min-height: 44px;
+  padding-block: var(--sp-2);
+  align-items: center;
+}
+.hero__contact .contact__mail, .hero__contact .contact__gh { font-size: var(--fs-body); }
 
-/* 메인은 스티커가 없어(사용자 10-23 "다 빼") 휴대폰에서 스티커 자리 여백을 쓰지 않는다 */
-@media (max-width: 719px) { .frame { --gap-top: var(--sp-8); } }
-
-/* 홈 첫 상자: 프로젝트 목록에 더 빨리 닿게 소개 줄·숫자 칸 여백을 줄인다 */
-.hero .row--lead { padding-block: var(--sp-6); }
-.hero .stats > li { padding-block: var(--sp-4); }
 @media (max-width: 719px) {
+  .hero .row--display { padding-block: var(--sp-8); }
   .hero .row--lead { padding-block: var(--sp-4); }
+  .hero .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero .stats > li { padding: var(--sp-3) var(--sp-2); }
+  .hero .stats span { font-size: var(--fs-small); }
+  .hero__action { padding-block: var(--sp-6); }
 }
