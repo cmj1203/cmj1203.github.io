@@ -44,6 +44,7 @@ main > * + * { margin-top: 0; }
 }
 .hero__action .dock__btn { flex: 0 1 var(--dock-w); width: var(--dock-w); }
 
+.hero__contact { scroll-margin-top: calc(var(--home-screen-h) / 2); }
 .hero__contact > * + * { border-top: var(--line); }
 .hero__contact .title-row > h2 {
   padding-block: var(--sp-2);
