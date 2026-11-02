@@ -234,6 +234,13 @@ main > * + * { margin-top: var(--gap-box); }
 .item__tech { margin-top: var(--sp-1); color: var(--ink-soft); font-size: var(--fs-small); font-weight: 500; line-height: 1.5; }
 .item__desc { margin-top: var(--sp-3); }
 .item:focus-within .item__num { background: var(--ink); color: var(--paper); }
+/* 3열에서 남는 마지막 한 칸(3n+1)은 2열의 홀수 칸처럼 한 줄을 다 쓰고 그림 | 글로 눕는다 */
+@media (min-width: 1100px) {
+  .items > .item:last-child:nth-child(3n+1) { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; grid-template-rows: auto 1fr; }
+  .items > .item:last-child:nth-child(3n+1) .item__num { grid-column: 1 / -1; }
+  .items > .item:last-child:nth-child(3n+1) .item__media { border-bottom: 0; border-right: var(--line); }
+  .items > .item:last-child:nth-child(3n+1) .item__text { grid-column: 2 / -1; }
+}
 @media (hover: hover) and (pointer: fine) {
   .item:hover .item__num { background: var(--ink); color: var(--paper); }
   .item:hover .item__shot { translate: 0 calc(var(--sp-1) * -1); }

@@ -1,0 +1,15 @@
+/* 투니온 대시보드 설명 페이지에만 있는 것: 스티커 자리, 숫자 칸 둘. 틀과 부품은 ../site.css (DESIGN.md D-50~)
+   그림은 운영 데이터가 아니라 대시보드 QA 서버의 예시 데이터(bun run qa:server -- --demo-projects)로 찍었다. */
+.s-icon { --w: 128px; --y: 36px; --over: 0.3; --i: 0; }
+.s-icon-2 { --w: 80px; --b: 160px; --r: 8deg; --over: 0.2; }
+
+.stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (max-width: 1099px) {
+  .s-icon { --w: 80px; --y: 28px; --over: 0.35; }
+  .s-icon-2 { --w: 56px; --b: 120px; --over: 0.1; }
+}
+@media (max-width: 719px) {
+  .s-icon { --w: 56px; --y: auto; --b: calc(100% - 4px); --over: 1; --x: 8px; }
+  .s-icon-2 { --w: 44px; --b: calc(100% - 3px); --r: 0deg; --over: 1; --x: 8px; }
+}

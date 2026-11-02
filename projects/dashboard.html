@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>투니온 대시보드 · 최민주</title>
+  <meta name="description" content="일정·할 일·메일과 AI 코딩 세션 상태를 한 화면에서 보는 업무용 웹앱입니다. 맥에서 켜 두고 휴대폰에서도 엽니다.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="투니온 대시보드 · 최민주">
+  <meta property="og:description" content="일정·할 일·메일과 AI 코딩 세션 상태를 한 화면에서 보는 업무용 웹앱입니다. 맥에서 켜 두고 휴대폰에서도 엽니다.">
+  <meta property="og:url" content="https://cmj1203.github.io/projects/dashboard.html">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="canonical" href="https://cmj1203.github.io/projects/dashboard.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../site.css?v=20261102a">
+  <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
+  <script src="../site.js?v=20261029d" defer></script>
+  <link rel="stylesheet" href="dashboard.css?v=20261102">
+</head>
+
+<body>
+<a class="skip" href="#features">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="site-header__in"><a class="site-header__mark" href="../">&lt;minju/&gt;</a><nav class="site-nav" aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#contact">연락</a></nav></div>
+</header>
+
+<div class="frame">
+<main>
+<section class="box hero" aria-labelledby="hero-title">
+  <div class="col">
+    <h1 id="hero-title" class="row row--display">투니온 대시보드</h1>
+    <p class="row row--meta">STAGE 10 · 업무용 웹앱 <span class="pill pill--plain">만드는 중</span></p>
+    <div class="row row--lead"><p>일정·할 일·메일과 AI 코딩 세션 상태를 한 화면에서 보는 업무용 웹앱입니다. 맥에서 켜 두고 휴대폰에서도 엽니다.</p></div>
+    <div class="tags-row">
+      <ul class="tags"><li>web</li><li>bun</li><li>typescript</li><li>vite</li><li>sqlite</li></ul>
+    </div>
+    <figure class="hero-media">
+      <img src="assets/dashboard/card.webp" alt="대시보드 홈. 예시 할 일 4건, 오늘 일정, GitHub 이슈와 실패한 액션, 이번 달 달력이 한 화면에 보인다" width="1280" height="720" fetchpriority="high">
+    </figure>
+    <ul class="stats" aria-label="들어 있는 것">
+      <li><b>8</b><span>메뉴</span></li>
+      <li><b>1,132</b><span>자동 검사</span></li>
+    </ul>
+  </div>
+  <img class="sticker sticker--l s-icon" src="assets/stickers/dashboard-icon.png" width="512" height="512" alt="">
+</section>
+
+<section class="box" aria-labelledby="facts-title">
+  <div class="col">
+    <div class="title-row"><h2 id="facts-title">이렇게 만들었습니다</h2></div>
+    <div class="facts">
+      <dl class="facts__table">
+        <div><dt>status</dt><dd>만드는 중</dd></div>
+        <div><dt>period</dt><dd>2026.10.12 ~ 2026.11.02 (22일)</dd></div>
+        <div><dt>runs on</dt><dd>맥 (launchd) · 휴대폰 브라우저 (Tailscale)</dd></div>
+        <div><dt>built with</dt><dd>Bun · TypeScript · Vite · SQLite · Swift</dd></div>
+        <div><dt>connects</dt><dd>구글 캘린더 · Gmail · GitHub · Claude Code</dd></div>
+        <div><dt>tests</dt><dd>자동 검사 1,132개</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="box" id="features" aria-labelledby="screens-title">
+  <div class="col">
+    <div class="title-row"><h2 id="screens-title">화면</h2></div>
+    <div class="features">
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/dashboard/briefing.webp" alt="브리핑 화면. 예시 프로젝트가 작업 중·오류로 멈춤·대기·커밋 안 함으로 나뉘어 있고 예시 AI 요약이 보인다" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>브리핑</h3><p>프로젝트마다 작업 중·오류로 멈춤·대기·커밋 안 함 같은 상태와 AI 요약을 봅니다.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/dashboard/jobs.webp" alt="작업관리 화면. 예시 세션의 현재 작업, 하위 작업, heavy 대기열 목록" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>작업관리</h3><p>AI 세션이 지금 하는 일과 하위 작업, heavy 대기열, 정기 작업을 봅니다.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/dashboard/calendar.webp" alt="캘린더 화면. 2026년 11월 달력에 예시 일정이 있고 오른쪽에 11월 2일 일정 목록이 있다" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>캘린더</h3><p>구글 캘린더의 공용·개인 일정과 내 업무를 한 달 달력에 같이 보여 줍니다.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="feature__media"><img src="assets/dashboard/phone.webp" alt="휴대폰에서 연 홈·브리핑·캘린더 화면 세 장" width="1280" height="720" loading="lazy"></figure>
+        <div class="feature__text"><h3>휴대폰</h3><p>Tailscale로 휴대폰에서도 같은 화면을 열고, 홈 화면에 설치하면 알림을 받습니다.</p></div>
+      </article>
+    </div>
+  </div>
+  <img class="sticker sticker--r s-icon-2" src="assets/stickers/dashboard-icon.png" width="512" height="512" alt="" loading="lazy">
+</section>
+
+</main>
+
+<div class="marquee">
+  <div class="marquee__track" aria-hidden="true">
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span><span>투니온 대시보드</span>
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span><span>투니온 대시보드</span>
+  </div>
+  <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
+</div>
+
+<footer class="box site-footer" id="contact">
+  <div class="col">
+    <div class="title-row"><h2>연락</h2></div>
+    <div class="contact">
+      <a class="contact__cell contact__mail" href="mailto:cmj120333@gmail.com">✉ cmj120333@gmail.com</a>
+      <a class="contact__cell contact__gh" href="https://github.com/cmj1203" target="_blank" rel="noopener">GITHUB<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6"/></svg></a>
+      <p class="contact__cell contact__copy">© 2026 최민주</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<nav class="dock" aria-label="바로 가기">
+  <a class="dock__btn" href="../#missions"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8h-11M6.5 4l-4 4 4 4"/></svg></span>작업 목록으로</a>
+</nav>
+</body>
+
+</html>
