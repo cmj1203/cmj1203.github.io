@@ -60,7 +60,7 @@ main > * + * { margin-top: 0; }
 @media (max-width: 719px) {
   .hero .row--display { padding-block: var(--sp-8); }
   .hero .row--lead { padding-block: var(--sp-4); }
-  .hero .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero .stats > li { padding: var(--sp-3) var(--sp-2); }
   .hero .stats span { font-size: var(--fs-small); }
   .hero__action { padding-block: var(--sp-6); }
