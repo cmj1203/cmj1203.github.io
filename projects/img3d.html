@@ -5,11 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>img3d · 최민주</title>
-  <meta name="description" content="사진 한 장을 올리면 빙글빙글 돌려 볼 수 있는 3D 모델로 만들어 주는 도구 img3d입니다. 인물·물건도, 방 같은 공간도 됩니다.">
+  <meta name="description" content="인물 사진을 캐리커처로 그리고, 각도별 그림을 거쳐 빙글빙글 돌려 볼 수 있는 3D 모델로 만드는 도구 img3d입니다. 물건·공간 사진 한 장도 됩니다.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
   <meta property="og:title" content="img3d · 최민주">
-  <meta property="og:description" content="사진 한 장을 올리면 빙글빙글 돌려 볼 수 있는 3D 모델로 만들어 주는 도구입니다.">
+  <meta property="og:description" content="인물 사진을 캐리커처로 그리고, 각도별 그림을 거쳐 빙글빙글 돌려 볼 수 있는 3D 모델로 만드는 도구입니다.">
   <meta property="og:url" content="https://cmj1203.github.io/projects/img3d.html">
   <meta property="og:locale" content="ko_KR">
   <link rel="canonical" href="https://cmj1203.github.io/projects/img3d.html">
@@ -19,11 +19,11 @@
   <link rel="stylesheet" href="../site.css?v=20261102a">
   <script>try{for(const n of['marquee','sprites'])if(localStorage.getItem('motion-'+n)==='paused')document.documentElement.classList.add(n+'-paused')}catch(e){}</script>
   <script src="../site.js?v=20261029d" defer></script>
-  <link rel="stylesheet" href="img3d.css?v=20261023">
+  <link rel="stylesheet" href="img3d.css?v=20261104">
 </head>
 
 <body>
-<a class="skip" href="#features">본문으로 건너뛰기</a>
+<a class="skip" href="#process">본문으로 건너뛰기</a>
 <header class="site-header">
   <div class="site-header__in"><a class="site-header__mark" href="../">&lt;minju/&gt;</a><nav class="site-nav" aria-label="사이트 이동"><a href="../#missions">작업 목록</a><a href="../#contact">연락</a></nav></div>
 </header>
@@ -33,18 +33,18 @@
 <section class="box hero" aria-labelledby="hero-title">
   <div class="col">
     <h1 id="hero-title" class="row row--display">img3d</h1>
-    <p class="row row--meta">STAGE 08 <span class="pill pill--plain">IN PROGRESS</span></p>
-    <div class="row row--lead"><p>사진 한 장을 올리면 <strong>빙글빙글 돌려 볼 수 있는 3D 모델</strong>로 만들어 주는 도구입니다. 인물·물건도, 방 같은 공간도 됩니다.</p></div>
+    <p class="row row--meta">STAGE 07 <span class="pill pill--plain">IN PROGRESS</span></p>
+    <div class="row row--lead"><p>인물 사진을 캐리커처로 그리고, 그 캐릭터를 <strong>빙글빙글 돌려 볼 수 있는 3D 모델</strong>로 만드는 도구입니다. 물건·공간 사진 한 장도 됩니다.</p></div>
     <div class="tags-row">
-      <ul class="tags"><li>python</li><li>pytorch</li><li>gradio</li><li>trellis.2</li><li>triposr</li></ul>
+      <ul class="tags"><li>python</li><li>fastapi</li><li>playwright</li><li>chatgpt</li><li>pytorch</li><li>hunyuan3d</li></ul>
     </div>
     <figure class="hero-media">
-      <img src="assets/img3d/card.webp" alt="의자 사진을 올리고 TRELLIS.2 엔진으로 만든 3D 의자를 돌려 보는 img3d 웹 화면. 삼각형 199,999개, 텍스처 2048×2048, 180.2초가 걸렸다는 정보와 GLB 내려받기 칸" width="1280" height="720" fetchpriority="high">
+      <img src="assets/img3d/card.webp?v=20261104" alt="ChatGPT가 그린 장미 원피스 캐릭터의 정면 그림과, 그 그림으로 만든 3D 모델을 앞·옆·뒤에서 본 모습" width="1280" height="720" fetchpriority="high">
     </figure>
     <ul class="stats" aria-label="들어 있는 것">
-      <li><b>3</b><span>엔진</span></li>
-      <li><b>2</b><span>모드 · 인물·물체와 공간</span></li>
-      <li><b>360°</b><span>돌려 보는 메시</span></li>
+      <li><b>4</b><span>단계 · 사진→캐리커처→각도별 그림→3D</span></li>
+      <li><b>5</b><span>내장 스타일</span></li>
+      <li><b>4</b><span>엔진</span></li>
     </ul>
   </div>
   <img class="sticker sticker--l s-chair" src="assets/stickers/img3d-chair.webp" width="287" height="439" alt="">
@@ -57,20 +57,63 @@
     <div class="facts">
       <dl class="facts__table">
         <div><dt>status</dt><dd>IN PROGRESS</dd></div>
-        <div><dt>period</dt><dd>2026.10.01 ~ 2026.10.13</dd></div>
-        <div><dt>run</dt><dd>내 컴퓨터에서 · 명령줄 img3d · 브라우저 화면 (Gradio)</dd></div>
-        <div><dt>built with</dt><dd>Python · PyTorch · Gradio · trimesh · rembg · Depth Anything V2 · TRELLIS.2 · TripoSR</dd></div>
-        <div><dt>engines</dt><dd>TRELLIS.2 (360° + PBR 텍스처, 몇 분) · TripoSR (수십 초) · Relief (정면 릴리프 + 사진 텍스처)</dd></div>
-        <div><dt>output</dt><dd>GLB · Y-up · 미터 단위 · 바닥 y=0</dd></div>
-        <div><dt>tests</dt><dd>pytest 자동 검사 30개</dd></div>
+        <div><dt>period</dt><dd>2026.09.21 ~ 2026.11</dd></div>
+        <div><dt>run</dt><dd>내 컴퓨터에서 · 더블클릭 실행기 (macOS · Windows · Linux) · 명령줄 photo2caricature / img3d · 브라우저 화면</dd></div>
+        <div><dt>needs</dt><dd>Google Chrome · ChatGPT 로그인 (API 키 없음)</dd></div>
+        <div><dt>built with</dt><dd>Python · FastAPI · Typer · Playwright · PyTorch · trimesh · uv</dd></div>
+        <div><dt>engines</dt><dd>Hunyuan3D-2mv (각도별 그림 → 형상) · TRELLIS.2 (사진 한 장, 360° + PBR 텍스처) · TripoSR (수십 초) · Relief (정면 릴리프 + 사진 텍스처)</dd></div>
+        <div><dt>output</dt><dd>캐리커처 PNG · 각도별 그림 PNG 4장 · GLB (Y-up · 미터 단위) · USDZ</dd></div>
+        <div><dt>tests</dt><dd>pytest 자동 검사 550개</dd></div>
       </dl>
     </div>
   </div>
 </section>
 
+<section class="box" id="process" aria-labelledby="process-title">
+  <div class="col">
+    <div class="title-row"><h2 id="process-title">만드는 과정</h2></div>
+    <article class="feature turn">
+      <div class="feature__text"><h3>1. 사진을 캐리커처로</h3><p>사진을 올리고 스타일을 고르면, 로그인된 ChatGPT 웹을 Playwright로 조작해 캐리커처를 그립니다. 프롬프트를 고쳐 보내거나, 그린 그림에서 고칠 점을 적어 이어서 고칠 수 있습니다.</p></div>
+      <div class="turn__views turn__views--wide">
+        <img src="assets/photo2caricature/first.webp" alt="사진 선택 칸, 다섯 가지 스타일 단추, 프롬프트 칸과 변환 단추가 있는 입력 카드와 아직 비어 있는 결과 카드" width="1600" height="1067" loading="lazy">
+        <img src="assets/photo2caricature/styles.webp" alt="웹툰 스타일을 고르자 프롬프트 칸이 한국 웹툰 스타일 프롬프트로 바뀐 모습" width="1108" height="552" loading="lazy">
+        <img src="assets/photo2caricature/prompt-edit.webp" alt="프롬프트 끝에 지시를 덧붙이자 프롬프트 옆에 (수정됨)이 붙고 기본값으로 링크가 보이는 모습" width="1108" height="394" loading="lazy">
+        <img src="assets/photo2caricature/add-style.webp" alt="스타일 추가를 눌러 이름과 프롬프트를 적는 칸과 저장·취소 단추가 열린 모습" width="1108" height="656" loading="lazy">
+      </div>
+    </article>
+    <article class="feature turn">
+      <div class="feature__text"><h3>2. 같은 캐릭터를 네 방향에서</h3><p>앞·왼쪽·뒤·오른쪽 그림 넉 장을 만듭니다. 정면은 새 대화에서 그리고, 나머지 셋은 한 턴어라운드 시트에서 잘라 내서 모습이 서로 어긋나지 않게 합니다.</p></div>
+      <div class="turn__views">
+        <img src="assets/img3d/girl-draw-front.webp" alt="ChatGPT가 그린 장미 원피스 캐릭터의 정면 그림" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-draw-left.webp" alt="같은 캐릭터의 왼쪽 옆모습 그림" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-draw-back.webp" alt="같은 캐릭터의 뒷모습 그림" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-draw-right.webp" alt="같은 캐릭터의 오른쪽 옆모습 그림" width="512" height="512" loading="lazy">
+      </div>
+    </article>
+    <article class="feature turn">
+      <div class="feature__text"><h3>3. 3D 형상과 텍스처</h3><p>넉 장에서 배경을 떼어 Hunyuan3D-2mv로 형상을 만들고, 각도별 그림을 메시에 투영해 텍스처를 입힙니다. 결과는 GLB 한 파일입니다.</p></div>
+      <div class="turn__views">
+        <img src="assets/img3d/girl-3d-front.webp" alt="각도별 그림으로 만든 3D 모델을 앞에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-3d-side-a.webp" alt="3D 모델을 옆에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-3d-side-b.webp" alt="3D 모델을 반대쪽 옆에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-3d-back.webp" alt="3D 모델을 뒤에서 본 모습" width="512" height="512" loading="lazy">
+      </div>
+    </article>
+    <article class="feature turn">
+      <div class="feature__text"><h3>4. 다듬기</h3><p>겹친 조각을 표면 텍스처에 굽고(flatten), 코끝·눈·속눈썹·머리카락·귀·옷을 명령 하나씩으로 손봅니다. 맥 미리보기용 USDZ도 함께 냅니다.</p></div>
+      <div class="turn__views">
+        <img src="assets/img3d/girl-face-0.webp" alt="다듬은 3D 모델의 얼굴을 정면에서 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-face-30.webp" alt="얼굴을 30도 돌려 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-face-45.webp" alt="얼굴을 45도 돌려 본 모습" width="512" height="512" loading="lazy">
+        <img src="assets/img3d/girl-face-60.webp" alt="얼굴을 60도 돌려 본 모습" width="512" height="512" loading="lazy">
+      </div>
+    </article>
+  </div>
+</section>
+
 <section class="box" id="features" aria-labelledby="turn-title">
   <div class="col">
-    <div class="title-row"><h2 id="turn-title">돌려 보기</h2></div>
+    <div class="title-row"><h2 id="turn-title">사진 한 장으로</h2></div>
     <article class="feature turn">
       <div class="feature__text"><h3>의자 · TRELLIS.2</h3><p>사진에서 배경을 떼어 내고 360° 메시를 만듭니다. 삼각형 20만 개와 2048px 텍스처가 기본값입니다.</p></div>
       <div class="turn__views">
@@ -115,8 +158,8 @@
 
 <div class="marquee">
   <div class="marquee__track" aria-hidden="true">
-    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span><span>투니온 대시보드</span>
-    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>photo2caricature</span><span>img3d</span><span>omo 디스코드 봇</span><span>투니온 대시보드</span>
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>img3d</span><span>omo 디스코드 봇</span><span>투니온 대시보드</span>
+    <span>던전 서바이버</span><span>Desktop Uparupa</span><span>라이브캔버스</span><span>AI 계정 사용량 메뉴바</span><span>GitHub 레포 개요</span><span>오메추</span><span>img3d</span><span>omo 디스코드 봇</span><span>투니온 대시보드</span>
   </div>
   <button class="marquee__toggle" type="button" data-motion="marquee"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.5v9l7-4.5z"/></svg><span class="motion-label"><span class="motion-label__on">띠 멈춤</span><span class="motion-label__off">띠 재생</span></span></button>
 </div>
@@ -134,7 +177,7 @@
 </div>
 
 <nav class="dock" aria-label="바로 가기">
-  <a class="dock__btn" href="#features"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M4 9.5l4 4 4-4"/></svg></span>결과 보기</a>
+  <a class="dock__btn" href="#process"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M4 9.5l4 4 4-4"/></svg></span>결과 보기</a>
   <a class="dock__btn" href="../#missions"><span class="dock__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8h-11M6.5 4l-4 4 4 4"/></svg></span>작업 목록으로</a>
 </nav>
 </body>

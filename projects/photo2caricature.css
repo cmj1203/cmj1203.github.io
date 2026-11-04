@@ -1,6 +1,0 @@
-/* photo2caricature 설명 페이지에만 있는 것: 16:9가 아닌 그림을 자르지 않기, 숫자 칸 3개. 틀과 부품은 ../site.css (DESIGN.md D-50~)
-   원본 레포에 자체 로고·아이콘이 없어 스티커는 붙이지 않는다. */
-.hero-media > img { aspect-ratio: auto; }
-.feature__media > img { object-fit: contain; }
-.stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-@media (max-width: 719px) { :root { --gap-top: var(--sp-8); } }

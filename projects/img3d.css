@@ -1,4 +1,4 @@
-/* img3d 설명 페이지에만 있는 것: 숫자 칸 셋, 돌려 보기 정사각형 칸(물건마다 한 줄 넷, 휴대폰 둘), 표 줄 높이, 스티커 자리. 틀과 부품은 ../site.css (DESIGN.md D-50~) */
+/* img3d 설명 페이지에만 있는 것: 숫자 칸 셋, 돌려 보기 정사각형 칸(물건마다 한 줄 넷, 휴대폰 둘), 과정 1단계의 넓은 화면 칸(한 줄 둘, 2:1), 표 줄 높이, 스티커 자리. 틀과 부품은 ../site.css (DESIGN.md D-50~) */
 .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .turn__views {
@@ -11,6 +11,8 @@
   background: var(--cell);
 }
 
+.turn__views--wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.turn__views--wide > img { aspect-ratio: 2 / 1; }
 .facts__table { grid-auto-rows: auto; }
 
 .s-chair { --w: 112px; --y: 28px; --over: 0.3; --i: 0; }
@@ -24,6 +26,7 @@
 }
 @media (max-width: 719px) {
   .turn__views { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .turn__views--wide { grid-template-columns: minmax(0, 1fr); }
   .s-chair { --w: 40px; --y: auto; --b: calc(100% - 3px); --over: 1; --x: 8px; }
   .s-teapot { --w: 56px; --y: auto; --b: calc(100% - 3px); --over: 1; --x: 8px; }
   .s-room { --w: 64px; --b: calc(100% - 3px); --over: 1; --x: 8px; }
