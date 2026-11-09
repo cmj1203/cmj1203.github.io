@@ -14,6 +14,7 @@
   --sign-border: #427abc;
   --sign-fill: #f5bf5a;
   --sign-ink: #c13c39;
+  --live-dot: #d32f2f;
 
   /* 글자 (D-52) */
   --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
@@ -219,7 +220,7 @@ main > * + * { margin-top: var(--gap-box); }
   display: flex; align-items: center; gap: var(--sp-2); padding-inline: var(--sp-4);
   font-size: var(--fs-small); font-weight: 700;
 }
-.item__state--live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.item__state--live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--live-dot); }
 .item__media { position: relative; padding: var(--pad-media); border-bottom: var(--line); background: var(--cell); }
 .item__shot {
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
